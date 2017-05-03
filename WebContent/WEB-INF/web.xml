@@ -7,12 +7,7 @@
   <display-name>DJ3M_TODDS</display-name>
 
   <welcome-file-list>
-    <welcome-file>inlogscherm.html</welcome-file>
-    <welcome-file>inlogscherm.html</welcome-file>
-    <welcome-file>inlogscherm.html</welcome-file>
-    <welcome-file>inlogscherm.html</welcome-file>
-    <welcome-file>inlogscherm.html</welcome-file>
-    <welcome-file>inlogscherm.html</welcome-file>
+    <welcome-file>Inlogscherm.jsp</welcome-file>
   </welcome-file-list>
 
 <servlet>
