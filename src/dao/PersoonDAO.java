@@ -7,7 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import domeinBackup.Persoon;
+import domein.Persoon;
 import util.HibernateUtil;
 
 public class PersoonDAO {
