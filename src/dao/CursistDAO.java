@@ -56,7 +56,7 @@ public class CursistDAO {
 		session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			connection = session.beginTransaction();
-			String queryString = "from Cursist where cursistID = :cursistID";
+			String queryString = "from Cursist where personID = :personID";
 			Query query = session.createQuery(queryString);
 			query.setInteger("cursistID", cursistID);
 			cursist = (Cursist) query.uniqueResult();
