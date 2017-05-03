@@ -8,7 +8,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import domein.Opdracht;
-import domeinBackup.Persoon;
 import util.HibernateUtil;
 
 public class OpdrachtDAO {
@@ -52,37 +51,37 @@ public class OpdrachtDAO {
 
 	}
 
-	public Persoon getPersoonByID(int opdrachtID) {
-		Persoon persoon = null;
+	public Opdracht getPersoonByID(int opdrachtID) {
+		Opdracht opdracht = null;
 		session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			connection = session.beginTransaction();
 			String queryString = "from Opdracht where opdrachtID = :opdrachtID";
 			Query query = session.createQuery(queryString);
 			query.setInteger("opdrachtID", opdrachtID);
-			persoon = (Persoon) query.uniqueResult();
+			opdracht = (Opdracht) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
 			session.flush();
 			session.close();
 		}
-		return persoon;
+		return opdracht;
 	}
 
-	public List<Persoon> getPersonen() {
-		List<Persoon> personen = new ArrayList<Persoon>();
+	public List<Opdracht> getOpdrachten() {
+		List<Opdracht> opdrachten = new ArrayList<Opdracht>();
 		session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			connection = session.beginTransaction();
-			personen = session.createQuery("From Persoon").list();
+			opdrachten = session.createQuery("From Opdracht").list();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
 			session.flush();
 			session.close();
 		}
-		return personen;
+		return opdrachten;
 	}
 
 }
