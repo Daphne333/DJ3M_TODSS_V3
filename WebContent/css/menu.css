@@ -1,0 +1,42 @@
+@CHARSET "ISO-8859-1";
+
+ul{
+	margin: 	0px;
+	padding:	0px;
+	list-style: none;
+
+
+}
+
+ul li{
+	float: 				left; 		/*toon ze van links naar rechts*/
+	width: 				200px; 		/* geef item een breedte */
+	height: 			40px; 		/* geef item een hoogte */
+	background-color: 	#e6fffa; 	/* de mooie groene kleur*/
+	opacity: 			.8;    		/* maak het doorschijnend*/
+	line-height:		40px;		/* zet de tekst in het midden vd menu*/
+	text-align: 		center;		/* plaats tekst in het midden */
+	font-size: 			20px;		/* grootte vd tekst */	
+	background-color: 	#99ffeb; 	/* de mooie groene kleur*/
+
+}
+
+/* */
+
+ul li a{
+	text-decoration: none;
+	color:			black;
+	display:		block;
+}
+
+ul li:hover{
+	background-color: #00BE9B;	
+}
+
+ul li ul li{
+	display: none;
+}
+
+ul li:hover ul li{
+	display: block
+}
