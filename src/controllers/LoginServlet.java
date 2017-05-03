@@ -2,7 +2,6 @@ package controllers;
 
 import java.io.IOException;
 import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 public class LoginServlet extends HttpServlet{ 	
@@ -23,18 +22,19 @@ public class LoginServlet extends HttpServlet{
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 			
-			//makes connection to the database to 
-			//PersoonDAO pDao = new PersoonDAO();	
+			//makes connection to the database to validate user input
+			//do...
 			
+			
+			//do something
 			System.out.println(username);
 			
+			//return message
+			request.setAttribute("msg", "Welkom: "+ username);
 			
-			//request.setAttribute("msg", "logged in: "+username);
-			rd = request.getRequestDispatcher("/index.html");
+			//redirect to page.. with msg
+			rd = request.getRequestDispatcher("./Bedrijf_Home.jsp");
 			rd.forward(request, response);
-		
-			response.sendRedirect("/index.html");
-
 	}		
 
 }
