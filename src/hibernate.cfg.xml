@@ -27,18 +27,18 @@
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">true</property>
 
-		<mapping class="util.Bedrijf" />
-		<mapping class="util.Persoon" />
-		<mapping class="util.Cursist" />
-		<mapping class="util.Manager" />
-		<mapping class="util.Docent" />
-		<mapping class="util.Cursus" />
-		<mapping class="util.CursusUitvoering" />
-		<mapping class="util.Training" />
-		<mapping class="util.Opdracht" />
-		<mapping class="util.AntwoordCursist" />
-		<mapping class="util.AntwoordOpdracht" />
-		<mapping class="util.ResultaatCursist" />
+		<mapping class="domein.Bedrijf" />
+		<mapping class="domein.Persoon" />
+		<mapping class="domein.Cursist" />
+		<mapping class="domein.Manager" />
+		<mapping class="domein.Docent" />
+		<mapping class="domein.Cursus" />
+		<mapping class="domein.CursusUitvoering" />
+		<mapping class="domein.Training" />
+		<mapping class="domein.Opdracht" />
+		<mapping class="domein.AntwoordCursist" />
+		<mapping class="domein.AntwoordOpdracht" />
+		<mapping class="domein.ResultaatCursist" />
 
 
 
