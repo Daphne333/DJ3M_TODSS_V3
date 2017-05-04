@@ -8,5 +8,10 @@
 </head>
 <body>
 
+		<div id="messagebox">
+				<%
+					Object msg = request.getAttribute("msg");		
+				%> 
+		</div>
 </body>
 </html>

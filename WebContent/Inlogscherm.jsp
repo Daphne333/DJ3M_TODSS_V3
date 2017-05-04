@@ -5,34 +5,43 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Sam Safety Login</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <!-- 
+         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    	<script type="text/javascript" src="./script/script.js"></script>
+	      -->
+
+	    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+	    	   <!--  <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+	    	    	    <link href="css/style-index.css" rel="stylesheet" type="text/css"/> -->
+
+
 </head>
 <body>
-	
-<!-- 	    <img src="./img/SAM-Logo.svg">
-	    <h1 style=text-align:center;> Inloggen </h1> -->
-	    
-	    
-	<%@include file="header.html"%>
 
-   
-   <br><br><br><br>
-	
-	<div class= "container-login">
-		<form action="LoginServlet" method="post">
-			<label for="name">Gebruikersnaam</label>
-			<input id= "username"></input>
+		<div class="header">
+	  		<%@include file="header.html"%>
+		</div>
+		
+	    <h1 style=text-align:center;> Inloggen </h1>
+
+
+
+		   <br><br>
+		   <br><br>
+		<div class= "container-login">
+			<form action="LoginServlet" method="post">
+				<label for="name">Gebruikersnaam</label><br><br>
+				<input id= "username"></input>
 			
 			<br><br>
 			
-			<label for="pass">Wachtwoord</label>
-			<input id="pass"></input>
-			
-			<input class="button-login" type="submit" value="inloggen"></input> 
-		</form>
-	</div>	
-	
-	
-	
+				<label for="pass">Wachtwoord</label><br><br>
+				<input id="pass"></input><br><br>
+				
+				<input class="button-login" type="submit" value="inloggen"></input> 
+			</form>
+		</div>	
+
+		
 </body>
 </html>

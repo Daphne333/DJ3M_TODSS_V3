@@ -1,13 +1,17 @@
 body {
-  margin: 0;
-  font-family: arial;
-
+  	margin: 0;
 }
 
-header{
+
+.header{
   background: #777;
-  color:white;
-  padding: 5px 15px 0 15px;
+  height:200px;
+}
+
+
+/* 	background-image: url('../img/SAM-Vink.'); */
+
+
 }
 
 header h2 {
@@ -30,6 +34,7 @@ nav ul li{
 
 nav ul li a{
   color: white;
+ 
 }
 
 div.row{
@@ -53,7 +58,8 @@ div.row{
 	margin: auto;
 	width: 30%;
 	border: 3px solid #00BE9B;
-	padding: 10px;
+	background-color: white;
+	opacity: 1;
 }
 
 .button-login{

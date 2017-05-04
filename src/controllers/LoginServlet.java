@@ -2,8 +2,10 @@ package controllers;
 
 import java.io.IOException;
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet{ 	
 	/**
 	 * 
@@ -33,7 +35,7 @@ public class LoginServlet extends HttpServlet{
 			request.setAttribute("msg", "Welkom: "+ username);
 			
 			//redirect to page.. with msg
-			rd = request.getRequestDispatcher("./Bedrijf_Home.jsp");
+			rd = request.getRequestDispatcher("/Bedrijf_Home.jsp");
 			rd.forward(request, response);
 	}		
 
