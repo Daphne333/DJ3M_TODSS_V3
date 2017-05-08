@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet{
 			//redirect to page.. with msg
 			rd = request.getRequestDispatcher("/Bedrijf_Home.jsp");
 			rd.forward(request, response);
-			response.sendRedirect("/Bedrijf_Home.jsp");
+			//response.sendRedirect("/Bedrijf_Home.jsp");
 	}	
 	  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
