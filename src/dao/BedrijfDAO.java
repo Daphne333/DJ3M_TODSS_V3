@@ -7,7 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import domein.Bedrijf;
+import Model.domein.Bedrijf;
 import util.HibernateUtil;
 
 public class BedrijfDAO {

@@ -3,18 +3,20 @@ package util;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.hibernate.*;
+import org.hibernate.Session;
 
-import domein.AntwoordCursist;
-import domein.AntwoordOpdracht;
-import domein.Bedrijf;
-import domein.Cursist;
-import domein.Cursus;
-import domein.CursusUitvoering;
-import domein.Docent;
-import domein.Opdracht;
-import domein.ResultaatCursist;
-import domein.Training;
+import Model.domein.AntwoordCursist;
+import Model.domein.AntwoordOpdracht;
+import Model.domein.Bedrijf;
+import Model.domein.Cursist;
+import Model.domein.Cursus;
+import Model.domein.CursusUitvoering;
+import Model.domein.Docent;
+import Model.domein.Opdracht;
+import Model.domein.ResultaatCursist;
+import Model.domein.Training;
+
+
 
 public class test {
 	protected static void add() {

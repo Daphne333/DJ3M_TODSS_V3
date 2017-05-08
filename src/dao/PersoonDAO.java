@@ -7,7 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import domein.Persoon;
+import Model.domein.Persoon;
 import util.HibernateUtil;
 
 public class PersoonDAO {
@@ -51,14 +51,14 @@ public class PersoonDAO {
 
 	}
 
-	public Persoon getPersoonByID(int persoonID) {
+	public Persoon getPersoonByID(String email) {
 		Persoon persoon = null;
 		session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			connection = session.beginTransaction();
-			String queryString = "from Persoon where personID = :personID";
+			String queryString = "from Persoon where email = :email";
 			Query query = session.createQuery(queryString);
-			query.setInteger("personID", persoonID);
+			query.setString("email", email);
 			persoon = (Persoon) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();

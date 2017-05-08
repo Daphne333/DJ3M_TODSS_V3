@@ -1,4 +1,4 @@
-package domein;
+package Model.domein;
 
 import javax.persistence.*;
 @Entity
@@ -7,17 +7,18 @@ import javax.persistence.*;
 public class Manager extends Persoon {
 	private Manager chef;
 	private Bedrijf bedrijfID;
+	private FunctieRol functie;
 
 	public Manager() {
 	}
 	@Column(name = "Functie")
 
-	public String getFunctie() {
-		return "Manager";
+	public FunctieRol getFunctie() {
+		return functie;
 	}
 
-	public void setFunctie(String functie) {
-		functie = "Manager";
+	public void setFunctie() {
+		this.functie = FunctieRol.MANAGER;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Chef")

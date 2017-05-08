@@ -1,4 +1,4 @@
-package domein;
+package Model.domein;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

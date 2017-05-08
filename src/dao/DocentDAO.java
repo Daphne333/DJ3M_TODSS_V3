@@ -7,7 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import domein.Docent;
+import Model.domein.Docent;
 import util.HibernateUtil;
 
 public class DocentDAO {

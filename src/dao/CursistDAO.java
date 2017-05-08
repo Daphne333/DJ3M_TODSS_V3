@@ -7,7 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import domein.Cursist;
+import Model.domein.Cursist;
 import util.HibernateUtil;
 
 public class CursistDAO {

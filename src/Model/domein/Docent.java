@@ -1,4 +1,4 @@
-package domein;
+package Model.domein;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -9,15 +9,18 @@ import javax.persistence.Table;
 @Table(name = "Persoon")
 @DiscriminatorValue("Docent")
 public class Docent extends Persoon {
+	
+	private FunctieRol functie;
+	
 	public Docent() {
 	}
 	@Column(name = "Functie")
 
-	public String getFunctie() {
-		return "Docent";
+	public FunctieRol getFunctie() {
+		return functie;
 	}
 
-	public void setFunctie(String functie) {
-		functie = "Docent";
+	public void setFunctie() {
+		this.functie = FunctieRol.DOCENT;
 	}
 }

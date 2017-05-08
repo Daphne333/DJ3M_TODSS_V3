@@ -14,10 +14,10 @@ public class Main {
 		byte[] salt = handler.generateSalt();
 		//encryptie van het wachtwoord
 		byte [] encryptedpassword = handler.getEncryptedPassword(password, salt);
-		Account test = new Account();
+		/*Account test = new Account();
 		test.setEmail("username");
 		test.setPassword(encryptedpassword);
-		test.setSalt(salt);
+		test.setSalt(salt);*/
 		//vergelijk het meegegeven wachtwoord, met het ge-encrypte wachtwoord EN salt uit de database(in de toekomst)
 		System.out.print(handler.authenticate("password", encryptedpassword, salt));
 

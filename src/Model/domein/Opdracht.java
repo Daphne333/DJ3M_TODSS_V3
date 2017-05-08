@@ -1,4 +1,4 @@
-package domein;
+package Model.domein;
 
 import java.util.HashSet;
 import java.util.Set;

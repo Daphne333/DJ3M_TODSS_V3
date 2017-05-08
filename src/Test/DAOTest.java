@@ -1,9 +1,7 @@
 package Test;
 
-import java.util.Date;
-
+import Model.domein.Persoon;
 import dao.PersoonDAO;
-import domein.Persoon;
 
 public class DAOTest {
 	

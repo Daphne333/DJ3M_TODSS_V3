@@ -7,7 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import domein.Manager;
+import Model.domein.Manager;
 import util.HibernateUtil;
 
 public class ManagerDAO {

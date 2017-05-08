@@ -1,4 +1,4 @@
-package domein;
+package Model.domein;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,23 +11,40 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Antwoord_Cursist")
-public class AntwoordCursist {
-
-	private int antwoordCursistID;
+@Table(name = "Antwoord_Opdracht")
+public class AntwoordOpdracht {
+	private int antwoordID;
+	private String omschrijving;
+	private int goedfout;
 	private String antwoord;
-	private Cursist cursist;
 	private Opdracht opdracht;
-	public AntwoordCursist() {
+	
+	public AntwoordOpdracht() {
 	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "AntwoordCursistID")
-	public int getAntwoordCursistID() {
-		return antwoordCursistID;
+	@Column(name = "AntwoordID")
+	public int getAntwoordID() {
+		return antwoordID;
 	}
-	public void setAntwoordCursistID(int antwoordCursistID) {
-		this.antwoordCursistID = antwoordCursistID;
+	public void setAntwoordID(int antwoordID) {
+		this.antwoordID = antwoordID;
+	}
+	@Column(name = "Omschrijving")
+
+	public String getOmschrijving() {
+		return omschrijving;
+	}
+	public void setOmschrijving(String omschrijving) {
+		this.omschrijving = omschrijving;
+	}
+	@Column(name = "GoedFout")
+
+	public int getGoedfout() {
+		return goedfout;
+	}
+	public void setGoedfout(int goedfout) {
+		this.goedfout = goedfout;
 	}
 	@Column(name = "Antwoord")
 
@@ -38,14 +55,6 @@ public class AntwoordCursist {
 		this.antwoord = antwoord;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "personID")
-	public Cursist getCursist() {
-		return cursist;
-	}
-	public void setCursist(Cursist cursist) {
-		this.cursist = cursist;
-	}
-	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "opdrachtID")
 	public Opdracht getOpdracht() {
 		return opdracht;
@@ -53,4 +62,5 @@ public class AntwoordCursist {
 	public void setOpdracht(Opdracht opdracht) {
 		this.opdracht = opdracht;
 	}
+
 }

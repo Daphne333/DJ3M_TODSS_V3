@@ -1,4 +1,4 @@
-package domein;
+package Model.domein;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,17 +12,18 @@ public class Cursist extends Persoon {
 	private Manager chef;
 	private Bedrijf bedrijfID;
 	private Set<CursusUitvoering> uitvoeringen = new HashSet<CursusUitvoering>();
+	private FunctieRol functie;
 
 	public Cursist() {
 	}
 	@Column(name = "Functie")
 
-	public String getFunctie() {
-		return "Cursist";
+	public FunctieRol getFunctie() {
+		return functie;
 	}
 
-	public void setFunctie(String functie) {
-		functie = "Cursist";
+	public void setFunctie() {
+		this.functie = FunctieRol.CURSIST;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Chef")
