@@ -5,50 +5,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>BedrijfHome</title>
-<!-- 
-         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    	<script type="text/javascript" src="./script/script.js"></script>
-	      -->
 
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<!--  <link href="css/menu.css" rel="stylesheet" type="text/css"/>
-	    	    	    <link href="css/style-index.css" rel="stylesheet" type="text/css"/> -->
+         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    	<script type="text/javascript" src="../script/script.js"></script>
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/menu.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style-index.css" rel="stylesheet" type="text/css"/>
 
 
 </head>
 <body>
 
-	<div class="header">
+	<div id ="header" class="header">
 		<!-- <img src="/img/SAM-Logo.svg" class="header-img"> -->
 	</div>
 
 	<div class="menu">
-		<ul>
-			<li><a href="/Bedrijf_Home.html">Home</a></li>
-			<li><a href="/Bedrijf_Planning.html">Planning
-					<ul>
-						<li>Deze week</li>
-						<li>Overzicht</li>
-						<li>Historie</li>
-					</ul>
-			</a></li>
-			<li><a href="/Bedrijf_Cursussen.html">Cursussen
-					<ul>
-						<li>Overzicht</li>
-						<li>Archief</li>
-					</ul>
-			</a></li>
-			<li><a href="/Bedrijf_Ontdek.html">Ontdek
-					<ul>
-						<li>Nieuw</li>
-					</ul>
-			</a></li>
-			<li><a href="/Bedrijf_Opties.html">Opties
-					<ul>
-						<li>Wijzigen</li>
-					</ul>
-			</a></li>
-		</ul>
+		
 	</div>
 	<div class="content">
 		<div class="content-title">CONTENT</div>
