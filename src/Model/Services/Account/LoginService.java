@@ -21,20 +21,14 @@ public class LoginService {
 
 	public Persoon loginPersonalAccount(FunctieRol functie, String email, String password) {
 		Persoon loginAccount = null;
-		if (functie == FunctieRol.DOCENT) {
+		if (functie == FunctieRol.DOCENT ||functie == FunctieRol.CURSIST ||functie == FunctieRol.MANAGER) {
 			 loginAccount = persoonDAO.getPersoonByID(email);
-			// ^ hierboven moet een docentDAO worden maar nu even zo vanwege nulpointers anders.
-		} else if (functie == FunctieRol.CURSIST) {
-			// loginAccount = cursistDao.getByPK(email)
-		} else if (functie == FunctieRol.MANAGER) {
-			// loginAccount = manager.getByPk(email);
 		}
 
 		if (loginAccount != null && loginAccount.getPassword().equals(password)) {
 			return loginAccount;
 		} else {
 			return null;
-
 		}
 
 	}
