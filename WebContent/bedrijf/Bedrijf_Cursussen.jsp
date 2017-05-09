@@ -18,8 +18,8 @@
 </head>
 <body>
 
-	<div class="header-box">
-		<img src="/img/SAM-Logo.svg" class="header-img">
+	<div class="header">
+		<!-- <img src="/img/SAM-Logo.svg" class="header-img"> -->
 	</div>
 
 	<div class="menu">
