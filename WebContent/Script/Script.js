@@ -1,8 +1,7 @@
 
+/*als eerst gaan we de header tevoegen op de pagina*/
 
-
-var myapp = angular.module("module",[]);
-
-var mycontroler =function($scope){
-	$scope.message = "angular tut";
+function HeaderLoad(){
+	
 }
+
