@@ -12,14 +12,14 @@
 		
 		<!-- css -->
 		<link href="../css/style.css" rel="stylesheet" type="text/css" />
-
+		<link href="../css/menu.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/style-index.css" rel="stylesheet" type="text/css"/>
 		
-
+		<!-- included pages -->
+		<jsp:include page="../standard/Menu.jsp"/>
 
 </head>
 <body>
-		<!-- included pages  -->
-		<jsp:include page="../standard/Menu.jsp"/>
 	
 
 		<div id="messagebox">

@@ -6,51 +6,24 @@ body {
 .header{
   background: #777;
   height:200px;
+  width: 100%;
 }
 
+ .footer{
 
-/* 	background-image: url('../img/SAM-Vink.'); */
-
-
-}
+ }
 
 header h2 {
 	margin: 0;
   	display: inline;
 }
-nav ul{
-  margin: 0;
-  padding: 0;
-  display: inline;
-}
 
-nav ul li{
-  background: #777;
-  color: white;
-  display: inline-block;
-  list-style-type: none;
-  padding: 5px, 15px;
-}
+/* 
+============================================================
+				 login-scherm
+============================================================
+ */
 
-nav ul li a{
-  color: white;
- 
-}
-
-div.row{
-
-}
- div.col{
-   background: #777;
-   padding: 20px;
-   margin: 5px;
-   float: left;
-   color: white;
- }
-
- footer{
-   clear:both;
- }
 
 .container-login{
 	align:center;
@@ -75,3 +48,48 @@ div.row{
 	height:		60px;
 	background-color: #00BE9B;
 }
+
+/* 
+============================================================
+				menu +  menu-items
+============================================================
+ */
+
+ul{
+	margin: 	0px;
+	padding:	0px;
+	list-style: none;
+}
+
+ul li{
+	float: 				left; 		/*toon ze van links naar rechts*/
+	width: 				200px; 		/* geef item een breedte */
+	height: 			40px; 		/* geef item een hoogte */
+	background-color: 	#e6fffa; 	/* de mooie groene kleur*/
+	opacity: 			.8;    		/* maak het doorschijnend*/
+	line-height:		40px;		/* zet de tekst in het midden vd menu*/
+	text-align: 		center;		/* plaats tekst in het midden */
+	font-size: 			20px;		/* grootte vd tekst */	
+	background-color: 	#99ffeb; 	/* de mooie groene kleur*/
+
+}
+
+ul li a{
+	text-decoration: none;
+	color:			black;
+	display:		block;
+}
+
+ul li:hover{
+	background-color: #00BE9B;	
+}
+
+ul li ul li{
+	display: none;
+}
+
+ul li:hover ul li{
+	display: block
+}
+
+
