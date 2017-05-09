@@ -1,8 +1,5 @@
-<%@ page import="Model.domein.Persoon"%>
+<%@ page import="Model.domein.Account"%>
 <%@ page import="Model.domein.FunctieRol"%>
-<%@ page import="Model.domein.Docent"%>
-<%@ page import="Model.domein.Cursist"%>
-
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -10,8 +7,7 @@
 
 <div>
 	<%
-            Cursist loginCursist = (Cursist) request.getSession().getAttribute("loginAccount");
-        	Docent loginDocent = (Docent) request.getSession().getAttribute("loginAccount");
+            Account loginAccount = (Account) request.getSession().getAttribute("loginAccount");
         	
         %>
 	<% if (loginCursist != null || loginDocent !=null) {

@@ -13,69 +13,49 @@ import Model.Services.Account.LoginService;
 import Model.Services.Provider.ServiceProvider;
 import Model.domein.Account;
 import Model.domein.FunctieRol;
+import Model.domein.Persoon;
 
 @WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet{ 	
+public class LoginServlet extends HttpServlet {
 	/**
 	 * 
-	 */	
+	 */
 	private static final long serialVersionUID = 1L;
 
-	private LoginService loginService = ServiceProvider.getLoginService();    
-	
+	private LoginService loginService = ServiceProvider.getLoginService();
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException{
-		
-			//to include content to request/response and to forward to pages
-			RequestDispatcher rd= null;		
-			
-			//requested parameters
-			String username = request.getParameter("username");
-			String password = request.getParameter("password");
-			
-			//makes connection to the database to validate user input
-			//do...
-			
-			
-			//do something
-			System.out.println(username);
-			
-			//return message
-			request.setAttribute("msg", "Welkom: "+ username);
-			
-			//redirect to page.. with msg
-			rd = request.getRequestDispatcher("/Bedrijf_Home.jsp");
-			rd.forward(request, response);
-			//response.sendRedirect("/Bedrijf_Home.jsp");
-	}	
-	  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			throws ServletException, IOException {
+		String url = "";
+		Account account;
+		RequestDispatcher rd = null;
 
-	    }
+		if ((account = (Account) request.getAttribute("loginAccount")) != null) {
+			FunctieRol functieRol;
+			if ((functieRol = account.getFunctie()) != null) {
+				request.getSession().invalidate();
+				request.getSession().setAttribute("loginAccount", account);
+				if (functieRol == FunctieRol.CURSIST) {
+					Persoon cursistAccount = loginService.loginPersonalAccount(functieRol, account.getEmail(),
+							account.getPassword());
+					request.getSession().setAttribute("loginAccount", cursistAccount);
+					url = "/bedrijf/Bedrijf_Home.jsp";
+				} else if (functieRol == FunctieRol.DOCENT) {
+					Persoon docentAccount = loginService.loginPersonalAccount(functieRol, account.getEmail(),
+							account.getPassword());
+					request.getSession().setAttribute("loginAccount", docentAccount);
+					url = "/cursist/Cursist_Home.jsp";
+				} else if (functieRol == FunctieRol.MANAGER) {
+					Persoon managerAccount = loginService.loginPersonalAccount(functieRol, account.getEmail(),
+							account.getPassword());
+					request.getSession().setAttribute("loginAccount", managerAccount);
+					url = "/manager/Manager_Home.jsp";
+				}
 
+			}
+			request.removeAttribute("loginAccount");
+		}
+		rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
+	}
 }
-
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    System.out.println("LoginServlet...");
-    String url = "/Inlogscherm.jsp";
-    Account account;
-    
-    
-    if ((account = (Account) request.getAttribute("loginAccount")) != null) {
-        FunctieRol accountRole;
-        if ((accountRole = account.getFunctie()) != null) {
-            request.getSession().invalidate();
-            request.getSession().setAttribute("loginAccount", account);
-            if (accountRole == FunctieRol.CURSIST ||  || accountRole == FunctieRol.MANAGER) {
-                Persoon cursistAccount = loginService.loginPersonalAccount(accountRole, account.getEmail() , account.getPassword());
-                request.getSession().setAttribute("loginAccount", cursistAccount);
-            } else if (accountRole == FunctieRol.DOCENT){
-            	Persoon docentAccount = loginService.loginPersonalAccount(acountRole,           }
-            
-            url = "/secure/" + account.getRole().name().toLowerCase() + "/" + account.getRole().name().toLowerCase() + ".jsp";
-
-        }
-        request.removeAttribute("loginAccount");
-    }
-    response.sendRedirect(url);
-}
-
