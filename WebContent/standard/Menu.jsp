@@ -7,11 +7,11 @@
 
 <div>
 	<%
-            Account loginAccount = (Account) request.getSession().getAttribute("loginAccount");
+            Account account = (Account) request.getSession().getAttribute("loginAccount");
         	
         %>
-	<% if (loginCursist != null || loginDocent !=null) {
-            if (loginCursist.getFunctie() == FunctieRol.CURSIST) {
+	<% if (account != null || account !=null) {
+            if (account.getFunctie() == FunctieRol.CURSIST) {
         %>
 
 		<!-- Hier moeten de menu item komen voor wat de cursist kan zien vb :
@@ -25,7 +25,7 @@
 		<ul> zijn de services die beschikbaar zijn in het menu.
 		-->
 		
- <% } else if (loginDocent.getFunctie() == FunctieRol.DOCENT) {
+ <% } else if (account.getFunctie() == FunctieRol.DOCENT) {
         %>
         
         <!-- zelfde spul hier als dat van Cursist en verder de andere rollen. -->
