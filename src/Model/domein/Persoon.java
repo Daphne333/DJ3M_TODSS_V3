@@ -8,13 +8,13 @@ import javax.persistence.*;
 @Table(name = "Persoon")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.STRING)
-public class Persoon {
+public class Persoon extends Account{
 	private int personID;
-	private String email;
+	//private String email;
 	private String naam;
 	private String tussenvoegsel;
 	private String achternaam;
-	private String password;
+	//private String password;
 	//private byte[] password;
 	private Date geboortedatum;
 	private int telefoonnummer;
@@ -28,8 +28,36 @@ public class Persoon {
 	private byte[] salt;
 
 	public Persoon() {
+		
 	}
-
+	public Persoon(FunctieRol functie){
+		setFunctie(functie);
+	}
+	public Persoon(String email){
+		super(email);
+	}
+	public Persoon(String email, FunctieRol functie){
+		super(email);
+		this.functie = functie;
+	}
+	public Persoon(String email,String password, String naam,FunctieRol functie, String tussenvoegsel,String achternaam,Date geboortedatum,
+			int telefoonnummer, String straatnaam, int huisnummer, String toevoeging, String postcode,
+			String plaats, int bsnnummer, String geslacht){
+		super(email,password,functie);
+		this.naam = naam;
+		this.tussenvoegsel = tussenvoegsel;
+		this.achternaam = achternaam;
+		this.geboortedatum = geboortedatum;
+		this.telefoonnummer = telefoonnummer;
+		this.straatnaam = straatnaam;
+		this.huisnummer = huisnummer;
+		this.toevoeging = toevoeging;
+		this.postcode = postcode;
+		this.plaats = plaats;
+		this.bsnnummer = bsnnummer;
+		this.geslacht = geslacht;
+	}
+			
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "PersonID")
@@ -39,24 +67,6 @@ public class Persoon {
 
 	public void setPersonID(int personID) {
 		this.personID = personID;
-	}
-
-	@Column(name = "email")
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	@Column(name = "wachtwoord")
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	
 	/*public byte[] getPassword() {

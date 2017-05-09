@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import Model.Services.Account.LoginService;
 import Model.Services.Provider.ServiceProvider;
+import Model.domein.Account;
+import Model.domein.FunctieRol;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet{ 	
@@ -19,7 +21,7 @@ public class LoginServlet extends HttpServlet{
 	 */	
 	private static final long serialVersionUID = 1L;
 
-	//private LoginService loginService = ServiceProvider.getLoginService();    
+	private LoginService loginService = ServiceProvider.getLoginService();    
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
@@ -52,20 +54,23 @@ public class LoginServlet extends HttpServlet{
 
 }
 
-/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     System.out.println("LoginServlet...");
-    String url = "/login.jsp";
-    Persoon account;
-    if ((account = (Persoon) request.getAttribute("loginAccount")) != null) {
+    String url = "/Inlogscherm.jsp";
+    Account account;
+    
+    
+    if ((account = (Account) request.getAttribute("loginAccount")) != null) {
         FunctieRol accountRole;
-        if ((accountRole = account()) != null) {
+        if ((accountRole = account.getFunctie()) != null) {
             request.getSession().invalidate();
             request.getSession().setAttribute("loginAccount", account);
-            if (accountRole == AccountRole.CUSTOMER || accountRole == AccountRole.MECHANIC) {
-                Persoon customerAccount = loginService.loginPersonalAccount(accountRole, account.getEmail() , account.getPassword());
-                request.getSession().setAttribute("loginAccount", customerAccount);
-
-            }
+            if (accountRole == FunctieRol.CURSIST ||  || accountRole == FunctieRol.MANAGER) {
+                Persoon cursistAccount = loginService.loginPersonalAccount(accountRole, account.getEmail() , account.getPassword());
+                request.getSession().setAttribute("loginAccount", cursistAccount);
+            } else if (accountRole == FunctieRol.DOCENT){
+            	Persoon docentAccount = loginService.loginPersonalAccount(acountRole,           }
+            
             url = "/secure/" + account.getRole().name().toLowerCase() + "/" + account.getRole().name().toLowerCase() + ".jsp";
 
         }
@@ -73,5 +78,4 @@ public class LoginServlet extends HttpServlet{
     }
     response.sendRedirect(url);
 }
-*/
 
