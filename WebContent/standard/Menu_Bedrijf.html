@@ -1,14 +1,24 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
 <body>
+
+
 		<div class="menu">		
-			<ul>
-				<a><li>Home</li></a>
-				<a><li>Planning</a>
-				<a><li>Alle Cursisten</li></a>
-			</ul>   			
+		 	<ul id="menu">				
+		 	
+<!-- 		 	this.id geeft het id van de list-item mee zodat als
+		 		we erop klikken we weten om welke button het gaat  
+		 		HET ID MOET DEZELFDE NAAM HEBBEN ALS DE NAAM VAN DE PAGINA
+		 		WAAR WE NAARTOE GAAN VERWIJZEN: 
+		 		Bedrijf_Home gaat naar 'Bedrijf_Home.jsp'-->
+		 		<li id="Bedrijf_Home" onclick="menuClick(this.id)">Home</li>
+				<li id="Bedrijf_Planning" onclick="menuClick(this.id)" id="menu-link" >Planning</li>
+				<li id="Bedrijf_Cursisten" onclick="menuClick(this.id)" id="menu-link" >Cursisten</li>
+			</ul>   			 
    		</div>
+
 </body>
 </html>

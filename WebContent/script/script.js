@@ -9,8 +9,20 @@ $(document).ready(function(){
 /*	  $("#footer").load("../standard/footer.html"); */
 
 	  SetMenu();
-	 
+ 
 });
+
+/*end of page startup*/
+
+
+
+/*works with all buttons in the different menu's
+loads corresponding content and places it into the div with id="#content*/
+function menuClick(clicked_id){
+		
+	var rol = document.getElementById("rol").value;
+	$('#content').load("../" + rol + "/"+ clicked_id + ".jsp");
+};
 
 
 /*to set the corresponding menu based on your role*/
@@ -20,18 +32,18 @@ function SetMenu(){
 	var rol = document.getElementById("rol").value;
 	if(rol != "" || rol != null){
 		switch(rol){
-		case "docent":
-			  $('#menu').load("../standard/Menu_Docent.html"); 
-		case "manager":
-			  $('#menu').load("../standard/Menu_Manager.html");
-		case "bedrijf":
-			  $('#menu').load("../standard/Menu_Bedrijf.html");
-		case "cursist":
-			  $('#menu').load("../standard/Menu_Manager.html");
-		}
-	
-	}
-	
+		case "Docent":
+				$('#menu').load("../standard/Menu_Docent.html");
+					break;
+		case "Manager":
+				$('#menu').load("../standard/Menu_Manager.html");
+					break;
+		case "Bedrijf":
+			  	$('#menu').load("../standard/Menu_Bedrijf.html");
+			  		break;
+		case "Cursist":
+			  	$('#menu').load("../standard/Menu_Cursist.html");
+			  		break;
+		}	
+	}	
 }
-
-

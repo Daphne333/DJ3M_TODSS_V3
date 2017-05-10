@@ -39,17 +39,20 @@ public class LoginServlet extends HttpServlet {
 					Persoon cursistAccount = loginService.loginPersonalAccount(functieRol, account.getEmail(),
 							account.getPassword());
 					request.getSession().setAttribute("loginAccount", cursistAccount);
-					url = "/bedrijf/Bedrijf_Home.jsp";
+					/*De mapnaam MOET een hoofdletter zijn!!*/
+					url = "/Bedrijf/Bedrijf_Home.jsp";
 				} else if (functieRol == FunctieRol.DOCENT) {
 					Persoon docentAccount = loginService.loginPersonalAccount(functieRol, account.getEmail(),
 							account.getPassword());
 					request.getSession().setAttribute("loginAccount", docentAccount);
-					url = "/cursist/Cursist_Home.jsp";
+					/*De mapnaam MOET een hoofdletter zijn!!*/
+					url = "/Cursist/Cursist_Home.jsp";
 				} else if (functieRol == FunctieRol.MANAGER) {
 					Persoon managerAccount = loginService.loginPersonalAccount(functieRol, account.getEmail(),
 							account.getPassword());
 					request.getSession().setAttribute("loginAccount", managerAccount);
-					url = "/manager/Manager_Home.jsp";
+					/*De mapnaam MOET een hoofdletter zijn!!*/
+					url = "/Manager/Manager_Home.jsp";
 				}
 
 			}

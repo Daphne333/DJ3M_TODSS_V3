@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
 			<!-- included pages  -->
 
 	
@@ -18,13 +19,13 @@
     	<script type="text/javascript" src="../script/script.js"></script>
 		
 		<!-- css -->
-		<link href="../css/style.css" rel="stylesheet" type="text/css" />
+		<link href="../css/style.css" rel="stylesheet" type="text/css"/>
 
 		
 
-
 </head>
 <body>
+
 
 
 
@@ -37,15 +38,21 @@
 	
 	
 		<div id="header" class="header"></div>		
-		<div style="height:30px; width: 100%; text-align: center;">Bedrijf HOME</div>	
 		
-		<div id="menu" class="menu"></div>
 		
+		<div class="menu-container">
+ 			<div id="menu" class="menu"></div>
+		</div>
 		
 		
 			
 		<!-- inhoud vd pagina komt hier -->
-		<div class="content"></div>
+		<div class="content-container">
+			<div id="content" class="content">
+				<div class="inner-content"  style="background-color: green;"></div>
+			
+			</div>			
+		</div>
 
 	
 	

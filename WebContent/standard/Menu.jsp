@@ -13,7 +13,7 @@
         %>
         
         <!-- style="visibility: hidden;" -->
-        <input id="rol" value="docent"></input>
+        <input id="rol" value="Bedrijf"></input>
 
 
 </html>
