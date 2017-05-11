@@ -125,26 +125,14 @@ ul li:hover ul li{
 	background-color: gray;	
 }
 
-.content-container .content div.inner-content{
+.inner-content{
+	margin: 0;
 	display: inline-block;
 	width: 100%;
 	height: 72vh;
 	list-style-type: none;
 	
 }
-/* 
-.content{
-	display: inline-block;
-	width: 70%;
-	height: 73vh;
-	background-color: red;
-}
-
-.content-inner{
-	width: 70%;
-	height: 73vh;
-	background-color: green;
-} */
 
 .tableview{
 	border-radius: 30px;

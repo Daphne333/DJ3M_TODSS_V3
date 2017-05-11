@@ -49,6 +49,7 @@
 						<td>${planning.GetDatum()}</td>
 						<td>${planning.GetOmschrijving()}</td>
 						<td>${planning.GetAantalDeelnemers()}</td>
+						<td>${planning.Prijs()}</td>
 
 				</t>
 				</c:forEach>

@@ -48,9 +48,8 @@
 			
 		<!-- inhoud vd pagina komt hier -->
 		<div class="content-container">
-			<div id="content" class="content">
-				<div class="inner-content"  style="background-color: green;"></div>
-			
+			<div id="content" class="content" >
+				<div class="inner-content" style="background-color: green;"></div>			
 			</div>			
 		</div>
 
@@ -60,6 +59,5 @@
 	
 
 
-	<div></div>
 </body>
 </html>
