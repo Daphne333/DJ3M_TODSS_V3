@@ -46,7 +46,7 @@
 	<div class="tableview" style="background: gray; opacity: .8;">
 			<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
 				<%-- <c:forEach var="cursist" items='${cursisten}'>	 --%>
-				<t>
+				<tr>
 				
 				<!-- voorbeeld van output: -->
 <%-- 						<td>${cursist.GetId()}</td>
@@ -58,17 +58,14 @@
 						<td>ID</td>
 						<td>CURSUS</td>
 						<td>DATUM</td>
-					</t>
-					 </table>
-					 
-				<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
-					<t>
+					</tr>		
+					<tr>
 						<td>Jelle</td>
 						<td>Wiersma</td>
 						<td>1234</td>
 						<td>HTML</td>
 						<td>20-05-2017</td>
-					</t>
+					</tr>
 					
 					</table>
 <%-- 	 </c:forEach> --%>

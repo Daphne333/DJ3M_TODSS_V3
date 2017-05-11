@@ -14,7 +14,7 @@
         
         <!-- style="visibility: hidden;" -->
         <!-- Bedrijf / Cursist / Manager /  -->
-        <input id="rol" value="Cursist"></input>
+        <input id="rol" value="Manager"></input>
 
 
 </html>

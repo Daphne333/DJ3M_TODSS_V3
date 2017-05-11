@@ -4,27 +4,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cursussen beheren</title>
-
-		<!-- scripts -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    	<script type="text/javascript" src="../script/script.js"></script>
 		
-		<!-- css -->
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		
-		<!-- included pages -->
-		<jsp:include page="../standard/Menu.jsp"/>
+<title>Manager | Cursusbeheer</title>
 </head>
 <body>
-	<div class="header">
-		<%@include file="../standard/header.html"%>
-	</div>
 
-	<h1 style="text-align: center;">Cursus beheren</h1>
+<div id="content" class="content">
+		
+		<div class="inner-content"	style="background-color: white; opacity: .9;">
+<!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
+		<div id="messagebox">
+		<%
+		
+			Object msg = request.getAttribute("msg");
+		
+			// dit object moet de informatie bevatten over de gehele planning
+			// dit object is via de servlet en de dao gevalideed in de database
+			// het object is van de eigenaar, degene die is ingeloged
+			Object cursisten = request.getAttribute("cursisten");
+		%>	
+		</div>
 
-
-	<br>
+	
+	<h1 style="text-align: center; margin-top:20px;">Cursus Beheer</h1>
+		<br>
 	<br>
 	<br>
 	<br>
@@ -37,5 +41,13 @@
 			<br> <input class="button-login" type="submit" value="Cursus aanmaken"></input>
 		</form>
 	</div>
+		
+
+
+	</div>
+</div>
+
+
+
 </body>
 </html>

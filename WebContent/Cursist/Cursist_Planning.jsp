@@ -46,14 +46,14 @@
 	<div class="tableview" style="background: gray; opacity: .8;">
 			<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
 				<c:forEach var="cursist" items='${cursisten}'>	
-				<t>
+				<tr>
 				
 				<!-- voorbeeld van output: -->
 						<td>${cursist.GetId()}</td>
 						<td>${cursist.GetNaam()}</td>
 						<td>${cursist.GetAchternaam()}</td>
 
-				</t>
+				</tr>
 	 </c:forEach>
 	 </table>
 	</div>
