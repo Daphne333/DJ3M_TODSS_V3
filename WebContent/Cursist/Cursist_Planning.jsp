@@ -36,11 +36,29 @@
 		</div>
 
 	
-	<h1 style="text-align: center; margin-top:20px;">HOME</h1>
+	<h1 style="text-align: center; margin-top:20px;">PLANNING</h1>
+	
+	
+	
+<!-- 	hier gaan we de opgevraagde gegevens; de planning, verwerken in een tabel-vorm
+	voor elk item dat in de planning zit gaan we de attributen opvragen en
+	in tabel-vorm weergeven -->
+	<div class="tableview" style="background: gray; opacity: .8;">
+			<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
+				<c:forEach var="cursist" items='${cursisten}'>	
+				<t>
+				
+				<!-- voorbeeld van output: -->
+						<td>${cursist.GetId()}</td>
+						<td>${cursist.GetNaam()}</td>
+						<td>${cursist.GetAchternaam()}</td>
 
+				</t>
+	 </c:forEach>
+	 </table>
 	</div>
 	</div>
-
+	</div>
 
 </body>
 </html>

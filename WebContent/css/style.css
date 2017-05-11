@@ -172,3 +172,9 @@ ul li:hover ul li{
             max-width:auto;
 }
 
+td{
+	background-color: white;
+	color: black;
+	opacity: 1;
+}
+
