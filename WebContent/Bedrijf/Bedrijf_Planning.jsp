@@ -18,7 +18,7 @@
 
 		<div id="content" class="content">
 		
-		<div class="inner-content" style="background-color: blue;">
+		<div class="inner-content" style="background-color: white; opacity: .9;">
 <!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
 		<div id="messagebox">
 		<%

@@ -1,63 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
-			<!-- included pages  -->
-
-	
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-
-<%@include file="../standard/Menu.jsp" %>
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Bedrijf | Home</title>
-
-		<!-- scripts -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    	<script type="text/javascript" src="../script/script.js"></script>
-		
-		<!-- css -->
-		<link href="../css/style.css" rel="stylesheet" type="text/css"/>
-
-		
-
+<title>Insert title here</title>
 </head>
 <body>
 
-
-
-
+		<div id="content" class="content">
+		
+		<div class="inner-content" style="background-color: white; opacity: .9;">
+<!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
 		<div id="messagebox">
-			<%
-				Object msg = request.getAttribute("msg");
-			%>
-		</div>
-	
-	
-	
-		<div id="header" class="header"></div>		
+		<%
 		
+			Object msg = request.getAttribute("msg");
 		
-		<div class="menu-container">
- 			<div id="menu" class="menu"></div>
-		</div>
-		
-		
-			
-		<!-- inhoud vd pagina komt hier -->
-		<div class="content-container">
-			<div id="content" class="content" >
-				<div class="inner-content" style="background-color: green;"></div>			
-			</div>			
-		</div>
+			// dit object moet de informatie bevatten over de gehele planning
+			// dit object is via de servlet en de dao gevalideed in de database
+			// het object is van de eigenaar, degene die is ingeloged
+			Object planning = request.getAttribute("home");
+		%>	
+		</div>	
+
+	<h1 style="text-align: center; margin-top:20px;">HOME PAGINA</h1>
 
 	
 	
 	
-	
+<!-- 	hier gaan we de opgevraagde gegevens verwerken -->
 
+		</div> 
+	</div>
 
+		
 </body>
 </html>

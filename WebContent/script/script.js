@@ -9,6 +9,7 @@ $(document).ready(function(){
 /*	  $("#footer").load("../standard/footer.html"); */
 
 	  SetMenu();
+	  SetHomePage();
  
 });
 
@@ -17,7 +18,7 @@ $(document).ready(function(){
 
 
 /*works with all buttons in the different menu's
-loads corresponding content and places it into the div with id="#content*/
+loads corresponding content and places it into the div with id="#content"*/
 function menuClick(clicked_id){
 		
 	var rol = document.getElementById("rol").value;
@@ -46,4 +47,15 @@ function SetMenu(){
 			  		break;
 		}	
 	}	
+}
+
+
+
+function SetHomePage(){
+	
+	var rol = document.getElementById("rol").value;
+	
+	if(rol != "" || rol != null){
+		$('#content').load("../" + rol + "/"+ rol +"_Home.jsp");
+	}
 }

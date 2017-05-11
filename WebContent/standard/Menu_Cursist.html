@@ -10,33 +10,17 @@
 
 <body>
 		<div class="menu">		
-			<ul>
-				<li><a>Home</a></li>
-				<li><a>Cursist</a>
-<!-- 					<ul>
-						<li><a>Deze week</a></li>
-						<li><a>Overzicht</a></li>
-						<li><a>Historie</a></li>					
-					</ul></li>
-				<li>Profielen
-					<ul>
-						<li>Maak aan</li>
-						<li>Overzicht</li>
-						<li>Archief</li>
-					</ul></li>
-				<li>Cursussen
-					<ul>
-						<li>Overzicht</li>
-					</ul></li>
-				<li>Ontdek
-					<ul>
-						<li>Nieuw</li>
-					</ul></li>
-				<li>Opties
-				<ul>
-					<li>Wijzigen</li>
-				</ul> --></li>
-			</ul>   			
+		 	<ul id="menu">				
+		 	
+<!-- 		 	this.id geeft het id van de list-item mee zodat als
+		 		we erop klikken we weten om welke button het gaat  
+		 		HET ID MOET DEZELFDE NAAM HEBBEN ALS DE NAAM VAN DE PAGINA
+		 		WAAR WE NAARTOE GAAN VERWIJZEN: 
+		 		Bedrijf_Home gaat naar 'Bedrijf_Home.jsp'-->
+		 		<li id="Cursist_Home" onclick="menuClick(this.id)">Home</li>
+				<li id="Cursist_Planning" onclick="menuClick(this.id)" id="menu-link" >Planning</li>
+				<li id="Cursist_Cursussen" onclick="menuClick(this.id)" id="menu-link" >Cursussen</li>
+			</ul>   			 
    		</div>
 
 
