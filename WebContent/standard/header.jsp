@@ -11,7 +11,7 @@
 
 	<div class="header">
 		<img src='../img/SAM-logo.svg' style="height: 200px;"/>
-		<div class="header-text">welkom: </div>
+		<div class="header-text">welkom </div>
 	</div>
 </body>
 </html>
