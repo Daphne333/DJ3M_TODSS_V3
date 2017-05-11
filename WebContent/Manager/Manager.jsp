@@ -28,7 +28,6 @@
 
 
 
-
 		<div id="messagebox">
 			<%
 				Object msg = request.getAttribute("msg");

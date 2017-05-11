@@ -3,14 +3,15 @@
 Als de pagina wordt gestart doe dit:
 als eerst gaan we de header/footer toevoegen op de pagina*/
 $(document).ready(function(){
+	  var rol = document.getElementById("rol").value;
 
 	 
-	  $('#header').load("../standard/header.html"); 
-/*	  $("#footer").load("../standard/footer.html"); */
 
 	  SetMenu();
 	  SetHomePage();
- 
+	  $('#header').load("../standard/header.jsp"); 
+	  /*	  $("#footer").load("../standard/footer.html"); */
+
 });
 
 /*end of page startup*/

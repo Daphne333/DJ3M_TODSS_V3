@@ -36,7 +36,7 @@
 		</div>
 
 	
-	<h1 style="text-align: center; margin-top:20px;">HOME</h1>
+	<h1 style="text-align: center; margin-top:20px;">Home</h1>
 		
 
 

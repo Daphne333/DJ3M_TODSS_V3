@@ -10,11 +10,12 @@
 	<%
             Account account = (Account) request.getSession().getAttribute("loginAccount");
         	/* String rol = "" + account.getFunctie(); */
+        	String rol ="Manager";
         %>
         
         <!-- style="visibility: hidden;" -->
         <!-- Bedrijf / Cursist / Manager /  -->
-        <input id="rol" value="Manager"></input>
+        <input type="hidden" id="rol" value="Manager" readonly></input>
 
 
 </html>
