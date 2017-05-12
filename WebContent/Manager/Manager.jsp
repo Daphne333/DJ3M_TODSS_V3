@@ -13,7 +13,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Manager | Home</title>
-
+ 
 		<!-- scripts -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     	<script type="text/javascript" src="../script/script.js"></script>
@@ -22,7 +22,7 @@
 		<link href="../css/style.css" rel="stylesheet" type="text/css"/>
 
 		
-
+	
 </head>
 <body>
 

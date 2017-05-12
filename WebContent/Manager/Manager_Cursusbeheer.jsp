@@ -10,37 +10,51 @@
 </head>
 <body>
 
-<div id="content" class="content">
-		
-		<div class="inner-content"	style="background-color: white; opacity: .9;">
-<!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
-		<div id="messagebox">
-		<%
-		
-			Object msg = request.getAttribute("msg");
-		
-			// dit object moet de informatie bevatten over de gehele planning
-			// dit object is via de servlet en de dao gevalideed in de database
-			// het object is van de eigenaar, degene die is ingeloged
-			Object cursisten = request.getAttribute("cursisten");
-		%>	
-		</div>
-
+			<div id="content" class="content">		
+					<div class="inner-content"	style="background-color: #d3d3d3; opacity: .9;">
+			
+			
+			
+			<!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
+					<div id="messagebox">
+						<%						
+							Object msg = request.getAttribute("msg");
+						
+							// dit object moet de informatie bevatten over de gehele planning
+							// dit object is via de servlet en de dao gevalideed in de database
+							// het object is van de eigenaar, degene die is ingeloged
+							Object cursisten = request.getAttribute("cursisten");
+						%>	
+					</div>
+			
+				<div>
+					<h1 style="text-align: center; margin-top:20px;">Cursus Beheer</h1>
+				</div>
+				
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="home-content-body">
+				<div class="cursus_aanmaken">
+					<form method="post" action="CursusServlet.do">
+						<label for="coursename">Cursusomschrijving</label><br> 
+						<br> <input id="coursename" name="coursename"></input>
+						<br> <br> <label for="courseprice">Cursus prijs</label><br>
+						<br> <input id="courseprice" name="courseprice"></input><br>			
+						<br> <input class="button-login" type="submit" value="Cursus aanmaken"></input>
+					</form>
+				</div>
+				
+				
+				
+				
+				
 	
-	<h1 style="text-align: center; margin-top:20px;">Cursus Beheer</h1>
-		<br>
-	<br>
-	<br>
-	<br>
-	<div class="cursus_aanmaken">
-		<form method="post" action="CursusServlet.do">
-			<label for="coursename">Cursusomschrijving</label><br> 
-			<br> <input id="coursename" name="coursename"></input>
-			<br> <br> <label for="courseprice">Cursus prijs</label><br>
-			<br> <input id="courseprice" name="courseprice"></input><br>			
-			<br> <input class="button-login" type="submit" value="Cursus aanmaken"></input>
-		</form>
-	</div>
+	
+	
+	
+				</div>
 		
 
 

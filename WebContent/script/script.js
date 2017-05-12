@@ -60,3 +60,24 @@ function SetHomePage(){
 		$('#content').load("../" + rol + "/"+ rol +"_Home.jsp");
 	}
 }
+
+
+$('.links').click(function() { 
+    
+	   var linksId1 =     $(this).attr('id');    
+	    
+	    var Containers=$('div#content > innercontent[id!= innercontent"]');   
+	    
+	    Containers.animate({
+	        left: '-50%'
+	    }, 500, function() {
+	         Containers.css('left', '150%');
+	         Containers.appendTo('#container');
+	    });
+
+	   $('#'+container).animate({
+	        left: '50%'
+	    }, 500);
+	});
+
+

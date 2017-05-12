@@ -20,8 +20,11 @@
 		
 		
 		<div id="content" class="content">		
-			<div class="inner-content"	style="background-color: white; opacity: .9;">
-	<!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
+			<div class="inner-content"	style="background-color: #d3d3d3; opacity: .9;">
+	
+	
+	<!-- 		
+				in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
 			<div id="messagebox">
 			<%
 			
@@ -31,12 +34,29 @@
 				// dit object is via de servlet en de dao gevalideed in de database
 				// het object is van de eigenaar, degene die is ingeloged
 				Object cursisten = request.getAttribute("cursisten");
-			%>	
-			</div>	
+			%>			
+			</div>
+			
+			<div>	
 				<h1 style="text-align: center; margin-top:20px;">Cursisten</h1>
 			</div>
+		
+		
+			
+			
+			<div class="home-content-body">
+	
+	
+	
+	
+			</div>
+		
+		
+		
+		
+		
 		</div>
-
+	</div>
 
 </body>
 </html>
