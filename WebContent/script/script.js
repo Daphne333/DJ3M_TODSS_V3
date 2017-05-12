@@ -11,6 +11,9 @@ $(document).ready(function(){
 	  SetHomePage();
 	  $('#header').load("../standard/header.jsp"); 
 	  /*	  $("#footer").load("../standard/footer.html"); */
+	  
+	  
+
 
 });
 
@@ -23,7 +26,16 @@ loads corresponding content and places it into the div with id="#content"*/
 function menuClick(clicked_id){
 		
 	var rol = document.getElementById("rol").value;
+	var end ='webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+	
+	//laden van de content
 	$('#content').load("../" + rol + "/"+ clicked_id + ".jsp");
+	//voeg animatie toe
+	$("#content").addClass('animated fadeInDown').one(end, function(){
+		//verwijder animatie
+		$('#content').removeClass('fadeInDown');
+	});
+
 };
 
 
@@ -36,6 +48,7 @@ function SetMenu(){
 		switch(rol){
 		case "Docent":
 				$('#menu').load("../standard/Menu_Docent.html");
+				
 					break;
 		case "Manager":
 				$('#menu').load("../standard/Menu_Manager.html");
@@ -55,6 +68,7 @@ function SetMenu(){
 function SetHomePage(){
 	
 	var rol = document.getElementById("rol").value;
+
 	
 	if(rol != "" || rol != null){
 		$('#content').load("../" + rol + "/"+ rol +"_Home.jsp");
@@ -62,22 +76,6 @@ function SetHomePage(){
 }
 
 
-$('.links').click(function() { 
-    
-	   var linksId1 =     $(this).attr('id');    
-	    
-	    var Containers=$('div#content > innercontent[id!= innercontent"]');   
-	    
-	    Containers.animate({
-	        left: '-50%'
-	    }, 500, function() {
-	         Containers.css('left', '150%');
-	         Containers.appendTo('#container');
-	    });
+/*$('#rechts1').
 
-	   $('#'+container).animate({
-	        left: '50%'
-	    }, 500);
-	});
-
-
+*/

@@ -11,7 +11,7 @@
 <body>
 
 			<div id="content" class="content">		
-					<div class="inner-content"	style="background-color: #d3d3d3; opacity: .9;">
+					<div class="inner-content">
 			
 			
 			

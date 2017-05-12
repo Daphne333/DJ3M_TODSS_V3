@@ -169,7 +169,7 @@ ul li:hover ul li{
   float: right;
   margin-right: 30px;
   margin-top: 50px;
-  background-color: #d3d3d3; opacity: .9;
+  background-color: #f9f9f9; opacity: .9;
      overflow: hidden; 
 
 
@@ -182,8 +182,12 @@ ul li:hover ul li{
 	background-color: gray;	 */
 	
 }
+.content{
+  background-color: #f9f9f9; opacity: .9;
+}
 
 .inner-content{
+  background-color: #f9f9f9; opacity: .9;
   min-width: 100%;		
   height: 146vh;
   text-align: center;
@@ -206,16 +210,13 @@ ul li:hover ul li{
 
 .home-content-body{
 	width: 90%;
-  height: 146vh;
+    height: 146vh;
 	background-color: white;
 	color: black;
 	margin: auto;
 	opacity: 1;
 	
 }
-
-
-
 
 /* voor de tabel */
 .tableview{
@@ -242,3 +243,87 @@ td{
 	opacity: 1;
 }
 
+
+/* 
+============================================================
+				CSS per pagina
+============================================================
+ */
+.manager-home-container{
+	width: 100%;
+	height: 200px;
+	margin: 10px;
+}
+.left1{
+	margin: 5;
+	float:left;
+	width: 68%;	
+	height: 200px;
+	background-color: #00BE9B;
+}
+.left1:hover{
+	width: 100%;
+}
+.right1{
+	margin: 5;
+	float: right;
+	width: 28%;
+	height: 200px;
+	background-color: gray;
+	opacity: .5;
+}
+
+.right1:hover {
+	width: 100%;
+} 
+
+.right2:hover{
+
+	opacity:1;
+	width: 100%;	
+}
+
+
+
+.right2{
+	float: right;
+	width: 69%;
+	height: 200px;
+	background-color: #00BE9B;
+}
+
+.left2{
+	float: left;
+	width: 29%;
+	height: 200px;
+	background-color: gray;
+	opacity: .5;
+}
+.left2:hover{
+	opacity: 1;
+	width: 68%
+}
+.left2:hover{
+	opacity: 1;
+	width: 68%
+}
+
+.left3{
+	float:left;
+	width: 69%;
+	height: 200px;
+	background-color: #00BE9B;
+}
+
+.right3{
+	float: right;
+	width: 29%;
+	height: 200px;
+	background-color: gray;
+	opacity: .5;
+}
+.right3:hover{
+	opacity:1;
+	width:68%;
+	
+}

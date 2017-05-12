@@ -19,9 +19,9 @@
 		
 		
 		
-		<div id="content" class="content">
+
 		
-		<div class="inner-content"	style="background-color: #d3d3d3; opacity: .9;">
+		<div class="inner-content">
 <!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
 		<div id="messagebox">
 		<%
@@ -40,6 +40,25 @@
 	
 	
 	
+		<div class="manager-home-container">
+			<div id="left1" class="left1"></div>
+			<div id="right1" class="right1"></div>		
+		</div>
+		
+		
+		
+ 		<div class="manager-home-container">
+			<div class="left2"></div>
+			<div class="right2"></div>	
+		</div>
+		
+		
+		
+		<div class="manager-home-container">
+			<div class="left3"></div>
+			<div class="right3"></div>	
+		</div>	
+
 	<div class="home-content-body">
 	
 	
@@ -50,7 +69,7 @@
 
 
 	</div>
-	</div>
+
 
 
 </body>

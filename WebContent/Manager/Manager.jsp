@@ -14,14 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Manager | Home</title>
  
-		<!-- scripts -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    	<script type="text/javascript" src="../script/script.js"></script>
-		
-		<!-- css -->
-		<link href="../css/style.css" rel="stylesheet" type="text/css"/>
 
-		
 	
 </head>
 <body>
@@ -48,7 +41,6 @@
 		<!-- inhoud vd pagina komt hier -->
 		<div class="content-container">
 			<div id="content" class="content" >
-				<div class="inner-content" style="background-color: white;"></div>			
 			</div>			
 		</div>
 
@@ -57,4 +49,13 @@
 
 
 </body>
+		<!-- scripts -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    	<script type="text/javascript" src="../script/script.js"></script>
+		
+		<!-- css -->
+		<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/animate.css" rel="stylesheet" type="text/css"/>
+
+		
 </html>
