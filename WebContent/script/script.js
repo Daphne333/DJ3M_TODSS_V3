@@ -20,6 +20,26 @@ $(document).ready(function(){
 /*end of page startup*/
 
 
+var animation;
+
+function RandomAnimation(){
+	var random = Math.floor(Math.random() * 4) + 1; 
+	
+	switch(random){
+	case 1:
+		animation= "fadeInBottom";
+		break;
+	case 2:
+		animation= "fadeInLeft";
+		break;
+	case 3:
+		animation= "fadeInRight";
+		break;
+	case 4:
+		animation= "fadeInUp";
+		break;
+	}	
+}
 
 /*works with all buttons in the different menu's
 loads corresponding content and places it into the div with id="#content"*/
@@ -31,12 +51,18 @@ function menuClick(clicked_id){
 	//laden van de content
 	$('#content').load("../" + rol + "/"+ clicked_id + ".jsp");
 	//voeg animatie toe
-	$("#content").addClass('animated fadeInDown').one(end, function(){
+	//animatie is random 1 uit 4
+	
+	RandomAnimation();
+	$("#content").addClass('animated ' +animation).one(end, function(){
 		//verwijder animatie
-		$('#content').removeClass('fadeInDown');
+		$('#content').removeClass(animation);
 	});
+}
 
-};
+
+
+
 
 
 /*to set the corresponding menu based on your role*/
@@ -48,8 +74,7 @@ function SetMenu(){
 		switch(rol){
 		case "Docent":
 				$('#menu').load("../standard/Menu_Docent.html");
-				
-					break;
+				break;
 		case "Manager":
 				$('#menu').load("../standard/Menu_Manager.html");
 					break;
@@ -73,9 +98,5 @@ function SetHomePage(){
 	if(rol != "" || rol != null){
 		$('#content').load("../" + rol + "/"+ rol +"_Home.jsp");
 	}
+
 }
-
-
-/*$('#rechts1').
-
-*/
