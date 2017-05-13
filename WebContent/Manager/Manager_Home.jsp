@@ -41,7 +41,7 @@
 	
 	
 		<div class="manager-home-container">
-			<div  class="left1"><img id="img-home" src="../img/loods.jpg"></div>
+			<div  class="left1"><img id="img-home" src="../img/machines.png"></div>
 			<div  class="right1"><div class="slide"><div class="left">|||</div></div>Slide</div>		
 		</div>
 		
