@@ -27,7 +27,7 @@ function RandomAnimation(){
 	
 	switch(random){
 	case 1:
-		animation= "fadeInBottom";
+		animation= "fadeInDown";
 		break;
 	case 2:
 		animation= "fadeInLeft";
@@ -46,17 +46,19 @@ loads corresponding content and places it into the div with id="#content"*/
 function menuClick(clicked_id){
 		
 	var rol = document.getElementById("rol").value;
+	
+	/*end of animation*/
 	var end ='webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 	
 	//laden van de content
 	$('#content').load("../" + rol + "/"+ clicked_id + ".jsp");
-	//voeg animatie toe
-	//animatie is random 1 uit 4
 	
-	RandomAnimation();
-	$("#content").addClass('animated ' +animation).one(end, function(){
+	//voeg animatie toe
+	//animation is a random number between 1-4
+/*	RandomAnimation();*/
+	$("#content").addClass('animated fadeInDown').one(end, function(){
 		//verwijder animatie
-		$('#content').removeClass(animation);
+		$('#content').removeClass('fadeInDown');
 	});
 }
 
@@ -100,3 +102,29 @@ function SetHomePage(){
 	}
 
 }
+
+
+/*$('#right1').hover(function() {
+	alert('dfgbhujilfbhuji');
+	    $('#left1').css('width','28%');
+	    $('#right1').css('width', '68%');
+	  }, function() {
+	    // on mouseout, reset the background color
+	    $('#left1').css('width', '68%');
+	    $('#right1').css('width', '28%');
+ });
+*/
+
+$(".right1").on({
+    mouseenter: function () {
+    	alert('awrg');
+        //stuff to do on mouse enter
+    	$('.left1').css('width','28%');
+	    $('.right1').css('width', '68%');
+    },
+    mouseleave: function () {
+        //stuff to do on mouse leave
+	    $('.left1').css('width', '68%');
+	    $('.right1').css('width', '28%');
+    }
+});

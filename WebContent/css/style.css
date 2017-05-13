@@ -31,18 +31,20 @@ body {
 	bottom:0; 
 	right:0;
 	margin-left: 10px;
+	
 
 }
 
 .header-text:hover{
-		background-color: /* #00BE9B */ /* #99ffeb */ gray;
-		color: white;
-		font-size: 35px;
-	    box-shadow: 3px 3px 3px black;
+/* 		background-color: #00BE9B #99ffeb gray; */
+/* 		color: white;
+ */		font-size: 30px;
+	    box-shadow: 0px 3px 3px black;
+	    border-bottom: 1px solid currentColor; /* Or whatever color you want */
    /*  box-shadow: inset 0 0 0 2px #00BE9B; */
 /*     box-shadow: 4px 4px 4px gray; */
-	cursor: pointer;
-	opacity: .3;
+		cursor: pointer;
+		opacity: .6;
 }
 
  .footer{
@@ -252,7 +254,7 @@ td{
 .manager-home-container{
 	width: 100%;
 	height: 200px;
-	margin: 10px;
+
 }
 .left1{
 	margin: 5;
@@ -260,34 +262,55 @@ td{
 	width: 68%;	
 	height: 200px;
 	background-color: #00BE9B;
-}
-.left1:hover{
-	width: 100%;
+
+
 }
 .right1{
 	margin: 5;
 	float: right;
-	width: 28%;
+	min-width: 28%;
+	width: auto;
 	height: 200px;
 	background-color: gray;
 	opacity: .5;
+	text-align:canter;
+	line-height: 200px;
+	font-size: 30px;
+	color: white;
 }
 
-.right1:hover {
-	width: 100%;
-} 
+/* .right1:hover{
+	opacity: 9;
+}  */ 
 
-.right2:hover{
+/* .right1:hover{
+	width: 68%;
+} */
 
-	opacity:1;
-	width: 100%;	
+
+.slide{
+	float: left;
+	width: 50px;
+	height: 200px;
+	background-color: red;
+}
+
+/* red slider-bar */
+.slide .left{
+	text-align: center;
+	line-height: 200px;
+	transform: rotate(90deg);
+	transform-origin: center left 5; 
+	float: middle;
+	color: white;
+	font-size: 25px;
 }
 
 
 
 .right2{
 	float: right;
-	width: 69%;
+	width: 68%;
 	height: 200px;
 	background-color: #00BE9B;
 }
@@ -299,10 +322,7 @@ td{
 	background-color: gray;
 	opacity: .5;
 }
-.left2:hover{
-	opacity: 1;
-	width: 68%
-}
+
 .left2:hover{
 	opacity: 1;
 	width: 68%

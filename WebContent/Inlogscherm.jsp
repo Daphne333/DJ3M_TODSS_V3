@@ -19,7 +19,7 @@
 <body>
 
 	<div class="header">
-		<%@include file="standard/header.html"%>
+		<%@include file="standard/header.jsp"%>
 	</div>
 
 	<h1 style="text-align: center;">Inloggen</h1>

@@ -41,13 +41,13 @@
 	
 	
 		<div class="manager-home-container">
-			<div id="left1" class="left1"></div>
-			<div id="right1" class="right1"></div>		
+			<div  class="left1"></div>
+			<div  class="right1"><div class="slide"><div class="left">|||</div></div>Slide</div>		
 		</div>
 		
 		
 		
- 		<div class="manager-home-container">
+<!--  		<div class="manager-home-container">
 			<div class="left2"></div>
 			<div class="right2"></div>	
 		</div>
@@ -57,7 +57,7 @@
 		<div class="manager-home-container">
 			<div class="left3"></div>
 			<div class="right3"></div>	
-		</div>	
+		</div>	 -->
 
 	<div class="home-content-body">
 	
