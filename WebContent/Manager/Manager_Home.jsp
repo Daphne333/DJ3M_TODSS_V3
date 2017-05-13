@@ -41,19 +41,22 @@
 	
 	
 		<div class="manager-home-container">
-			<div  class="left1"></div>
+			<div  class="left1"><img id="img-home" src="../img/loods.jpg"></div>
 			<div  class="right1"><div class="slide"><div class="left">|||</div></div>Slide</div>		
 		</div>
 		
 		
 		
-<!--  		<div class="manager-home-container">
-			<div class="left2"></div>
-			<div class="right2"></div>	
+ 		<div class="manager-home-container">
+ 			<div class="three-boxes-container">
+				<div class="three-boxes"><div class="top">Cursussen</div><div class="bottom"><img class="icon" src="../img/courses-icon.png"></div></div>
+				<div class="three-boxes"></div>
+				<div class="three-boxes"></div>
+			</div>
 		</div>
 		
 		
-		
+<!-- 		
 		<div class="manager-home-container">
 			<div class="left3"></div>
 			<div class="right3"></div>	

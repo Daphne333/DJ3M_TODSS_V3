@@ -4,8 +4,11 @@ body {
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: 500px 500px;
-    font-family:  Georgia ;
+    font-family: "DomaineDisplayNarrow",Georgia,serif;
+font-weight: bold;
+font-style: normal;
     height: 150vh;
+    
 
 
 }
@@ -122,7 +125,7 @@ header h2 {
 	opacity: 			1;    		/* maak het doorschijnend*/
 	line-height:		40px;		/* zet de tekst in het midden vd menu*/
 	text-align: 		left;		/* plaats tekst in het midden */
-	font-size: 			28px;		/* grootte vd tekst */	
+	font-size: 			25px;		/* grootte vd tekst */	
 	background-color: 	/* #99ffeb *//*  #00BE9B */ white; 	/* de mooie groene kleur*/
 	border-radius: 3px;
 	border-bottom: 1px solid currentColor; /* Or whatever color you want */
@@ -136,7 +139,7 @@ header h2 {
    /*  box-shadow: inset 0 0 0 2px #00BE9B; */
 /*     box-shadow: 4px 4px 4px gray; */
 	cursor: pointer;
-	font-size: 25px;
+	font-size: 26px;
 	margin-top: 10px;
 	padding-left: 20px;
 	opacity: .7;
@@ -171,7 +174,7 @@ ul li:hover ul li{
   float: right;
   margin-right: 30px;
   margin-top: 50px;
-  background-color: #f9f9f9; opacity: .9;
+  background-color: /* #f9f9f9 */ white; opacity: .9;
      overflow: hidden; 
 
 
@@ -185,11 +188,11 @@ ul li:hover ul li{
 	
 }
 .content{
-  background-color: #f9f9f9; opacity: .9;
+  background-color: /* #f9f9f9 */ white; opacity: .9;
 }
 
 .inner-content{
-  background-color: #f9f9f9; opacity: .9;
+  background-color: /* #f9f9f9 */ white; opacity: .9;
   min-width: 100%;		
   height: 146vh;
   text-align: center;
@@ -248,12 +251,13 @@ td{
 
 /* 
 ============================================================
-				CSS per pagina
+				CSS per pagina  || MANAGER
 ============================================================
  */
 .manager-home-container{
 	width: 100%;
 	height: 200px;
+	margin-bottom: 100px;
 
 }
 .left1{
@@ -306,44 +310,86 @@ td{
 	font-size: 25px;
 }
 
-
-
-.right2{
-	float: right;
-	width: 68%;
+.three-boxes-container{
+	width: 98%;
 	height: 200px;
-	background-color: #00BE9B;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.left2{
+.three-boxes{
+	width: 200px;
+	height: 200px;
 	float: left;
-	width: 29%;
-	height: 200px;
-	background-color: gray;
-	opacity: .5;
-}
-
-.left2:hover{
-	opacity: 1;
-	width: 68%
-}
-
-.left3{
-	float:left;
-	width: 69%;
-	height: 200px;
-	background-color: #00BE9B;
-}
-
-.right3{
-	float: right;
-	width: 29%;
-	height: 200px;
-	background-color: gray;
-	opacity: .5;
-}
-.right3:hover{
-	opacity:1;
-	width:68%;
+	margin-left: 120px;
+	margin-right: 120px;
+	background-color: white;	
+ 	border: 1px solid black ;
+	box-shadow: 5px 5px 5px gray;
+	border-radius: 50%;
+	cursor: pointer;
+	overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
 	
+}
+
+.three-boxes .top{
+	width: 100%;
+	height: 80px;
+	line-height: 100px;
+	font-size: 25px;
+	border-bottom: 2px solid black;
+}
+
+.three-boxes .bottom{
+	width: 100%;
+	height: 120px;
+	line-height: 100px;
+	opacity: .5;	
+}
+
+.icon{
+	margin-top: 20px;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	line-height: 100px;
+}
+
+.three-boxes:hover .bottom{
+	opacity: 1;
+}
+
+.three-boxes:hover{
+	transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+	/* -webkit-animation:spin .6s linear ;
+    -moz-animation:spin .6s linear ;
+    animation:spin .6s linear ; */
+}
+.three-boxes:hover .top{
+
+}
+
+/* 
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+ */
+
+
+
+
+
+
+/* ============================================================
+				images
+============================================================ */
+
+#img-home{
+	width: 100%;
+	height: 200px;
 }

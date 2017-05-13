@@ -43,18 +43,20 @@
 	<div class="tableview" style="background: gray; opacity: .8;">
 			<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
 				<c:forEach var="datum" items='${planning}'>	
-				<t>
-				
-				<!-- voorbeeld van output: -->
-						<td>${planning.GetDatum()}</td>
-						<td>${planning.GetOmschrijving()}</td>
-						<td>${planning.GetAantalDeelnemers()}</td>
-						<td>${planning.Prijs()}</td>
-
-				</t>
+					<t>
+					
+					<!-- voorbeeld van output: -->
+							<td>${planning.GetDatum()}</td>
+							<td>${planning.GetOmschrijving()}</td>
+							<td>${planning.GetAantalDeelnemers()}</td>
+							<td>${planning.Prijs()}</td>
+	
+					</t>
 				</c:forEach>
 			</table>
 		</div> 
+		
+
 	</div>
 </div>	
 			

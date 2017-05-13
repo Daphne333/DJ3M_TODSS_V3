@@ -100,9 +100,11 @@ function SetHomePage(){
 	if(rol != "" || rol != null){
 		$('#content').load("../" + rol + "/"+ rol +"_Home.jsp");
 	}
-
 }
 
+
+/*
+werkt niet?*/
 
 /*$('#right1').hover(function() {
 	alert('dfgbhujilfbhuji');
@@ -115,16 +117,21 @@ function SetHomePage(){
  });
 */
 
-$(".right1").on({
+/*
+werkt niet?*/
+		
+		
+		
+/*$(".right1").on({
     mouseenter: function () {
     	alert('awrg');
         //stuff to do on mouse enter
-    	$('.left1').css('width','28%');
-	    $('.right1').css('width', '68%');
+    	$(".left1").css('width','28%');
+	    $(".right1").css('width', '68%');
     },
     mouseleave: function () {
         //stuff to do on mouse leave
-	    $('.left1').css('width', '68%');
-	    $('.right1').css('width', '28%');
+	    $(".left1").css('width', '68%');
+	    $(".right1").css('width', '28%');
     }
-});
+});*/

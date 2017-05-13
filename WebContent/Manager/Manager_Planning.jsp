@@ -42,8 +42,8 @@
 			
 			
 			<div class="home-content-body">
-			
-			
+			<br><br>
+<br><br><br><br>						<img src="../img/giphy.gif">
 			
 			
 			</div>
