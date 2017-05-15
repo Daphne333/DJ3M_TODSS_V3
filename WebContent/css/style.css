@@ -283,13 +283,22 @@ td{
 	color: white;
 }
 
-/* .right1:hover{
-	opacity: 9;
-}  */ 
-
-/* .right1:hover{
+.right1:hover{
+	opacity: 1;
 	width: 68%;
-} */
+}   
+
+
+/* the "~" is essential. also:
+right has to come before left in the HTML page
+otherwise it is impossible to change the other element.
+
+there should be a few more options but non actually worked for me
+ */
+.right1:hover ~ .left1{
+	width: 28%;
+	opacity: .5;
+} 
 
 
 .slide{

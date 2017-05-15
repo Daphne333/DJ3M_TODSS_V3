@@ -41,8 +41,9 @@
 	
 	
 		<div class="manager-home-container">
-			<div  class="left1"><img id="img-home" src="../img/machines.png"></div>
 			<div  class="right1"><div class="slide"><div class="left">|||</div></div>Slide</div>		
+			<div  class="left1"><img id="img-home" src="../img/machines.png"></div>
+			
 		</div>
 		
 		
@@ -50,8 +51,8 @@
  		<div class="manager-home-container">
  			<div class="three-boxes-container">
 				<div class="three-boxes"><div class="top">Cursussen</div><div class="bottom"><img class="icon" src="../img/courses-icon.png"></div></div>
-				<div class="three-boxes"></div>
-				<div class="three-boxes"></div>
+				<div class="three-boxes"><div class="top">Test-1</div><div class="bottom"><img class="icon" src="../img/courses-icon.png"></div></div>
+				<div class="three-boxes"><div class="top">test-2</div><div class="bottom"><img class="icon" src="../img/courses-icon.png"></div></div>
 			</div>
 		</div>
 		
