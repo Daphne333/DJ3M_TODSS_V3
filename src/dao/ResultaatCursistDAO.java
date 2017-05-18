@@ -12,6 +12,7 @@ import util.HibernateUtil;
 
 public class ResultaatCursistDAO {
 	
+	
 	Session session = HibernateUtil.getSessionFactory().openSession();
 	Transaction connection = null;
 
