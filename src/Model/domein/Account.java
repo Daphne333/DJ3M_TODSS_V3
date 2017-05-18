@@ -12,11 +12,12 @@ import javax.persistence.Table;
 @DiscriminatorValue("Account")
 public class Account {
 
-	protected String username, password;
-	//CURSIST,MANAGER,BEHEERDER,DOCENT
-	protected FunctieRol rol;
+	private String username, password;
+	private Persoon persoon;
 
-	
+	//CURSIST,MANAGER,BEHEERDER,DOCENT
+	private FunctieRol rol;
+
 	public Account(){
 		
 	}
@@ -62,6 +63,14 @@ public class Account {
 
 	public void setFunctie(FunctieRol rol) {
 		this.rol = rol;
+	}
+	
+	public Persoon getPersoon() {
+		return persoon;
+	}
+
+	public void setPersoon(Persoon persoon) {
+		this.persoon = persoon;
 	}
 
 }

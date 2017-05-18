@@ -8,14 +8,12 @@ import javax.persistence.*;
 @Table(name = "Persoon")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.STRING)
-public class Persoon extends Account{
+public class Persoon {
 	private int personID;
-	//private String email;
+	private String email;
 	private String naam;
 	private String tussenvoegsel;
 	private String achternaam;
-	//private String password;
-	//private byte[] password;
 	private Date geboortedatum;
 	private int telefoonnummer;
 	private String straatnaam;
@@ -25,25 +23,17 @@ public class Persoon extends Account{
 	private String plaats;
 	private int bsnnummer;
 	private String geslacht;
-	private byte[] salt;
+	// private byte[] salt;
+	// private String password;
+	// private byte[] password;
 
 	public Persoon() {
-		
+
 	}
-	public Persoon(FunctieRol functie){
-		setFunctie(functie);
-	}
-	public Persoon(String email){
-		super(email);
-	}
-	public Persoon(String email, FunctieRol functie){
-		super(email);
-		this.functie = functie;
-	}
-	public Persoon(String email,String password, String naam,FunctieRol functie, String tussenvoegsel,String achternaam,Date geboortedatum,
-			int telefoonnummer, String straatnaam, int huisnummer, String toevoeging, String postcode,
-			String plaats, int bsnnummer, String geslacht){
-		super(email,password,functie);
+
+	public Persoon(String email, String password, String naam, String tussenvoegsel, String achternaam,
+			Date geboortedatum, int telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
+			String postcode, String plaats, int bsnnummer, String geslacht) {
 		this.naam = naam;
 		this.tussenvoegsel = tussenvoegsel;
 		this.achternaam = achternaam;
@@ -57,7 +47,7 @@ public class Persoon extends Account{
 		this.bsnnummer = bsnnummer;
 		this.geslacht = geslacht;
 	}
-			
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "PersonID")
@@ -67,26 +57,6 @@ public class Persoon extends Account{
 
 	public void setPersonID(int personID) {
 		this.personID = personID;
-	}
-	
-	/*public byte[] getPassword() {
-		return password;
-	}
-
-	public void setPassword(byte[] password) {
-		this.password = password;
-	}*/
-
-	@Column(name = "salt")
-
-	public byte[] getSalt() {
-		return salt;
-	}
-
-
-
-	public void setSalt(byte[] salt) {
-		this.salt = salt;
 	}
 
 	@Column(name = "naam")
@@ -210,3 +180,18 @@ public class Persoon extends Account{
 	}
 
 }
+/*
+ * public byte[] getPassword() { return password; }
+ * 
+ * public void setPassword(byte[] password) { this.password = password; }
+ */
+
+/*
+ * @Column(name = "salt")
+ * 
+ * public byte[] getSalt() { return salt; }
+ * 
+ * 
+ * 
+ * public void setSalt(byte[] salt) { this.salt = salt; }
+ */
