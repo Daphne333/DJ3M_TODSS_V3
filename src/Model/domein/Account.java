@@ -15,7 +15,7 @@ public class Account {
 	private String username, password;
 	private Persoon persoon;
 
-	//CURSIST,MANAGER,BEHEERDER,DOCENT
+	//CURSIST,MANAGER,BEHEERDER,DOCENT 
 	private FunctieRol rol;
 
 	public Account(){
