@@ -25,7 +25,6 @@ public class CursusUitvoering {
 	private Date eindDatum;
 	private int aantalPlaatsen;
 	private Cursus cursus;
-	private Docent docent;
 
 	private Set<Account> cursisten = new HashSet<Account>();
 	private Set<Account> docenten = new HashSet<Account>();
@@ -85,15 +84,6 @@ public class CursusUitvoering {
 		this.cursus = cursus;
 	}
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "docentID")
-	public Docent getDocent() {
-		return docent;
-	}
-
-	public void setDocent(Docent docent) {
-		this.docent = docent;
-	}
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "Volgt_Cursus", joinColumns = {
 			@JoinColumn(name = "uitvoeringID") },
