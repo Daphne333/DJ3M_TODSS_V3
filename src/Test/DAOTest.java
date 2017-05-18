@@ -12,7 +12,7 @@ public class DAOTest {
 		persoon.setAchternaam("Klaas");
 		persoon.setNaam("Pietje");
 		persoon.setBsnnummer(342423422);
-		persoon.setEmail("piet_Jan@gmail.com");
+		persoon.setUsername("piet_Jan@gmail.com");
 		persoon.setPersonID(2);
 		persoon.setPlaats("Utrecht");
 		persoon.setPostcode("1242GD");
