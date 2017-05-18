@@ -32,23 +32,23 @@ public class LoginServlet extends HttpServlet {
 
 		if ((account = (Account) request.getAttribute("loginAccount")) != null) {
 			FunctieRol functieRol;
-			if ((functieRol = account.getFunctie()) != null) {
+			if ((functieRol = account.getRol()) != null) {
 				request.getSession().invalidate();
 				request.getSession().setAttribute("loginAccount", account);
 				if (functieRol == FunctieRol.CURSIST) {
-					Persoon cursistAccount = loginService.loginPersonalAccount(functieRol, account.getEmail(),
+					Persoon cursistAccount = loginService.loginPersonalAccount(functieRol, account.getUsername(),
 							account.getPassword());
 					request.getSession().setAttribute("loginAccount", cursistAccount);
 					/*De mapnaam MOET een hoofdletter zijn!!*/
 					url = "/Bedrijf/Bedrijf_Home.jsp";
 				} else if (functieRol == FunctieRol.DOCENT) {
-					Persoon docentAccount = loginService.loginPersonalAccount(functieRol, account.getEmail(),
+					Persoon docentAccount = loginService.loginPersonalAccount(functieRol, account.getUsername(),
 							account.getPassword());
 					request.getSession().setAttribute("loginAccount", docentAccount);
 					/*De mapnaam MOET een hoofdletter zijn!!*/
 					url = "/Cursist/Cursist_Home.jsp";
 				} else if (functieRol == FunctieRol.MANAGER) {
-					Persoon managerAccount = loginService.loginPersonalAccount(functieRol, account.getEmail(),
+					Persoon managerAccount = loginService.loginPersonalAccount(functieRol, account.getUsername(),
 							account.getPassword());
 					request.getSession().setAttribute("loginAccount", managerAccount);
 					/*De mapnaam MOET een hoofdletter zijn!!*/
