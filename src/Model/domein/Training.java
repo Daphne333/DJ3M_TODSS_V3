@@ -79,6 +79,6 @@ public class Training {
 	}
 
 	public void setOpdrachten(Set<Opdracht> opdrachten) {
-		this.opdrachten  =opdrachten;
+		this.opdrachten = opdrachten;
 	}
 }
