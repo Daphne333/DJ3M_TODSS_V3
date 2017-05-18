@@ -20,5 +20,15 @@
 			<servlet-name>LoginServlet</servlet-name>
 			<url-pattern>/LoginServlet.do</url-pattern>
 		</servlet-mapping>
+		
+		<servlet>
+			<servlet-name>CursusServlet</servlet-name>
+			<servlet-class>Controller.Servlets.Account.CursusServlet
+			</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>CursusServlet</servlet-name>
+			<url-pattern>/CursusServlet.do</url-pattern>
+		</servlet-mapping>
 
 	</web-app>

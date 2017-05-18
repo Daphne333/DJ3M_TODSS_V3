@@ -6,11 +6,25 @@ import javax.persistence.*;
 @Table(name = "Cursus")
 public class Cursus {
 	private int CursusID;
+	private String naam; // jelle - toegevoegd, staat nog niet in de database
 	private String Omschrijving;
 	private double CursusPrijs;
 
 	public Cursus() {
 	}
+	
+	
+	public Cursus(int id, String naam, String omschrijving, double prijs){
+		this.naam = naam;
+		this.CursusID = id;
+		this.Omschrijving = omschrijving;
+		this.CursusPrijs = prijs;
+	}
+	
+	
+	
+	
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
