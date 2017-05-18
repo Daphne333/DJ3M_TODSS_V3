@@ -1,38 +1,49 @@
 package Model.domein;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name = "Account")
+@DiscriminatorValue("Account")
 public class Account {
 
-	protected String email, password;
-	protected FunctieRol functie;
+	protected String username, password;
+	//CURSIST,MANAGER,BEHEERDER,DOCENT
+	protected FunctieRol rol;
 
 	
 	public Account(){
 		
 	}
 	
-	public Account(String email) {
-		this.email = email;
+	public Account(String username) {
+		this.username = username;
 	}
 
-	public Account(String email, String password) {
+	public Account(String username, String password) {
+		this.username = username;
 		this.password = password;
 	}
 
-	public Account(String email, String password, FunctieRol functie) {
-		this.functie = functie;
-		this.email = email;
+	public Account(String username, String password, FunctieRol rol) {
+		this.rol = rol;
+		this.username = username;
 		this.password = password;
 	}
 
-	@Column(name = "email")
-	public String getEmail() {
-		return email;
+	@Id
+	@Column(name = "username")
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	@Column(name = "wachtwoord")
@@ -44,13 +55,13 @@ public class Account {
 		this.password = password;
 	}
 	
-	@Column
-	public FunctieRol getFunctie() {
-		return functie;
+	@Column(name = "rol")
+	public FunctieRol getRol() {
+		return rol;
 	}
 
-	public void setFunctie(FunctieRol functie) {
-		this.functie = functie;
+	public void setFunctie(FunctieRol rol) {
+		this.rol = rol;
 	}
 
 }
