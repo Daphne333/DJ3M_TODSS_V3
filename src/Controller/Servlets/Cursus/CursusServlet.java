@@ -6,12 +6,15 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Model.domein.Cursus;
 
+
+@WebServlet("/CursusServlet")
 public class CursusServlet extends HttpServlet{
 
 	/**
@@ -28,10 +31,15 @@ public class CursusServlet extends HttpServlet{
 	
 	
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
 		RequestDispatcher rd = null;
+		
+		/*//String rol = req.getParameter("rol");
+		String rol = "Manager";
+		String url = "";
+		
 		
 		List<Cursus> allCursussen = new ArrayList<Cursus>();
 		
@@ -54,6 +62,17 @@ public class CursusServlet extends HttpServlet{
 		allCursussen.add(c6);
 		
 		
+		
+		// een switch voor de navigatie naar de desbetreffende pagina afhankelijk van de rol van de ingelogde persoon
+		
+//		if(rol == "Manager"){
+*/		String url = "/Manager_Cursussen.jsp";
+		
+		
+		//req.setAttribute("cursussen", allCursussen); // deze halen wij op in de cursuspagina
+		rd = req.getRequestDispatcher(url);
+	
 
+		rd.forward(req, resp);
 	}	
 }

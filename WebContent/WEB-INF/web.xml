@@ -23,7 +23,7 @@
 		
 		<servlet>
 			<servlet-name>CursusServlet</servlet-name>
-			<servlet-class>Controller.Servlets.Account.CursusServlet
+			<servlet-class>Controller.Servlets.Cursus.CursusServlet
 			</servlet-class>
 		</servlet>
 		<servlet-mapping>

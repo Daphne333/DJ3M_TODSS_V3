@@ -11,6 +11,7 @@
             Account account = (Account) request.getSession().getAttribute("loginAccount");
         	/* String rol = "" + account.getFunctie(); */
         	String rol ="Manager";
+        	request.getSession().setAttribute("rol", rol);// deze zal denk ik niet meer nodig zijn als de loginservlet goed werkt?
         %>
         
         <!-- style="visibility: hidden;" -->
