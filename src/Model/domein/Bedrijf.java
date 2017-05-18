@@ -9,16 +9,18 @@ public class Bedrijf {
 	private int bedrijfID;
 	private String bedrijfsnaam;
 	private int vestiging_huisnummer;
+	private String vestiging_straat;
 	private String vestiging_toevoeging;
 	private String vestiging_postcode;
 	private String vestiging_plaats;
 	private int vestiging_postbus;
 	private int postadres_huisnummer;
+	private String postadres_straat;
 	private String postadres_toevoeging;
 	private String postadres_postcode;
 	private String postadres_plaats;
 	private int postadres_postbus;
-	private int telefoonnummer;
+	private String telefoonnummer;
 	private int kvknummer;
 	private String email;
 	
@@ -146,11 +148,11 @@ public class Bedrijf {
 
 	@Column(name = "telefoonnummer")
 
-	public int getTelefoonnummer() {
+	public String getTelefoonnummer() {
 		return telefoonnummer;
 	}
 
-	public void setTelefoonnummer(int telefoonnummer) {
+	public void setTelefoonnummer(String telefoonnummer) {
 		this.telefoonnummer = telefoonnummer;
 	}
 
@@ -172,5 +174,21 @@ public class Bedrijf {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	@Column(name = "postadres_straat")
+
+	public String getPostadres_straat() {
+		return postadres_straat;
+	}
+	public void setPostadres_straat(String postadres_straat) {
+		this.postadres_straat = postadres_straat;
+	}
+	@Column(name = "vestiging_straat")
+
+	public String getVestiging_straat() {
+		return vestiging_straat;
+	}
+	public void setVestiging_straat(String vestiging_straat) {
+		this.vestiging_straat = vestiging_straat;
 	}
 }

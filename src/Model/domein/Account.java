@@ -4,6 +4,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,7 +22,8 @@ public class Account {
 
 	//CURSIST,MANAGER,BEHEERDER,DOCENT 
 	private FunctieRol rol;
-
+	private byte[] salt;
+	private int accountID;
 	public Account(){
 		
 	}
@@ -52,6 +55,15 @@ public class Account {
 	}
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "accountID")
+	public int getAccountID() {
+		return accountID;
+	}
+
+	public void setAccountID(int accountID) {
+		this.accountID = accountID;
+	}
 	@Column(name = "username")
 	public String getUsername() {
 		return username;
@@ -75,7 +87,7 @@ public class Account {
 		return rol;
 	}
 
-	public void setFunctie(FunctieRol rol) {
+	public void setRol(FunctieRol rol) {
 		this.rol = rol;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -86,6 +98,14 @@ public class Account {
 
 	public void setPersoon(Persoon persoon) {
 		this.persoon = persoon;
+	}
+	@Column(name = "salt")
+	public byte[] getSalt() {
+		return salt;
+	}
+
+	public void setSalt(byte[] salt) {
+		this.salt = salt;
 	}
 
 }

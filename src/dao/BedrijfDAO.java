@@ -51,14 +51,14 @@ public class BedrijfDAO {
 
 	}
 
-	public Bedrijf getPersoonByID(int bedrijfID) {
+	public Bedrijf getBedrijfBijNaam(String bedrijfsnaam) {
 		Bedrijf bedrijf = null;
 		session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			connection = session.beginTransaction();
-			String queryString = "from Persoon where bedrijfID = :bedrijfID";
+			String queryString = "from Bedrijf where bedrijfsnaam = :bedrijfsnaam";
 			Query query = session.createQuery(queryString);
-			query.setInteger("bedrijfID", bedrijfID);
+			query.setString("bedrijfsnaam", bedrijfsnaam);
 			bedrijf = (Bedrijf) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();

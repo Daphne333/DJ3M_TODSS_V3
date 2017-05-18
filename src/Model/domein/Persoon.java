@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Persoon")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.STRING)
 public class Persoon {
 	private int personID;
 	private String email;
@@ -15,7 +14,7 @@ public class Persoon {
 	private String tussenvoegsel;
 	private String achternaam;
 	private Date geboortedatum;
-	private int telefoonnummer;
+	private String telefoonnummer;
 	private String straatnaam;
 	private int huisnummer;
 	private String toevoeging;
@@ -24,7 +23,7 @@ public class Persoon {
 	private int bsnnummer;
 	private String geslacht;
 	private Bedrijf bedrijfID;
-	private int chefID;
+	private Persoon chefID;
 	// private byte[] salt;
 	// private String password;
 	// private byte[] password;
@@ -34,10 +33,10 @@ public class Persoon {
 	}
 	
 	public Persoon(String email, String password, String naam, String tussenvoegsel, String achternaam,
-			Date geboortedatum, int telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
+			Date geboortedatum, String telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
 			String postcode, String plaats, int bsnnummer, String geslacht, Bedrijf bedrijfID) {
 		this.naam = naam;
-		this.email = email;
+		this.setEmail(email);
 		this.tussenvoegsel = tussenvoegsel;
 		this.achternaam = achternaam;
 		this.geboortedatum = geboortedatum;
@@ -51,12 +50,13 @@ public class Persoon {
 		this.geslacht = geslacht;
 		this.bedrijfID = bedrijfID;
 	}
+	
 
 	public Persoon(String email, String password, String naam, String tussenvoegsel, String achternaam,
-			Date geboortedatum, int telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
-			String postcode, String plaats, int bsnnummer, String geslacht, Bedrijf bedrijfID, int chef) {
+			Date geboortedatum, String telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
+			String postcode, String plaats, int bsnnummer, String geslacht, Bedrijf bedrijfID, Persoon chef) {
 		this.naam = naam;
-		this.email = email;
+		this.setEmail(email);
 		this.tussenvoegsel = tussenvoegsel;
 		this.achternaam = achternaam;
 		this.geboortedatum = geboortedatum;
@@ -73,8 +73,8 @@ public class Persoon {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "PersonID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "personID")
 	public int getPersonID() {
 		return personID;
 	}
@@ -125,11 +125,11 @@ public class Persoon {
 
 	@Column(name = "telefoonnummer")
 
-	public int getTelefoonnummer() {
+	public String getTelefoonnummer() {
 		return telefoonnummer;
 	}
 
-	public void setTelefoonnummer(int telefoonnummer) {
+	public void setTelefoonnummer(String telefoonnummer) {
 		this.telefoonnummer = telefoonnummer;
 	}
 
@@ -203,6 +203,16 @@ public class Persoon {
 		this.geslacht = geslacht;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "chef")
+
+	public Persoon getChefID() {
+		return chefID;
+	}
+
+	public void setChefID(Persoon chefID) {
+		this.chefID = chefID;
+	}
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "bedrijfID")
 
 	public Bedrijf getBedrijfID() {
@@ -212,15 +222,14 @@ public class Persoon {
 	public void setBedrijfID(Bedrijf bedrijfID) {
 		this.bedrijfID = bedrijfID;
 	}
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Chef")
+	@Column(name = "email")
 
-	public int getChefID() {
-		return chefID;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setChef(int chefID) {
-		this.chefID = chefID;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

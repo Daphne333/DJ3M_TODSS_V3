@@ -23,6 +23,8 @@ public class PersoonDAO {
 		} catch (RuntimeException e) {
 			if (connection != null) {
 				connection.rollback();
+				e.printStackTrace();
+
 			} else {
 				e.printStackTrace();
 			}
@@ -51,14 +53,14 @@ public class PersoonDAO {
 
 	}
 
-	public Persoon getPersoonByID(String email) {
+	public Persoon getPersoonByID(int id) {
 		Persoon persoon = null;
 		session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			connection = session.beginTransaction();
-			String queryString = "from Persoon where email = :email";
+			String queryString = "from Persoon where personID = :id";
 			Query query = session.createQuery(queryString);
-			query.setString("email", email);
+			query.setInteger("personID", id);
 			persoon = (Persoon) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();

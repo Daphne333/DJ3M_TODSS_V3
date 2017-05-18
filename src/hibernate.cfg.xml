@@ -8,9 +8,9 @@
 	<session-factory>
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/todss</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/todss_dj3m</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password"><!-- eigen pass --></property>
+		<property name="connection.password">5kpbgn</property>
 
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">1</property>
@@ -29,16 +29,7 @@
 
 		<mapping class="Model.domein.Bedrijf" />
 		<mapping class="Model.domein.Persoon" />
-		<mapping class="Model.domein.Cursist" />
-		<mapping class="Model.domein.Manager" />
-		<mapping class="Model.domein.Docent" />
-		<mapping class="Model.domein.Cursus" />
-		<mapping class="Model.domein.CursusUitvoering" />
-		<mapping class="Model.domein.Training" />
-		<mapping class="Model.domein.Opdracht" />
-		<mapping class="Model.domein.AntwoordCursist" />
-		<mapping class="Model.domein.AntwoordOpdracht" />
-		<mapping class="Model.domein.ResultaatCursist" />
+		<mapping class="Model.domein.Account" />
 		
 		  
 
