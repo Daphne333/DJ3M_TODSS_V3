@@ -36,6 +36,17 @@ public class Account {
 		this.username = username;
 		this.password = password;
 	}
+	public Account (String username, FunctieRol rol, Persoon persoon){
+		this.username = username;
+		this.rol = rol;
+		this.persoon = persoon;
+	}
+	public Account (String username, String password, FunctieRol rol, Persoon persoon){
+		this.username = username;
+		this.password = password;
+		this.rol = rol;
+		this.persoon = persoon;
+	}
 
 	@Id
 	@Column(name = "username")
