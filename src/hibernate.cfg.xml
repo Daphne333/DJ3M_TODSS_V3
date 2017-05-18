@@ -39,6 +39,8 @@
 		<mapping class="Model.domein.AntwoordCursist" />
 		<mapping class="Model.domein.AntwoordOpdracht" />
 		<mapping class="Model.domein.ResultaatCursist" />
+		
+		  
 
 
 
