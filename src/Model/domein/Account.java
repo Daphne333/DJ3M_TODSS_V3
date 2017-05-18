@@ -1,9 +1,12 @@
 package Model.domein;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -64,7 +67,8 @@ public class Account {
 	public void setFunctie(FunctieRol rol) {
 		this.rol = rol;
 	}
-	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "persoonID")
 	public Persoon getPersoon() {
 		return persoon;
 	}
