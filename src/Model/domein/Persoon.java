@@ -23,6 +23,8 @@ public class Persoon {
 	private String plaats;
 	private int bsnnummer;
 	private String geslacht;
+	private Bedrijf bedrijfID;
+	private int chefID;
 	// private byte[] salt;
 	// private String password;
 	// private byte[] password;
@@ -177,6 +179,26 @@ public class Persoon {
 
 	public void setGeslacht(String geslacht) {
 		this.geslacht = geslacht;
+	}
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "bedrijfID")
+
+	public Bedrijf getBedrijfID() {
+		return this.bedrijfID;
+	}
+
+	public void setBedrijfID(Bedrijf bedrijfID) {
+		this.bedrijfID = bedrijfID;
+	}
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "Chef")
+
+	public int getChefID() {
+		return chefID;
+	}
+
+	public void setChef(int chefID) {
+		this.chefID = chefID;
 	}
 
 }
