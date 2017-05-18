@@ -27,7 +27,9 @@ public class CursusUitvoering {
 	private Cursus cursus;
 	private Docent docent;
 
-	private Set<Cursist> cursisten = new HashSet<Cursist>();
+	private Set<Account> cursisten = new HashSet<Account>();
+	private Set<Account> docenten = new HashSet<Account>();
+	
 	public CursusUitvoering() {
 
 	}
@@ -93,14 +95,25 @@ public class CursusUitvoering {
 		this.docent = docent;
 	}
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "Persoon_Volgt_Cursus", joinColumns = {
+	@JoinTable(name = "Volgt_Cursus", joinColumns = {
 			@JoinColumn(name = "uitvoeringID") },
-			inverseJoinColumns = { @JoinColumn(name = "personID") })
-	public Set<Cursist> getCursisten() {
+			inverseJoinColumns = { @JoinColumn(name = "accountID") })
+	public Set<Account> getCursisten() {
 		return this.cursisten;
 	}
 
-	public void setCursisten(Set<Cursist> cursisten) {
+	public void setCursisten(Set<Account> cursisten) {
 		this.cursisten = cursisten;
+	}
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "Geeft_Cursus", joinColumns = {
+			@JoinColumn(name = "uitvoeringID") },
+			inverseJoinColumns = { @JoinColumn(name = "accountID") })
+	public Set<Account> getDocenten() {
+		return this.docenten;
+	}
+
+	public void setDocenten(Set<Account> docenten) {
+		this.docenten = docenten;
 	}
 }
