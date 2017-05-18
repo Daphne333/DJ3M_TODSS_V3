@@ -1,5 +1,5 @@
 package dao;
 
-public class AntwoordDAO {
+public class AntwoordCursistDAO {
 
 }
