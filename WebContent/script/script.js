@@ -43,6 +43,13 @@ function RandomAnimation(){
 
 /*works with all buttons in the different menu's
 loads corresponding content and places it into the div with id="#content"*/
+
+
+/*============================================================
+	WORDT NIET GEBRUIKT!!!! HET GAAT NU VIA DE SERVER IPV JAVASCRIPT
+	ANDERS KAN ER GEEN DATA WORDEN GETOONT DIE WE UIT DE DATABASE MOETEN HALEN
+============================================================*/
+
 function menuClick(clicked_id){
 		
 	var rol = document.getElementById("rol").value;

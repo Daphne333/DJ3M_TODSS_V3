@@ -13,7 +13,7 @@ public class Training {
 	private Date beginDatum;
 	private Date eindDatum;
 	private Cursus cursus;
-	private Docent docent;
+	private Account account;
 	private Set<Opdracht> opdrachten = new HashSet<Opdracht>();
 	public Training(){
 	}
@@ -54,13 +54,13 @@ public class Training {
 		this.eindDatum = eindDatum;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "docentID")
-	public Docent getDocent() {
-		return docent;
+	@JoinColumn(name = "accountID")
+	public Account getAccount() {
+		return account;
 	}
 
-	public void setDocent(Docent docent) {
-		this.docent = docent;
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "cursusID")
@@ -79,6 +79,6 @@ public class Training {
 	}
 
 	public void setOpdrachten(Set<Opdracht> opdrachten) {
-		this.opdrachten  =opdrachten;
+		this.opdrachten = opdrachten;
 	}
 }

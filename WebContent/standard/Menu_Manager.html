@@ -3,7 +3,7 @@
 
 		<div class="menu">	
 			<div id="links">
-			 	<ul id="menu">				
+			 	<div id="menu">				
 			 	
 	<!-- 		 	this.id geeft het id van de list-item mee zodat als
 			 		we erop klikken we weten om welke button het gaat  
@@ -11,13 +11,20 @@
 			 		WAAR WE NAARTOE GAAN VERWIJZEN: 
 			 		Bedrijf_Home gaat naar 'Bedrijf_Home.jsp'-->
 			 		
-			 		<li id="Manager_Home" onclick="menuClick(this.id)">Home</li>
-					<li id="Manager_Planning" onclick="menuClick(this.id)" id="menu-link" >Planning</li>
-					<li id="Manager_Cursusbeheer" onclick="menuClick(this.id)" id="menu-link" >Cursusbeheer</li>
-					<li id="Manager_Cursisten" onclick="menuClick(this.id)" id="menu-link" >Cursisten</li>					
-				</ul>
+			 		<input type="submit" id="Manager_Home" class="menu-link" value="Home">
+					<input type="submit" id="Manager_Planning" class="menu-link" value="Planning">
+					<input type="submit" id="Manager_Cursusbeheer" class="menu-link" value="CursusBeheer">
+					<input type="submit" id="Manager_Cursisten" class="menu-link" value="Cursisten">
+					
+					<form action="CursusServlet.do" method="get">
+						<input type="submit" id="Manager_Cursussen" class="menu-link" value="Cursussen">
+					</form>					
+				</div>
 			</div>   
 		</div>			 
    		
 
 </html>
+
+<!-- 
+onclick="menuClick(this.id)" -->

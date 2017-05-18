@@ -1,5 +1,6 @@
 package Model.Services.Account;
 
+import Model.domein.Account;
 import Model.domein.FunctieRol;
 import Model.domein.Persoon;
 import dao.PersoonDAO;
@@ -11,16 +12,16 @@ public class LoginService {
 	public LoginService() {
 	}
 
-	public Persoon login(String email, String password) {
-		Persoon loginAccount;
+	public Account login(String email, String password) {
+		Account loginAccount;
 		if ((loginAccount = persoonDAO.getPersoonByID((email))) != null)
 			if (loginAccount.getPassword().equals(password))
 				return loginAccount;
 		return null;
 	}
 
-	public Persoon loginPersonalAccount(FunctieRol functie, String email, String password) {
-		Persoon loginAccount = null;
+	public Account loginPersonalAccount(FunctieRol functie, String email, String password) {
+		Account loginAccount = null;
 		if (functie == FunctieRol.DOCENT ||functie == FunctieRol.CURSIST ||functie == FunctieRol.MANAGER) {
 			 loginAccount = persoonDAO.getPersoonByID(email);
 		}

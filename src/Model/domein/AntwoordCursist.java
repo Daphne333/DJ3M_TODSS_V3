@@ -15,8 +15,9 @@ import javax.persistence.Table;
 public class AntwoordCursist {
 
 	private int antwoordCursistID;
+	private FunctieRol rol;
 	private String antwoord;
-	private Cursist cursist;
+	private Account account;
 	private Opdracht opdracht;
 	public AntwoordCursist() {
 	}
@@ -38,12 +39,18 @@ public class AntwoordCursist {
 		this.antwoord = antwoord;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "personID")
-	public Cursist getCursist() {
-		return cursist;
+	@JoinColumn(name = "accountID")
+	public Account getAccount() {
+		if(account.getRol() == rol.CURSIST){
+			return account;
+		} else {
+			return null;
+		}
 	}
-	public void setCursist(Cursist cursist) {
-		this.cursist = cursist;
+	public void setAccount(Account account) {
+		if(account.getRol() == rol.CURSIST ){
+			this.account = account;
+		}
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "opdrachtID")
