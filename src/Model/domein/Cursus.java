@@ -57,7 +57,7 @@ public class Cursus {
 		CursusPrijs = cursusPrijs;
 	}
 
-
+	@Column(name = "Naam")
 	public String getNaam() {
 		return naam;
 	}
