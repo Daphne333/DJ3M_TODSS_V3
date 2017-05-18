@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import Model.domein.Cursus;
 
 
-@WebServlet("/CursusServlet")
+//@WebServlet("/CursusServlet")
 public class CursusServlet extends HttpServlet{
 
 	/**
@@ -66,13 +66,12 @@ public class CursusServlet extends HttpServlet{
 		// een switch voor de navigatie naar de desbetreffende pagina afhankelijk van de rol van de ingelogde persoon
 		
 //		if(rol == "Manager"){
-*/		String url = "/Manager_Cursussen.jsp";
+*/		String url = "Manager_Cursussen.jsp";
 		
 		
 		//req.setAttribute("cursussen", allCursussen); // deze halen wij op in de cursuspagina
 		rd = req.getRequestDispatcher(url);
 	
-
 		rd.forward(req, resp);
 	}	
 }
