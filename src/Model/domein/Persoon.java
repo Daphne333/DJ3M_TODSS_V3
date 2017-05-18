@@ -32,11 +32,12 @@ public class Persoon {
 	public Persoon() {
 
 	}
-
+	
 	public Persoon(String email, String password, String naam, String tussenvoegsel, String achternaam,
 			Date geboortedatum, int telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
-			String postcode, String plaats, int bsnnummer, String geslacht) {
+			String postcode, String plaats, int bsnnummer, String geslacht, Bedrijf bedrijfID) {
 		this.naam = naam;
+		this.email = email;
 		this.tussenvoegsel = tussenvoegsel;
 		this.achternaam = achternaam;
 		this.geboortedatum = geboortedatum;
@@ -48,6 +49,27 @@ public class Persoon {
 		this.plaats = plaats;
 		this.bsnnummer = bsnnummer;
 		this.geslacht = geslacht;
+		this.bedrijfID = bedrijfID;
+	}
+
+	public Persoon(String email, String password, String naam, String tussenvoegsel, String achternaam,
+			Date geboortedatum, int telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
+			String postcode, String plaats, int bsnnummer, String geslacht, Bedrijf bedrijfID, int chef) {
+		this.naam = naam;
+		this.email = email;
+		this.tussenvoegsel = tussenvoegsel;
+		this.achternaam = achternaam;
+		this.geboortedatum = geboortedatum;
+		this.telefoonnummer = telefoonnummer;
+		this.straatnaam = straatnaam;
+		this.huisnummer = huisnummer;
+		this.toevoeging = toevoeging;
+		this.postcode = postcode;
+		this.plaats = plaats;
+		this.bsnnummer = bsnnummer;
+		this.geslacht = geslacht;
+		this.bedrijfID = bedrijfID;
+		this.chefID = chef;
 	}
 
 	@Id
