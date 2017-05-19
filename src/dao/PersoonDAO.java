@@ -55,19 +55,21 @@ public class PersoonDAO {
 
 	public Persoon getPersoonByID(int id) {
 		Persoon persoon = null;
-		session = HibernateUtil.getSessionFactory().openSession();
-		try {
+		//session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//kijken of hij hem hiermee opent.
+		/*try {*/
 			connection = session.beginTransaction();
 			String queryString = "from Persoon where personID = :id";
 			Query query = session.createQuery(queryString);
 			query.setInteger("personID", id);
 			persoon = (Persoon) query.uniqueResult();
-		} catch (RuntimeException e) {
+	/*	} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
 			session.flush();
 			session.close();
-		}
+		}*/
 		return persoon;
 	}
 

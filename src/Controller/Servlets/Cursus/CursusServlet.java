@@ -66,7 +66,7 @@ public class CursusServlet extends HttpServlet{
 		// een switch voor de navigatie naar de desbetreffende pagina afhankelijk van de rol van de ingelogde persoon
 		
 //		if(rol == "Manager"){
-*/		String url = "Manager_Cursussen.jsp";
+*/		String url = "/Manager/Manager_Cursussen.jsp";
 		
 		
 		//req.setAttribute("cursussen", allCursussen); // deze halen wij op in de cursuspagina
