@@ -55,16 +55,24 @@
 			<div class="tableview">
 			<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
 				<c:forEach var="cursus" items='${cursussen}'>
-					<tr>
-						<th colspan="3">${cursus.getNaam()}</th>
-					</tr>
+					
 					<tr>												
-						<td rowspan="2"><img id="cursus-img" src="<c:out value="${cursus.getImageFilePath()}"/>"/></td>						
+						<td rowspan="3"><img id="cursus-img" src="<c:out value="${cursus.getImageFilePath()}"/>"/></td>	
+						<td class="title"  colspan="2">${cursus.getNaam()}</td>
+										
+						
+						
+					</tr>
+					<tr>
 						<td rowspan="2">${cursus.getOmschrijving()}</td>
-						<td style="width:100px; height: 40px; border-bottom: 0;">Prijs</td>
+						<td style="width:100px; height: 40px; border-bottom: 0;">Prijs</td>	
+						
 					</tr>
 					<tr>
 						<td style="border-top: 0;">${cursus.getCursusPrijs()}</td>
+					</tr>					
+					<tr >
+						<th class="whitespace" colspan="3"></th>
 					</tr>
 
 	 
