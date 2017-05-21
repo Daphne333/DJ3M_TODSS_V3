@@ -46,12 +46,12 @@ public class CursusServlet extends HttpServlet{
 		
 		//id, naam, omschrijving, prijs
 		
-		Cursus c1 = new Cursus(1, "traktor rijden", "Rijden met een tractor kan erg gevaarlijk zijn. Hier leer je omgaan met de gevaren van een traktor", 500.00);
-		Cursus c2 = new Cursus(2, "Flenscontrole", "Weet jij alles over de flens? hier leer je alle gevaren kennen die erbij horen", 500.00);
-		Cursus c3 = new Cursus(3, "Heftruc", "Een heftruc is groot, een heftruc is geel, maar wat als hij rood is? leer het hier!!", 600.00);
-		Cursus c4 = new Cursus(4, "Gereedschap", "weet jij wat je nodig hebt voor elke situatie? Dit zal jou opweg helpen!", 425.00);
-		Cursus c5 = new Cursus(5, "Lopendeband", "Machines zijn gevaarlijk, wij helpen jou er veilig mee om gaan!", 500.00);
-		Cursus c6 = new Cursus(6, "Hygiene", "Hygiene is ontzettend belangrijk in de voedselindustrie. Hier leer je er alles over", 500.00);
+		Cursus c1 = new Cursus(1, "traktor racen", "Rijden met een tractor kan erg gevaarlijk zijn. Hier leer je omgaan met de gevaren van een gele traktor", 500.00,"../img/cursus/tractor.png");
+		Cursus c2 = new Cursus(2, "Flenscontrole", "Weet jij alles over de flens? hier leer je alle gevaren kennen die erbij horen", 500.00, "../img/cursus/Flensmonteur.png");
+		Cursus c3 = new Cursus(3, "Heftruck heffen", "Een heftruc is groot, een heftruc is geel, maar wat als hij rood is?\n\n kun jij em heffen?", 600.00, "../img/cursus/heftruck.png");
+		Cursus c4 = new Cursus(4, "Gereedschap maken", "weet jij wat je nodig hebt voor elke situatie? Dit zal jou opweg helpen!", 425.00, "../img/cursus/tools.png");
+		Cursus c5 = new Cursus(5, "Lopendeband lopen", "Machines zijn gevaarlijk, wij helpen jou er veilig op lopen", 500.00, "../img/cursus/lopendeband.png");
+		Cursus c6 = new Cursus(6, "Hygiene", "Hygiene is ontzettend belangrijk in de voedselindustrie. Hier leer je er alles over", 500.00, "../img/cursus/hygiene.png");
 		
 		allCursussen.add(c1);
 		allCursussen.add(c2);

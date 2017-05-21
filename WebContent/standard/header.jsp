@@ -11,8 +11,9 @@
 
 	<div class="header">
 		<img src='../img/SAM-logo.svg' style="height: 200px;"/>
+		<div class="header-text"></div>
 		<div class="header-text">Contact</div>
-		<div class="header-text">About</div>
+
 	</div>
 </body>
 </html>

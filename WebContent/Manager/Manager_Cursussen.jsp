@@ -49,16 +49,25 @@
 
 		<div class="title-bar">
 			<h1>Cursussen</h1></div>
+		
+		<br/><br/>
 			
-			<div class="tableview" style="background:#FBF5EF;">
+			<div class="tableview">
 			<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
-				<c:forEach var="cursus" items='${cursussen}'>	
+				<c:forEach var="cursus" items='${cursussen}'>
 					<tr>
-						<td>${cursus.getCursusId()}</td>
-						<td>${cursus.getNaam()}</td>
-						<td>${cursus.getOmschrijving()}</td>
-						<td>${cursus.getCursusPrijs()}</td>
-					</tr>	 
+						<th colspan="3">${cursus.getNaam()}</th>
+					</tr>
+					<tr>												
+						<td rowspan="2"><img id="cursus-img" src="<c:out value="${cursus.getImageFilePath()}"/>"/></td>						
+						<td rowspan="2">${cursus.getOmschrijving()}</td>
+						<td style="width:100px; height: 40px; border-bottom: 0;">Prijs</td>
+					</tr>
+					<tr>
+						<td style="border-top: 0;">${cursus.getCursusPrijs()}</td>
+					</tr>
+
+	 
 				 </c:forEach>
 			</table>
 		</div>

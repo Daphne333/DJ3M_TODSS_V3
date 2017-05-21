@@ -1,5 +1,7 @@
 package Model.domein;
 
+
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +11,7 @@ public class Cursus {
 	private String naam;
 	private String Omschrijving;
 	private double CursusPrijs;
+	private String image; // why string? we will use it's filepath to get the image from the server
 
 	public Cursus() {
 	}
@@ -21,7 +24,13 @@ public class Cursus {
 		this.CursusPrijs = prijs;
 	}
 	
-	
+	public Cursus(int id, String naam, String omschrijving, double prijs, String imgFilePath){
+		this.setNaam(naam);
+		this.CursusID = id;
+		this.Omschrijving = omschrijving;
+		this.CursusPrijs = prijs;
+		this.image = imgFilePath;
+	}	
 	
 	
 	
@@ -65,5 +74,13 @@ public class Cursus {
 
 	public void setNaam(String naam) {
 		this.naam = naam;
+	}
+	
+	public String getImageFilePath(){
+		return image;
+	}
+	
+	public void setImageFilePath(String imgFilePath){
+		this.image = imgFilePath;
 	}
 }
