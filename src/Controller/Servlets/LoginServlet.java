@@ -1,4 +1,4 @@
-package Controller.Servlets.Account;
+package Controller.Servlets;
 
 import java.io.IOException;
 

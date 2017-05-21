@@ -8,27 +8,28 @@
 			<div id="links">
 			 	<div id="menu">				
 			 	
-	<!-- 		 	this.id geeft het id van de list-item mee zodat als
-			 		we erop klikken we weten om welke button het gaat  
-			 		HET ID MOET DEZELFDE NAAM HEBBEN ALS DE NAAM VAN DE PAGINA
-			 		WAAR WE NAARTOE GAAN VERWIJZEN: 
-			 		Bedrijf_Home gaat naar 'Bedrijf_Home.jsp'-->
 			 		
 			 		<a  href="../Manager/Manager_Home.jsp" id="Manager_Home" class="menu-link">Home</a>
 			 		
 			 		<form action="PlanningServlet" method="post">
-						<input type="submit" id="Manager_Planning" class="menu-link" value="Planning / Historie">
-					</form>
+						<input type="submit" id="Manager_Planning" class="menu-link" value="Planning">
+							</form>
 					
-					<input type="submit" id="Manager_Cursisten" class="menu-link" value="Cursisten / Beheer">
-					
-					<form action="CursusServlet.do" method="post">					
+					<form action="CursistServlet" method="post">
+						<input type="submit" id="Manager_Cursisten" class="menu-link" value="Cursisten">
+							</form>
+							
+					<form action="CursusServlet" method="post">					
 						<input type="submit" id="Manager_Cursusaanbod" class="menu-link" value="Cursusaanbod">
-					</form>	
+							</form>	
 					
-					<input type="submit" id="Manager_Resultaten" class="menu-link" value="Resultaten">
-					<input type="submit" id="Manager_Bedrijfsprofiel" class="menu-link" value="Bedrijfsprofiel">
-
+					<form action="ResultatenServlet" method="post">
+						<input type="submit" id="Manager_Resultaten" class="menu-link" value="Resultaten">
+							</form>
+					
+					<form action="ProfielServlet" method="post">
+						<input type="submit" id="Manager_Bedrijfsprofiel" class="menu-link" value="Bedrijfsprofiel">
+							</form>
 					
 									
 				</div>

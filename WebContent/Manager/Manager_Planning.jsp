@@ -4,6 +4,9 @@
 <!-- de C-prefix is nodig voor de tabel die hieronder wordt gegenereerd. 
      C kan elk ander willekeurig iets zijn -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+			<!-- included pages  -->
+<%@include file="../standard/Menu.jsp" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -52,10 +55,7 @@
 			
 			
 			<div class="home-content-body">
-			<br><br>
-<br><br><br><br>						<img src="../img/giphy.gif">
-			
-			
+					<img src="../img/giphy.gif">			
 			</div>
 			
 			
@@ -64,8 +64,15 @@
 			
 		</div>
 	</div>
-	</div>
-
+</div>
 
 </body>
+
+		<!-- scripts -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
+    	<script type="text/javascript" src="../script/script.js"></script>
+		
+		<!-- css -->
+		<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/animate.css" rel="stylesheet" type="text/css"/>
 </html>

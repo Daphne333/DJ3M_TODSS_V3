@@ -29,11 +29,11 @@ public class Cursus {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "CursusID")
-	public int getCursusID() {
+	public int getCursusId() {
 		return CursusID;
 	}
 
-	public void setCursusID(int cursusID) {
+	public void setCursusId(int cursusID) {
 		CursusID = cursusID;
 	}
 

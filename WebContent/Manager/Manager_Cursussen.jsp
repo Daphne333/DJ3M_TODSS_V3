@@ -2,7 +2,11 @@
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.domein.Cursus"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+			<!-- included pages  -->
+<%@include file="../standard/Menu.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -39,9 +43,14 @@
 		<!-- inhoud vd pagina komt hier in content-->
 		<div class="content-container">
 			<div id="content" class="content">
+			<div class="inner-content">
 			
+
+
+		<div class="title-bar">
+			<h1>Cursussen</h1></div>
 			
-				<div class="tableview" style="background:#FBF5EF;">
+			<div class="tableview" style="background:#FBF5EF;">
 			<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
 				<c:forEach var="cursus" items='${cursussen}'>	
 					<tr>
@@ -64,14 +73,9 @@
 							<input type="image" name="edit" value ="none" alt="edit_link" src="Images/pencil.png"></input>
 						</form></td> --%>
 			
-			</div>			
-		</div>
-
-	
-
-
-
-
+		</div>			
+	</div>
+</div>
 
 </body>
 
