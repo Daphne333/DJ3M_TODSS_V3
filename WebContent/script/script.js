@@ -8,7 +8,7 @@ $(document).ready(function(){
 	 
 
 	  SetMenu();
-	  SetHomePage();
+	  //SetHomePage();
 	  $('#header').load("../standard/header.jsp"); 
 	  /*	  $("#footer").load("../standard/footer.html"); */
 	  
@@ -98,6 +98,10 @@ function SetMenu(){
 }
 
 
+/*============================================================
+WORDT NIET GEBRUIKT!!!! 
+ELKE PAGINA BEVAT NU ALLE INFORMATIE
+============================================================*/
 
 function SetHomePage(){
 	

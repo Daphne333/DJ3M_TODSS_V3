@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%><%-- ISO-8859-1 --%>
     
 <!-- de C-prefix is nodig voor de tabel die hieronder wordt gegenereerd. 
      C kan elk ander willekeurig iets zijn -->
@@ -16,26 +16,36 @@
 <title>Manager | Planning</title>
 </head>
 <body>
-		
-		
-		
-		<div id="content" class="content">		
-			<div class="inner-content">
-	<!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
+
+<!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
 			<div id="messagebox">
-			<%
-			
-				Object msg = request.getAttribute("msg");
-			
-				// dit object moet de informatie bevatten over de gehele planning
-				// dit object is via de servlet en de dao gevalideed in de database
-				// het object is van de eigenaar, degene die is ingeloged
-				Object cursisten = request.getAttribute("cursisten");
-			%>	
+				<%				
+					Object msg = request.getAttribute("msg");
+				
+					// dit object moet de informatie bevatten over de gehele planning
+					// dit object is via de servlet en de dao gevalideed in de database
+					// het object is van de eigenaar, degene die is ingeloged
+					Object cursisten = request.getAttribute("cursisten");
+				%>	
 			</div>
-			<div>	
-				<h1 style="text-align: center; margin-top:20px;">Planning</h1>
-			</div>
+			
+			
+		<div id="header" class="header"></div>			
+		
+		
+		<div class="menu-container">
+ 			<div id="menu" class="menu"></div>
+		</div>
+		
+		
+<!-- 	inhoud vd pagina komt hier -->
+		<div class="content-container">
+			<div id="content" class="content">		
+				<div class="inner-content">
+
+
+		<div class="title-bar">
+			<h1>Planning</h1></div>
 			
 			
 			
@@ -53,6 +63,7 @@
 			
 			
 		</div>
+	</div>
 	</div>
 
 

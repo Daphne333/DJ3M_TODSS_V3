@@ -1,7 +1,9 @@
 package Model.Services.Account;
 
+import Model.domein.Persoon;
+
 public class RegisterService {
 	
-	private Persoon
+	private Persoon p;
 
 }

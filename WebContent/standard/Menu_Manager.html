@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
 
 		<div class="menu">	
 			<div id="links">
@@ -11,14 +14,23 @@
 			 		WAAR WE NAARTOE GAAN VERWIJZEN: 
 			 		Bedrijf_Home gaat naar 'Bedrijf_Home.jsp'-->
 			 		
-			 		<input type="submit" id="Manager_Home" class="menu-link" value="Home">
-					<input type="submit" id="Manager_Planning" class="menu-link" value="Planning">
-					<input type="submit" id="Manager_Cursusbeheer" class="menu-link" value="CursusBeheer">
-					<input type="submit" id="Manager_Cursisten" class="menu-link" value="Cursisten">
+			 		<a  href="../Manager/Manager_Home.jsp" id="Manager_Home" class="menu-link">Home</a>
+			 		
+			 		<form action="PlanningServlet" method="post">
+						<input type="submit" id="Manager_Planning" class="menu-link" value="Planning / Historie">
+					</form>
 					
-					<form method="get" action="/TODSS/CursusServlet.do">
-						<input type="submit" id="Manager_Cursussen" class="menu-link" value="Cursussen">
-					</form>					
+					<input type="submit" id="Manager_Cursisten" class="menu-link" value="Cursisten / Beheer">
+					
+					<form action="CursusServlet.do" method="post">					
+						<input type="submit" id="Manager_Cursusaanbod" class="menu-link" value="Cursusaanbod">
+					</form>	
+					
+					<input type="submit" id="Manager_Resultaten" class="menu-link" value="Resultaten">
+					<input type="submit" id="Manager_Bedrijfsprofiel" class="menu-link" value="Bedrijfsprofiel">
+
+					
+									
 				</div>
 			</div>   
 		</div>			 

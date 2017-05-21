@@ -11,10 +11,16 @@
 		</welcome-file-list>
 
 
+<!-- 
+============================================================
+						Login
+============================================================
+ -->
+
+
 		<servlet>
 			<servlet-name>LoginServlet</servlet-name>
-			<servlet-class>Controller.Servlets.Account.LoginServlet
-			</servlet-class>
+			<servlet-class>Controller.Servlets.Account.LoginServlet</servlet-class>
 		</servlet>
 		<servlet-mapping>
 			<servlet-name>LoginServlet</servlet-name>
@@ -29,5 +35,20 @@
 			<servlet-name>CursusServlet</servlet-name>
 			<url-pattern>/CursusServlet.do</url-pattern>
 		</servlet-mapping>
+		
+<!-- 
+============================================================
+						Manager
+============================================================
+ -->
+ 
+ 	<servlet>
+	 	<servlet-name>PlanningServlet</servlet-name>
+	 	<servlet-class>Controller.Servlets.Planning.PlanningServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>PlanningServlet</servlet-name>
+ 		<url-pattern>/Manager/PlanningServlet</url-pattern>
+ 	</servlet-mapping>
 
 	</web-app>
