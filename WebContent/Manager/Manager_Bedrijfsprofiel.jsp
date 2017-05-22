@@ -43,14 +43,65 @@
 		<!-- inhoud vd pagina komt hier -->
 		<div class="content-container">
 			<div id="content" class="content" >			
-				<div class="inner-content">
+				<div class="inner-content" >
 			
 
 
 		<div class="title-bar">
 			<h1>Bedrijfsprofiel</h1></div>
-			
-			
+		
+		<div class="TopLeftSection">
+
+			<div class="Section-Left">
+				<h2>Bedrijfsgegevens</h2>	
+				<p>Naam</p>
+				<p>Straat en Nr.</p>
+				<p>Postcode</p>
+			</div>
+			<div class="Section-Right">
+				<p>SAM Safety</p>
+				<p>Laan van naamloos</p>
+				<p>1234AB</p>
+			</div>		
+		</div>
+		
+		<div class="TopRightSection">
+			<div class="Section-Left">
+				<h2>Contactpersoon</h2>
+				<p>Naam</p>
+				<p>Afdeling</p>
+				<p>Telefoon</p>
+				<p>Fax</p>
+				<p>E-mail</p>
+			</div>
+			<div class="Section-Right">
+				<p>Naam</p>
+				<p>Afdeling</p>
+				<p>Telefoon</p>
+				<p>Fax</p>
+				<p>E-mail</p>
+			</div>			
+		</div>
+		
+		<div class="BottemLeftSection">
+			<div class="Section-Left">		
+				<h2>PostAdres</h2>		
+				<p>T.A.V.</p>	
+				<p>Straat + Nr.</p>
+				<p>Postcode</p>
+			</div>
+			<div class="Section-Right">	
+
+				<p>Naam</p>
+				<p>Straat + Nr.</p>
+				<p>Postcode</p>
+			</div>
+		</div>
+		<div class="BottemrightSection">
+			<img alt="bedrijfspand" src="../img/bedrijfspand.jpg">
+		</div>
+		
+
 			
 			
 			

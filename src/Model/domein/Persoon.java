@@ -24,6 +24,7 @@ public class Persoon {
 	private String geslacht;
 	private Bedrijf bedrijfID;
 	private Persoon chefID;
+	private String image; // kijk maar of je deze wel of neit wilt
 	// private byte[] salt;
 	// private String password;
 	// private byte[] password;
@@ -31,6 +32,15 @@ public class Persoon {
 	public Persoon() {
 
 	}
+	
+	public Persoon(int id, String email, String naam, String achternaam, String imageFilePath){//dit is strx niet meer nodig
+		this.personID = id;
+		this.email = email;
+		this.naam = naam;
+		this.achternaam =achternaam;
+		this.image = imageFilePath;
+	}
+	
 	
 	public Persoon(String email, String password, String naam, String tussenvoegsel, String achternaam,
 			Date geboortedatum, String telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
@@ -232,6 +242,14 @@ public class Persoon {
 		this.email = email;
 	}
 
+	
+	public void setImgFilePath(String path){
+		this.image = path;
+	}
+	
+	public String getImgFilePath(){
+		return image;
+	}
 }
 /*
  * public byte[] getPassword() { return password; }

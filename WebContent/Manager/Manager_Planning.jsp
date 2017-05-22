@@ -55,7 +55,7 @@
 			
 			
 			<div class="home-content-body">
-					<img src="../img/giphy.gif">			
+		<!-- 			<img src="../img/giphy.gif">		 -->	
 			</div>
 			
 			

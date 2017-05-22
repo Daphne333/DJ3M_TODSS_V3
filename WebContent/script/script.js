@@ -12,8 +12,9 @@ $(document).ready(function(){
 	  $('#header').load("../standard/header.jsp"); 
 	  /*	  $("#footer").load("../standard/footer.html"); */
 	  
-	  
-
+	  $('#"cursus-img"').click(function(){
+		  alert($(this));
+	  })
 
 });
 

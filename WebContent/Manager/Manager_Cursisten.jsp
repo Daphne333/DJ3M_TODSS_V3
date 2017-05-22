@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+  
+<!-- java imports -->    
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.domein.Cursus"%>
     
 <!-- de C-prefix is nodig voor de tabel die hieronder wordt gegenereerd. 
      C kan elk ander willekeurig iets zijn -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-			<!-- included pages  -->
+<!-- included pages  -->
 <%@include file="../standard/Menu.jsp" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -62,12 +66,20 @@
 		
 		
 			
-			
-			<div class="home-content-body">	
+			<div class="tableview">				
+				<div class="home-content-body">	
+						<c:forEach var="cursist" items='${cursisten}'>
+							<div class="cursist-profile">
+								<br/><br/>
+								<div><img id="cursist-img" src="<c:out value="${cursist.getImgFilePath()}"/>"/></div>
+								<br/><br/>
+								<div>${cursist.getNaam()} ${cursist.getAchternaam()}</div>							
+								<div>${cursist.getEmail()}</div>	
+							</div>
+						</c:forEach>
+						
+				</div>						
 			</div>
-		
-		
-		
 		
 		
 		</div>
