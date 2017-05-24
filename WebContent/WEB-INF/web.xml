@@ -24,6 +24,10 @@
     <url-pattern>/Manager/PlanningServlet</url-pattern>
   </servlet-mapping>
   
+<!--  ====================================================================================  
+  									CURSISTEN
+ ========================================================================================= -->
+  
   <servlet>
     <servlet-name>CursistServlet</servlet-name>
     <servlet-class>Controller.Servlets.CursistServlet</servlet-class>
@@ -32,6 +36,20 @@
     <servlet-name>CursistServlet</servlet-name>
     <url-pattern>/Manager/CursistServlet</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>CursistToevoegenServlet</servlet-name>
+    <servlet-class>Controller.Servlets.CursistToevoegenServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CursistToevoegenServlet</servlet-name>
+    <url-pattern>/Manager/CursistToevoegenServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!--  ====================================================================================  
+  									CURSUSSEN
+ ========================================================================================= -->
   
   <servlet>
     <servlet-name>CursusServlet</servlet-name>

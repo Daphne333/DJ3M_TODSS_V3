@@ -10,7 +10,7 @@
 
 
 	<div class="header">
-		<img src='../img/SAM-logo.svg' style="height: 200px;"/>
+		<img src='../img/SAM-logo.svg' style="height: 280px;"/>
 		<div class="header-text"></div>
 		<div class="header-text">Contact</div>
 
