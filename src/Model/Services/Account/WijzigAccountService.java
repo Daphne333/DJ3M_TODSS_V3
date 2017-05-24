@@ -10,13 +10,11 @@ import util.PasswordHandler;
 
 public class WijzigAccountService {
 	
-	public void Wijzig(String username, String password, FunctieRol rol) throws NoSuchAlgorithmException, InvalidKeySpecException {
+	public void Wijzig(String password, FunctieRol rol) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		AccountDAO accDao = new AccountDAO();
 		Account a = new Account();
-		PasswordHandler pwh =new PasswordHandler();
-		if(username !=null){
-			a.setUsername(username);			
-		}if(password != null){
+		PasswordHandler pwh =new PasswordHandler();		
+		if(password != null){
 			byte[] salt = pwh.generateSalt();
 			a.setSalt(salt);
 			a.setPassword(pwh.getEncryptedPassword(password, salt));
