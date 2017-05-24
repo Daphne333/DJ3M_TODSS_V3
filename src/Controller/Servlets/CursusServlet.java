@@ -55,7 +55,6 @@ public class CursusServlet extends HttpServlet{
 		allCursussen.add(c5);
 		allCursussen.add(c6);
 	
-		
 		if(rol == "Manager"){
 		url = "../Manager/Manager_Cursussen.jsp";
 		
