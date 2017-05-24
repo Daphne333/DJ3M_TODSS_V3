@@ -1,11 +1,5 @@
 package Controller.Servlets;
 
-public class CursusAanmakenServlet {
-	
-	/*
-	 * 
-	 * package SerieController;
-
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -14,31 +8,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.TvserieDao;
-import dao.TvserieDaoImpl;
 
-public class TvserieToevoegenServlet extends HttpServlet{
+import Model.Services.Cursus.*;
+import Model.domein.Cursus;
+
+public class CursusAanmakenServlet extends HttpServlet{
 	
-	private static final long serialVersionUID = 1L;
-
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{		
 		
-	 String tvid = req.getParameter("setTvid");
-	 String titel = req.getParameter("setTitel");
-	 String genre = req.getParameter("setGenre");
-	 String beschrijving = req.getParameter("setBeschrijving");
+	 String cursusnaam = req.getParameter("setCursusNaam");
+	 String omschrijving = req.getParameter("setOmschrijving");
+	 String cursusPrijs = req.getParameter("setCursusPrijs");
+	 String plaatjeURL = req.getParameter("setPlaatjeURL");
 	 String toevoegen = req.getParameter("toevoegenknop");
 	 
 	 RequestDispatcher rd = null;
-	 TvserieDao tvdao = new TvserieDaoImpl();
+	 CursusService cursusService = new CursusService();
 	 
 	if (toevoegen != null){
-		tvdao.voegTvserieToe(tvid, titel, genre, beschrijving);
+		cursusService.voegCursusToe(cursusnaam, omschrijving, cursusPrijs, plaatjeURL);
 		rd = req.getRequestDispatcher("/toevoegen.jsp");
 		} 
 	rd.forward(req, resp);
 	}
 
-} */
+} 
 
 }
