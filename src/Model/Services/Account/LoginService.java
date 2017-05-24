@@ -1,36 +1,24 @@
 package Model.Services.Account;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+
 import Model.domein.Account;
-import Model.domein.FunctieRol;
-import Model.domein.Persoon;
-import dao.PersoonDAO;
+import dao.AccountDAO;
+import util.PasswordHandler;
 
 public class LoginService {
-
-	private PersoonDAO persoonDAO = new PersoonDAO();
-
 	public LoginService() {
 	}
 
-	public Account login(String email, String password) {
-		Account loginAccount;
-		if ((loginAccount = persoonDAO.getPersoonByID((email))) != null)
-			if (loginAccount.getPassword().equals(password))
-				return loginAccount;
-		return null;
-	}
-
-	public Account loginPersonalAccount(FunctieRol functie, String email, String password) {
-		Account loginAccount = null;
-		if (functie == FunctieRol.DOCENT ||functie == FunctieRol.CURSIST ||functie == FunctieRol.MANAGER) {
-			 loginAccount = persoonDAO.getPersoonByID(email);
-		}
-
-		if (loginAccount != null && loginAccount.getPassword().equals(password)) {
-			return loginAccount;
-		} else {
+	public Account login(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
+		PasswordHandler pwh = new PasswordHandler();
+		AccountDAO dao = new AccountDAO();
+		Account a = dao.getAccountByUsername(username);
+		if(pwh.authenticate(password, a.getPassword(), a.getSalt())){
+			return a;
+		}else{
 			return null;
 		}
-
 	}
 }

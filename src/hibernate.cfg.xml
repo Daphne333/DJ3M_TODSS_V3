@@ -30,6 +30,13 @@
 		<mapping class="Model.domein.Bedrijf" />
 		<mapping class="Model.domein.Persoon" />
 		<mapping class="Model.domein.Account" />
+		<mapping class="Model.domein.Cursus" />
+		<mapping class="Model.domein.CursusUitvoering" />
+		<mapping class="Model.domein.Training" />
+		<mapping class="Model.domein.Opdracht" />
+		<mapping class="Model.domein.AntwoordCursist" />
+		<mapping class="Model.domein.AntwoordOpdracht" />
+		<mapping class="Model.domein.ResultaatCursist" />
 		
 		  
 

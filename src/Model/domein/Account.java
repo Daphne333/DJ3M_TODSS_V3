@@ -22,7 +22,8 @@ import javax.persistence.Table;
 @DiscriminatorValue("Account")
 public class Account {
 
-	private String username, password;
+	private String username; 
+	private byte[] password;
 	private Persoon persoon;
 
 	//CURSIST,MANAGER,BEHEERDER,DOCENT
@@ -40,12 +41,12 @@ public class Account {
 		this.username = username;
 	}
 
-	public Account(String username, String password) {
+	public Account(String username, byte[] password) {
 		this.username = username;
 		this.password = password;
 	}
 
-	public Account(String username, String password, FunctieRol rol) {
+	public Account(String username, byte[] password, FunctieRol rol) {
 		this.rol = rol;
 		this.username = username;
 		this.password = password;
@@ -55,7 +56,7 @@ public class Account {
 		this.rol = rol;
 		this.persoon = persoon;
 	}
-	public Account (String username, String password, FunctieRol rol, Persoon persoon){
+	public Account (String username, byte[] password, FunctieRol rol, Persoon persoon){
 		this.username = username;
 		this.password = password;
 		this.rol = rol;
@@ -81,12 +82,12 @@ public class Account {
 		this.username = username;
 	}
 
-	@Column(name = "wachtwoord")
-	public String getPassword() {
+	@Column(name = "password")
+	public byte[] getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(byte[] password) {
 		this.password = password;
 	}
 	
@@ -100,11 +101,11 @@ public class Account {
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "persoonID")
-	public Persoon getPersoon() {
+	public Persoon getPersoonID() {
 		return persoon;
 	}
 
-	public void setPersoon(Persoon persoon) {
+	public void setPersoonID(Persoon persoon) {
 		this.persoon = persoon;
 	}
 	@Column(name = "salt")
