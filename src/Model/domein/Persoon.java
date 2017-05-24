@@ -242,7 +242,7 @@ public class Persoon {
 		this.email = email;
 	}
 
-	
+	@Column(name = "imgFilePath")
 	public void setImgFilePath(String path){
 		this.image = path;
 	}

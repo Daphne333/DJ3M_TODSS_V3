@@ -15,8 +15,12 @@ public class LoginService {
 		PasswordHandler pwh = new PasswordHandler();
 		AccountDAO dao = new AccountDAO();
 		Account a = dao.getAccountByUsername(username);
-		if(pwh.authenticate(password, a.getPassword(), a.getSalt())){
-			return a;
+		if(a != null){
+			if(pwh.authenticate(password, a.getPassword(), a.getSalt())){
+				return a;
+			}else{
+				return null;
+			}
 		}else{
 			return null;
 		}
