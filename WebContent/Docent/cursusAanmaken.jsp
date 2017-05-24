@@ -17,7 +17,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>Docent | Cursus toevoegen</title>
+<title>Docent | Cursus toevoegen</title>  
 </head>
 <body>
 
