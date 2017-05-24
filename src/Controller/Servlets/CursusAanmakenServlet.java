@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import Model.Services.Cursus.*;
 import Model.domein.Cursus;
 
-public class CursusAanmakenServlet extends HttpServlet{
+public class CursusAanmakenServlet extends HttpServlet{ 
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{		
 		
