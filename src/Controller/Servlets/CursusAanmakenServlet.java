@@ -32,6 +32,5 @@ public class CursusAanmakenServlet extends HttpServlet{
 	rd.forward(req, resp);
 	}
 
-} 
 
 }
