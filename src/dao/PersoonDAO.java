@@ -16,40 +16,18 @@ public class PersoonDAO {
 	Transaction connection = null;
 
 	public void create(Persoon persoon) {
-		try {
-			connection = session.beginTransaction();
-			session.save(persoon);
-			session.getTransaction().commit();
-		} catch (RuntimeException e) {
-			if (connection != null) {
-				connection.rollback();
-				e.printStackTrace();
 
-			} else {
-				e.printStackTrace();
-			}
-		} finally {
-			session.flush();
-			session.close();
-		}
+		connection = session.beginTransaction();
+		session.save(persoon);
+		session.getTransaction().commit();
+
 	}
 
 	public void update(Persoon persoon) {
 
-		try {
-			connection = session.beginTransaction();
-			session.update(persoon);
-			session.getTransaction();
-		} catch (RuntimeException e) {
-			if (connection != null) {
-				connection.rollback();
-			} else {
-				e.printStackTrace();
-			}
-		} finally {
-			session.flush();
-			session.close();
-		}
+		connection = session.beginTransaction();
+		session.update(persoon);
+		session.getTransaction();
 
 	}
 
@@ -75,22 +53,17 @@ public class PersoonDAO {
 		List<Persoon> personen = new ArrayList<Persoon>();
 		session = HibernateUtil.getSessionFactory().getCurrentSession();
 		connection = session.beginTransaction();
-		personen =session.createQuery("from Persoon where chef = :chef").list();
+		personen = session.createQuery("from Persoon where chef = :chef").list();
 		return personen;
 	}
 
-	public List<Persoon> getPersonen() {
+	public List<Persoon> getListPersonen() {
 		List<Persoon> personen = new ArrayList<Persoon>();
 		session = HibernateUtil.getSessionFactory().openSession();
-		try {
-			connection = session.beginTransaction();
-			personen = session.createQuery("From Persoon").list();
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		} finally {
-			session.flush();
-			session.close();
-		}
+
+		connection = session.beginTransaction();
+		personen = session.createQuery("From Persoon").list();
+
 		return personen;
 	}
 

@@ -17,83 +17,49 @@ public class AccountDAO {
 	Transaction connection = null;
 
 	public void create(Account account) {
-		try {
-			connection = session.beginTransaction();
-			session.save(account);
-			session.getTransaction().commit();
-		} catch (RuntimeException e) {
-			if (connection != null) {
-				connection.rollback();
-				e.printStackTrace();
 
-			} else {
-				e.printStackTrace();
-			}
-		} finally {
-			session.flush();
-			session.close();
-		}
+		connection = session.beginTransaction();
+		session.save(account);
+		session.getTransaction().commit();
 	}
 
 	public void update(Account account) {
-
-		try {
-			connection = session.beginTransaction();
-			session.update(account);
-			session.getTransaction();
-		} catch (RuntimeException e) {
-			if (connection != null) {
-				connection.rollback();
-			} else {
-				e.printStackTrace();
-			}
-		} finally {
-			session.flush();
-			session.close();
-		}
-
+		connection = session.beginTransaction();
+		session.update(account);
+		session.getTransaction();
 	}
 
 	public Account getAccountbyID(int accountID) {
 		Account account = null;
 		session = HibernateUtil.getSessionFactory().openSession();
-		try {
-			connection = session.beginTransaction();
-			String queryString = "from Account where accountID = :accountID";
-			Query query = session.createQuery(queryString);
-			query.setInteger("accountID", accountID);
-			account = (Account) query.uniqueResult();
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		} finally {
-			session.flush();
-			session.close();
-		}
+
+		connection = session.beginTransaction();
+		String queryString = "from Account where accountID = :accountID";
+		Query query = session.createQuery(queryString);
+		query.setInteger("accountID", accountID);
+		account = (Account) query.uniqueResult();
+
 		return account;
 	}
+
 	public Account getAccountByUsername(String username) {
 		Account account = null;
-		//session = HibernateUtil.getSessionFactory().openSession();
 		session = HibernateUtil.getSessionFactory().getCurrentSession();
-		//try {
-			connection = session.beginTransaction();
-			String queryString = "from Account where username = :username";
-			Query query = session.createQuery(queryString);
-			query.setString("username", username);
-			account = (Account) query.uniqueResult();
-		//} catch (RuntimeException e) {
-		//	e.printStackTrace();
-		//} finally {
-		//	session.flush();
-		//	session.close();
-		//}
+	
+		connection = session.beginTransaction();
+		String queryString = "from Account where username = :username";
+		Query query = session.createQuery(queryString);
+		query.setString("username", username);
+		account = (Account) query.uniqueResult();
+
 		return account;
 	}
-	public List<Account> getAccountBijRol(String rol) {
+
+	public List<Account> getListAccountBijRol(String rol) {
 		List<Account> accounts = new ArrayList<Account>();
 		session = HibernateUtil.getSessionFactory().getCurrentSession();
 		connection = session.beginTransaction();
-		accounts =session.createQuery("from Persoon where rol = :rol").list();
+		accounts = session.createQuery("from Persoon where rol = :rol").list();
 		return accounts;
 	}
 

@@ -11,76 +11,46 @@ import Model.domein.Opdracht;
 import util.HibernateUtil;
 
 public class OpdrachtDAO {
-		
+
 	Session session = HibernateUtil.getSessionFactory().openSession();
 	Transaction connection = null;
 
 	public void create(Opdracht opdracht) {
-		try {
-			connection = session.beginTransaction();
-			session.save(opdracht);
-			session.getTransaction().commit();
-		} catch (RuntimeException e) {
-			if (connection != null) {
-				connection.rollback();
-			} else {
-				e.printStackTrace();
-			}
-		} finally {
-			session.flush();
-			session.close();
-		}
+
+		connection = session.beginTransaction();
+		session.save(opdracht);
+		session.getTransaction().commit();
+
 	}
 
 	public void update(Opdracht opdracht) {
 
-		try {
-			connection = session.beginTransaction();
-			session.update(opdracht);
-			session.getTransaction();
-		} catch (RuntimeException e) {
-			if (connection != null) {
-				connection.rollback();
-			} else {
-				e.printStackTrace();
-			}
-		} finally {
-			session.flush();
-			session.close();
-		}
+		connection = session.beginTransaction();
+		session.update(opdracht);
+		session.getTransaction();
 
 	}
 
-	public Opdracht getPersoonByID(int opdrachtID) {
+	public Opdracht getOpdrachtByID(int opdrachtID) {
 		Opdracht opdracht = null;
-		session = HibernateUtil.getSessionFactory().openSession();
-		try {
-			connection = session.beginTransaction();
-			String queryString = "from Opdracht where opdrachtID = :opdrachtID";
-			Query query = session.createQuery(queryString);
-			query.setInteger("opdrachtID", opdrachtID);
-			opdracht = (Opdracht) query.uniqueResult();
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		} finally {
-			session.flush();
-			session.close();
-		}
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+		connection = session.beginTransaction();
+		String queryString = "from Opdracht where opdrachtID = :opdrachtID";
+		Query query = session.createQuery(queryString);
+		query.setInteger("opdrachtID", opdrachtID);
+		opdracht = (Opdracht) query.uniqueResult();
+
 		return opdracht;
 	}
 
-	public List<Opdracht> getOpdrachten() {
+	public List<Opdracht> getListOpdrachten() {
 		List<Opdracht> opdrachten = new ArrayList<Opdracht>();
-		session = HibernateUtil.getSessionFactory().openSession();
-		try {
-			connection = session.beginTransaction();
-			opdrachten = session.createQuery("From Opdracht").list();
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		} finally {
-			session.flush();
-			session.close();
-		}
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+		connection = session.beginTransaction();
+		opdrachten = session.createQuery("From Opdracht").list();
+
 		return opdrachten;
 	}
 
