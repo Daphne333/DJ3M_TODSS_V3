@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import Model.domein.Account;
+import Model.domein.Persoon;
 import util.HibernateUtil;
 
 public class AccountDAO {
@@ -88,20 +89,12 @@ public class AccountDAO {
 		//}
 		return account;
 	}
-
-	public List<Account> getPersonen() {
-		List<Account> personen = new ArrayList<Account>();
-		session = HibernateUtil.getSessionFactory().openSession();
-		try {
-			connection = session.beginTransaction();
-			personen = session.createQuery("From Account").list();
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		} finally {
-			session.flush();
-			session.close();
-		}
-		return personen;
+	public List<Account> getAccountBijRol(String rol) {
+		List<Account> accounts = new ArrayList<Account>();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
+		connection = session.beginTransaction();
+		accounts =session.createQuery("from Persoon where rol = :rol").list();
+		return accounts;
 	}
 
 }
