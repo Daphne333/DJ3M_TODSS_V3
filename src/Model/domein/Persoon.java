@@ -41,7 +41,7 @@ public class Persoon {
 		this.image = imageFilePath;
 	}
 	
-	
+	//als je zelf chef bent
 	public Persoon(String email, String password, String naam, String tussenvoegsel, String achternaam,
 			Date geboortedatum, String telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
 			String postcode, String plaats, int bsnnummer, String geslacht, Bedrijf bedrijfID) {
@@ -61,7 +61,7 @@ public class Persoon {
 		this.bedrijfID = bedrijfID;
 	}
 	
-
+	//als je wel een chef hebt
 	public Persoon(String email, String password, String naam, String tussenvoegsel, String achternaam,
 			Date geboortedatum, String telefoonnummer, String straatnaam, int huisnummer, String toevoeging,
 			String postcode, String plaats, int bsnnummer, String geslacht, Bedrijf bedrijfID, Persoon chef) {

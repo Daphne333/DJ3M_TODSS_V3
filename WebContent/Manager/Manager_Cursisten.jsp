@@ -67,7 +67,7 @@
 		
 			
 			<div class="tableview">	
-			<div class="table-menu"><div><form action="CursistToevoegenServlet" method="post"><input class="table-menu-button" type="submit" name="toevoegen" value="+ Cursist"></input></form></div></div>
+			<div class="table-menu"><div><form action="CursistToevoegenServlet" method="post"><input class="table-menu-button" type="submit" name="toevoegen" value="Toevoegen_Cursist"></input></form></div></div>
 						
 				<div class="home-content-body">	
 						<c:forEach var="cursist" items='${cursisten}'>
