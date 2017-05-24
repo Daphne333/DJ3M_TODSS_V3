@@ -3,7 +3,7 @@
 
 <!-- java imports -->
 <%@page import="java.util.ArrayList"%>
-<%@page import="Model.domein.Cursus"%>
+<%@page import="Model.domein.Bedrijf"%>
 
 <!-- de C-prefix is nodig voor de tabel die hieronder wordt gegenereerd. 
      C kan elk ander willekeurig iets zijn -->
@@ -53,33 +53,33 @@
 						<br> <input type="text" name="setVestigingStraat"><br>
 						<label>Vestiging huisnummer: </label>
 						<br> <input type="text"	name="setVestigingHuisnummer"><br> 
-						<label>Cursusnaam: </label>
-						<br> <input type="text" name="setCursusNaam"><br> 
-						<label>Omschrijving: </label>
-						<br> <input type="text" name="setOmschrijving"><br>
-						<label>Cursusprijs: </label>
-						<br> <input type="text"	name="setPrijs"><br> 
-						<label>Cursusnaam: </label>
-						<br> <input type="text" name="setCursusNaam"><br> 
-						<label>Omschrijving: </label>
-						<br> <input type="text" name="setOmschrijving"><br>
-						<label>Cursusprijs: </label>
-						<br> <input type="text"	name="setPrijs"><br> 
-						<label>Cursusnaam: </label>
-						<br> <input type="text" name="setCursusNaam"><br> 
-						<label>Omschrijving: </label>
-						<br> <input type="text" name="setOmschrijving"><br>
-						<label>Cursusprijs: </label>
-						<br> <input type="text"	name="setPrijs"><br> 
-						<label>Cursusprijs: </label>
-						<br> <input type="text"	name="setPrijs"><br> 
-						<label>Cursusnaam: </label>
-						<br> <input type="text" name="setCursusNaam"><br> 
-						<label>Omschrijving: </label>
-						<br> <input type="text" name="setOmschrijving"><br>
-						<label>Cursusprijs: </label>
-						<br> <input type="text"	name="setPrijs"><br> 
-						<br> <input type="submit" name="toevoegenknop" value="Cursus toevoegen">
+						<label>Vestiging toevoeging: </label>
+						<br> <input type="text" name="setVestigingToevoeging"><br> 
+						<label>Vestiging postcode: </label>
+						<br> <input type="text" name="setVestigingPostcode"><br>
+						<label>Vestiging plaats: </label>
+						<br> <input type="text"	name="setVestigingPlaats"><br> 
+						<label>Vestiging postbus: </label>
+						<br> <input type="text" name="setVestigingPostbus"><br> 
+						<label>Postadres straat: </label>
+						<br> <input type="text" name="setPostadresStraat"><br>
+						<label>Postadres huisnummer: </label>
+						<br> <input type="text"	name="setPostadresHuisnummer"><br> 
+						<label>Postadres toevoeging: </label>
+						<br> <input type="text" name="setPostadresToevoeging"><br> 
+						<label>Postadres postcode: </label>
+						<br> <input type="text" name="setPostadresPostcode"><br>
+						<label>Postadres plaats: </label>
+						<br> <input type="text"	name="setPostadresPlaats"><br> 
+						<label>Postadres postbus: </label>
+						<br> <input type="text"	name="setPostadresPostbus"><br> 
+						<label>Telefoonnummer: </label>
+						<br> <input type="text" name="setTelefoonnummer"><br> 
+						<label>Kvknummer: </label>
+						<br> <input type="text" name="setKvknummer"><br>
+						<label>E-mail: </label>
+						<br> <input type="text"	name="setEmail"><br> 
+						<br> <input type="submit" name="toevoegenknop" value="Bedrijf toevoegen">
 					</form>
 				</div>
 
