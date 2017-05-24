@@ -1,4 +1,4 @@
-package Model.Services.Account;
+package Model.Services.Persoon;
 
 import Model.domein.Persoon;
 import dao.PersoonDAO;
