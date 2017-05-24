@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
+	pageEncoding="ISO-8859-1"%>
+
 <!-- java imports -->
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.domein.Training"%>
@@ -11,7 +11,7 @@
 
 <!-- included pages  -->
 <%@include file="../standard/Menu.jsp"%>
-       
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,20 +40,20 @@
 
 
 				<%
-					Object Cursus = request.getAttribute("voegtoeCursus");
+					Object Cursus = request.getAttribute("voegtoeTraining");
 				%>
 
-				<h3 style="text-align: center;">Cursus toevoegen</h3>
+				<h3 style="text-align: center;">Training toevoegen</h3>
 				<div style="text-align: center;">
-					<form action="CursusAanmakenServlet" method="post">
-						<label>Cursusnaam: </label>
-						<br> <input type="text" name="setCursusNaam" required><br> 
-						<label>Omschrijving: </label>
-						<br> <input type="text" name="setOmschrijving" required><br>
-						<label>Cursusprijs: </label>
-						<br> <input type="text"	name="setPrijs" required><br> 
-						<label>PlaatjeURL</label>
-						<br> <input type="text" name="setPlaatjeURL"><br> 
+					<form action="TrainingAanmakenServlet" method="post">
+						<label>Trainingnaam: </label> <br> 
+						<input type="text" name="setTrainingNaam" required><br> 
+						<label>Begindatum: </label> 
+						<br> <input type="text" name="setBegindatum" required><br>
+						<label>Einddatum: </label> 
+						<br> <input type="text"	name="setEinddatum" required><br> 
+						<label>Cursus: </label>
+						<br> <input type="text" name="setCursus"><br>
 						<br> <input type="submit" name="toevoegenknop" value="Cursus toevoegen">
 					</form>
 				</div>
