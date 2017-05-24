@@ -18,17 +18,23 @@ public class CursusAanmakenServlet extends HttpServlet{
 		
 	 String cursusnaam = req.getParameter("setCursusNaam");
 	 String omschrijving = req.getParameter("setOmschrijving");
-	 String cursusPrijs = req.getParameter("setCursusPrijs");
+	 String cursusPrijsStr = req.getParameter("setCursusPrijs");
 	 String plaatjeURL = req.getParameter("setPlaatjeURL");
-	 String toevoegen = req.getParameter("toevoegenknop");
+	 Double cursusPrijs = Double.parseDouble(cursusPrijsStr);
 	 
 	 RequestDispatcher rd = null;
 	 CursusService cursusService = new CursusService();
 	 
-	if (toevoegen != null){
-		cursusService.voegCursusToe(cursusnaam, omschrijving, cursusPrijs, plaatjeURL);
+	if (plaatjeURL != null && cursusnaam != null && omschrijving != null && cursusPrijs != null){
+		Cursus cursus = new Cursus(cursusnaam, omschrijving, cursusPrijs, plaatjeURL);
+		cursusService.voegCursusToe(cursus);
 		rd = req.getRequestDispatcher("/toevoegen.jsp");
 		} 
+	else if (cursusnaam != null && omschrijving != null && cursusPrijs != null){
+		Cursus cursus = new Cursus(cursusnaam, omschrijving, cursusPrijs);
+		cursusService.voegCursusToe(cursus);
+		rd = req.getRequestDispatcher("/toevoegen.jsp");
+	}
 	rd.forward(req, resp);
 	}
 

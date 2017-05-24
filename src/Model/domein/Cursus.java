@@ -17,16 +17,14 @@ public class Cursus {
 	}
 	
 	
-	public Cursus(int id, String naam, String omschrijving, double prijs){
+	public Cursus(String naam, String omschrijving, double prijs){
 		this.setNaam(naam);
-		this.CursusID = id;
 		this.Omschrijving = omschrijving;
 		this.CursusPrijs = prijs;
 	}
 	
-	public Cursus(int id, String naam, String omschrijving, double prijs, String imgFilePath){
+	public Cursus(String naam, String omschrijving, double prijs, String imgFilePath){
 		this.setNaam(naam);
-		this.CursusID = id;
 		this.Omschrijving = omschrijving;
 		this.CursusPrijs = prijs;
 		this.image = imgFilePath;
