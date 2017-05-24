@@ -8,10 +8,8 @@ import dao.AccountDAO;
 import util.PasswordHandler;
 
 public class LoginService {
-	public LoginService() {
-	}
 
-	public Account login(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
+	public Account Login(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		PasswordHandler pwh = new PasswordHandler();
 		AccountDAO dao = new AccountDAO();
 		Account a = dao.getAccountByUsername(username);

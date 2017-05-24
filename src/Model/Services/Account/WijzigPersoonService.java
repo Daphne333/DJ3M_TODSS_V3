@@ -1,7 +1,14 @@
 package Model.Services.Account;
 
+import Model.domein.Persoon;
+import dao.PersoonDAO;
+
 public class WijzigPersoonService {
 	
-	// hier moet de aanroep komen om een persoonlijk account te gaan wijzigen.
-
+	public void Wijzig(Persoon p){
+		PersoonDAO perDao = new PersoonDAO();
+		if(p != null){
+			perDao.update(p);
+		}
+	}
 }

@@ -72,19 +72,20 @@ public class AccountDAO {
 	}
 	public Account getAccountByUsername(String username) {
 		Account account = null;
-		session = HibernateUtil.getSessionFactory().openSession();
-		try {
+		//session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//try {
 			connection = session.beginTransaction();
 			String queryString = "from Account where username = :username";
 			Query query = session.createQuery(queryString);
 			query.setString("username", username);
 			account = (Account) query.uniqueResult();
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		} finally {
-			session.flush();
-			session.close();
-		}
+		//} catch (RuntimeException e) {
+		//	e.printStackTrace();
+		//} finally {
+		//	session.flush();
+		//	session.close();
+		//}
 		return account;
 	}
 
