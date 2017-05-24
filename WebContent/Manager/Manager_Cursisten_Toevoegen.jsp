@@ -59,7 +59,58 @@
 			</div>
 		
 		
-		
+			<div class="form" style="height: 170vh;">
+				<form action="CursistToevoegenServlet" method="post">			
+					<label class="form-label">Naam</label>
+					<input class="form-inputfield" name="naam"></input>
+					
+					<label class="form-label">Achternaam</label> 
+					<input class="form-inputfield" name="achternaam"></input>
+					
+					<label class="form-label">Tussenvoegsel</label>
+					<input class="form-inputfield" name="tussenvoegsel"></input> 
+					
+					<label class="form-label">Geboortedatum</label> 
+					<input class="form-inputfield" name="geboortedatum"></input> 
+					
+					<label class="form-label">E-mail</label> 
+					<input class="form-inputfield" name="email" ></input> 
+					
+					<label class="form-label">Telefoonnummer</label> 
+					<input class="form-inputfield" name="telefoonnummer" ></input> 
+					
+					<label class="form-label">Straatnaam</label> 
+					<input class="form-inputfield" name="straatnaam" ></input> 
+					
+					<label class="form-label">Huisnummer</label> 
+					<input class="form-inputfield" name="huisnummer" ></input> 
+					
+					<label class="form-label">Toevoeging</label> 
+					<input class="form-inputfield" name="toevoeging" ></input> 
+					
+					<label class="form-label">Postcode</label> 
+					<input class="form-inputfield" name="postcode" ></input> 
+					
+					<label class="form-label">Plaats</label> 
+					<input class="form-inputfield" name="plaats" ></input> 
+					
+					<label class="form-label">BSN</label> 
+					<input class="form-inputfield" name="bsn" ></input> 
+					
+					<label class="form-label">BedrijfID</label> 
+					<input class="form-inputfield" name="bedrijfID" ></input> 
+					
+					<label class="form-label">Geslacht</label> 
+					<input class="form-inputfield" name="geslacht" ></input> 
+					
+					<label class="form-label">ChefID</label> 
+					<input class="form-inputfield" name="chefID" ></input> 
+					
+					<label class="form-label">Foto</label> 
+					<input class="form-inputfield" name="Foto" ></input> 		
+						
+				</form>
+			</div>
 		
 		
 		
