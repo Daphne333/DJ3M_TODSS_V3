@@ -36,101 +36,9 @@ public class CursistToevoegenServlet extends HttpServlet{
 			String rol = "Manager"; // deze moet worden vervangen worden met de login/servlet response
 			String afkomstigePagina = req.getParameter("toevoegen"); //cursist-pagina of cursist-form-pagina
 			
-			//====================================================================
-			// 						Attributen van pagina
-			//====================================================================
+			System.out.println(afkomstigePagina);
 			
-			
-		
-			String naam = req.getParameter("naam");
-			String achternaam = req.getParameter("achternaam");
-			String tussenvoegsel = req.getParameter("tussenvoegsel");
-			
-			//ophalen datum en converten naar date-format
-			String geboortedatum = req.getParameter("geboortedatum");
-			DateFormat sourceFormat = new SimpleDateFormat("dd-MM-yyyy");
-			Date date = null;
-			try {
-				date = sourceFormat.parse(geboortedatum);
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			String email = req.getParameter("email");
-			String telefoonnummer = req.getParameter("telefoonnummer");
-/*			int telefoonnummer = Integer.parseInt(req.getParameter("telefoonnummer"));*/
-			
-			String straatnaam = req.getParameter("straatnaam");
-			int huisnummer = Integer.parseInt(req.getParameter("huisnummer"));
-			String toevoeging = req.getParameter("toevoeging");
-			String postcode = req.getParameter("postcode");
-			String plaats = req.getParameter("plaats");
-			int bsn = Integer.parseInt(req.getParameter("bsn"));
-			int bedrijfsID = Integer.parseInt(req.getParameter("bedrijfID"));
-			String geslacht = req.getParameter("geslacht");
-			int chefID = Integer.parseInt(req.getParameter("chefID"));
-			String Foto = req.getParameter("foto");
-			
-			
-			
-			//====================================================================
-			// 						Rol-Validation
-			//====================================================================
-			
-			
-			
-			
-			
-			
-			
-			// database check moet worden toegevoegd en de rol van de gebruiker moet gevalideerd worden
-			// aan de had van de  de rol kan worden gecheckt of jij wel of niet cursisten toe kan voegen
-			
-			
-			
-			
-			
-			
-			
-			//====================================================================
-			// 						ServiceProvider + DAO + Persoon-Object
-			//====================================================================
-						
-			ServiceProvider sp = new ServiceProvider();
-			
-			Bedrijf bedrijfID = new Bedrijf();
-			String password = "";
-			
-			Persoon p = new Persoon (email,  password,  naam,  tussenvoegsel,  achternaam,
-					date,  telefoonnummer,  straatnaam,  huisnummer,  toevoeging,
-					 postcode,  plaats,  bsn,  geslacht,  bedrijfID);
-			
-			
-			
-			
-			
-			
-			@SuppressWarnings("static-access")
-			AccountService ac = sp.getAccountService();
-			try {
-				ac.Register(p, naam + "01", password, FunctieRol.CURSIST);                // wachtwoord generator???
-			} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+				
 		
 			
 			System.out.println("CursistToevoegenServlet");
@@ -144,7 +52,7 @@ public class CursistToevoegenServlet extends HttpServlet{
 			
 			
 			//als je van de pagina Manager_Cursisten.jsp komt
-			if(afkomstigePagina.equals("+ Cursist")){                     											 //rolcheck  toevoegen?
+			if(afkomstigePagina.equals("Toevoegen_Cursist")){                     											 //rolcheck  toevoegen?
 				
 				
 
@@ -156,7 +64,109 @@ public class CursistToevoegenServlet extends HttpServlet{
 			//we gaan nu data verwerken die afkomstig is van de Manager_Cursisten_Toevoegen.jsp
 			else{                     																				 //rolcheck  toevoegen?
 //				
-//				req.setAttribute("cursussen", allCursussen);
+				
+				//====================================================================
+				// 						Attributen van pagina
+				//====================================================================
+				
+				
+			
+				String naam = req.getParameter("naam");
+				String achternaam = req.getParameter("achternaam");
+				String tussenvoegsel = req.getParameter("tussenvoegsel");
+				
+				//ophalen datum en converten naar date-format
+				String geboortedatum = req.getParameter("geboortedatum");
+				DateFormat sourceFormat = new SimpleDateFormat("dd-MM-yyyy");
+				Date date = null;
+				try {
+					date = sourceFormat.parse(geboortedatum);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				String email = req.getParameter("email");
+				String telefoonnummer = req.getParameter("telefoonnummer");
+	/*			int telefoonnummer = Integer.parseInt(req.getParameter("telefoonnummer"));*/
+				
+				String straatnaam = req.getParameter("straatnaam");
+				int huisnummer = Integer.parseInt(req.getParameter("huisnummer"));
+				String toevoeging = req.getParameter("toevoeging");
+				String postcode = req.getParameter("postcode");
+				String plaats = req.getParameter("plaats");
+				int bsn = Integer.parseInt(req.getParameter("bsn"));
+				int bedrijfsID = Integer.parseInt(req.getParameter("bedrijfID"));
+				String geslacht = req.getParameter("geslacht");
+				int chefID = Integer.parseInt(req.getParameter("chefID"));
+				String Foto = req.getParameter("foto");
+				
+				
+				
+				//====================================================================
+				// 						Rol-Validation
+				//====================================================================
+				
+				
+				
+				
+				
+				
+				
+				// database check moet worden toegevoegd en de rol van de gebruiker moet gevalideerd worden
+				// aan de had van de  de rol kan worden gecheckt of jij wel of niet cursisten toe kan voegen
+				
+				
+				
+				
+				
+				
+				
+				//====================================================================
+				// 						ServiceProvider + DAO + Persoon-Object
+				//====================================================================
+							
+				ServiceProvider sp = new ServiceProvider();
+				
+				Bedrijf bedrijfID = new Bedrijf();
+				String password = "";
+				
+				Persoon p = new Persoon (email,  password,  naam,  tussenvoegsel,  achternaam,
+						date,  telefoonnummer,  straatnaam,  huisnummer,  toevoeging,
+						 postcode,  plaats,  bsn,  geslacht,  bedrijfID);
+				
+				
+				
+				
+				
+				
+				@SuppressWarnings("static-access")
+				AccountService ac = sp.getAccountService();
+				try {
+					ac.Register(p, naam + "01", password, FunctieRol.CURSIST);                // wachtwoord generator???
+				} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				req.setAttribute("msg", "De cursist is succesvol afgerond!");
+				url = "../Manager/Manager_Cursisten.jsp";
+
 			}
 			
 					
