@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.FetchType;
@@ -90,7 +92,7 @@ public class Account {
 	public void setPassword(byte[] password) {
 		this.password = password;
 	}
-	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "rol")
 	public FunctieRol getRol() {
 		return rol;
