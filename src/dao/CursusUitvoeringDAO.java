@@ -7,11 +7,10 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import Model.domein.Cursus;
 import Model.domein.CursusUitvoering;
 import util.HibernateUtil;
 
-public class CursistUitvoering {
+public class CursusUitvoeringDAO {
 	
 	Session session = HibernateUtil.getSessionFactory().openSession();
 	Transaction connection = null;
@@ -32,21 +31,21 @@ public class CursistUitvoering {
 
 	}
 
-	public CursusUitvoering getCursusUitvoeringByID(int uitvoeringID) {
-		CursusUitvoering uitvoering = null;
+	public CursusUitvoeringDAO getCursusUitvoeringByID(int uitvoeringID) {
+		CursusUitvoeringDAO uitvoering = null;
 		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		String queryString = "from Cursus_uitvoering where uitvoeringID = :uitvoeringID";
 		Query query = session.createQuery(queryString);
 		query.setInteger("uitvoeringID", uitvoeringID);
-		uitvoering = (CursusUitvoering) query.uniqueResult();
+		uitvoering = (CursusUitvoeringDAO) query.uniqueResult();
 
 		return uitvoering;
 	}
 
-	public List<CursusUitvoering> getListCursusUitvoeringen() {
-		List<CursusUitvoering> alleUitvoeringen = new ArrayList<CursusUitvoering>();
+	public List<CursusUitvoeringDAO> getListCursusUitvoeringen() {
+		List<CursusUitvoeringDAO> alleUitvoeringen = new ArrayList<CursusUitvoeringDAO>();
 		session = HibernateUtil.getSessionFactory().openSession();
 
 		connection = session.beginTransaction();
