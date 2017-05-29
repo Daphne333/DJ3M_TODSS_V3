@@ -33,8 +33,6 @@ public class TrainingDAO {
 
 	public Training getTrainingByID(int trainingID) {
 		Training result = null;
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		String queryString = "from Training where trainingID = :trainingID";
 		Query query = session.createQuery(queryString);
@@ -46,8 +44,6 @@ public class TrainingDAO {
 
 	public List<Training> getListTrainingen() {
 		List<Training> trainingen = new ArrayList<Training>();
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		trainingen = session.createQuery("From Training").list();
 

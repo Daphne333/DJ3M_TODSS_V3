@@ -21,15 +21,12 @@ public class PersoonDAO {
 		connection = session.beginTransaction();
 		session.save(persoon);
 		session.getTransaction().commit();
-
 	}
-
+	
 	public void update(Persoon persoon) {
-
 		connection = session.beginTransaction();
 		session.update(persoon);
 		session.getTransaction();
-
 	}
 
 	public Persoon getPersoonByID(int id) {
@@ -63,12 +60,24 @@ public class PersoonDAO {
 
 		return personen;
 	}
+
 	public List<Persoon> getManagersBijBedrijf(int bedrijfID) {
 		List<Persoon> personen = new ArrayList<Persoon>();
+
 		connection = session.beginTransaction();
 		personen = session.createQuery("From Persoon where bedrijfID = :bedrijfID").list();
 
 		return personen;
 	}
 
+	public Persoon getPersoonBijID(int id) {
+		Persoon persoon = null;
+		connection = session.beginTransaction();
+		String queryString = "from Persoon where personID = :id";
+		Query query = session.createQuery(queryString);
+		query.setInteger("id", id);
+		persoon = (Persoon) query.uniqueResult();
+
+		return persoon;
+	}
 }

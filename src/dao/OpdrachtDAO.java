@@ -33,8 +33,6 @@ public class OpdrachtDAO {
 
 	public Opdracht getOpdrachtByID(int opdrachtID) {
 		Opdracht opdracht = null;
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		String queryString = "from Opdracht where opdrachtID = :opdrachtID";
 		Query query = session.createQuery(queryString);
@@ -46,8 +44,6 @@ public class OpdrachtDAO {
 
 	public List<Opdracht> getListOpdrachten() {
 		List<Opdracht> opdrachten = new ArrayList<Opdracht>();
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		opdrachten = session.createQuery("From Opdracht").list();
 

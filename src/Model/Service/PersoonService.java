@@ -58,4 +58,7 @@ public class PersoonService {
 	public Persoon getPersoonBijAccount(Account account){
 		return perDao.getPersoonByID(account.getPersoonID().getPersonID());
 	}
+	public Persoon getPersoonBijID(int id){
+		return perDao.getPersoonBijID(id);
+	}
 }

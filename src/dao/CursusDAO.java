@@ -32,8 +32,6 @@ public class CursusDAO {
 
 	public Cursus getCursusByID(int cursusID) {
 		Cursus result = null;
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		String queryString = "from Training where cursusID = :cursusID";
 		Query query = session.createQuery(queryString);
@@ -45,8 +43,6 @@ public class CursusDAO {
 
 	public List<Cursus> getListCursussen() {
 		List<Cursus> alleCursussen = new ArrayList<Cursus>();
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		alleCursussen = session.createQuery("From Cursus").list();
 
