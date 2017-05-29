@@ -33,8 +33,6 @@ public class CursusUitvoeringDAO {
 
 	public CursusUitvoeringDAO getCursusUitvoeringByID(int uitvoeringID) {
 		CursusUitvoeringDAO uitvoering = null;
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		String queryString = "from Cursus_uitvoering where uitvoeringID = :uitvoeringID";
 		Query query = session.createQuery(queryString);
@@ -46,8 +44,6 @@ public class CursusUitvoeringDAO {
 
 	public List<CursusUitvoeringDAO> getListCursusUitvoeringen() {
 		List<CursusUitvoeringDAO> alleUitvoeringen = new ArrayList<CursusUitvoeringDAO>();
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		alleUitvoeringen = session.createQuery("From Cursus").list();
 

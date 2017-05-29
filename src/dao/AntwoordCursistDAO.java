@@ -31,8 +31,6 @@ public class AntwoordCursistDAO {
 
 	public AntwoordCursist getAntwoordCursistByID(int antwoordCursistID) {
 		AntwoordCursist antwoordCursist = null;
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		String queryString = "from Antwoord_Cursist where antwoordCursistID = :antwoordCursistID";
 		Query query = session.createQuery(queryString);
@@ -44,8 +42,6 @@ public class AntwoordCursistDAO {
 
 	public List<AntwoordCursist> getListAntwoordCursisten() {
 		List<AntwoordCursist> antwoordCursist = new ArrayList<AntwoordCursist>();
-		session = HibernateUtil.getSessionFactory().openSession();
-
 		connection = session.beginTransaction();
 		antwoordCursist = session.createQuery("From Antwoord_Cursist").list();
 
