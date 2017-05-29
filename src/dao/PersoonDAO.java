@@ -35,13 +35,12 @@ public class PersoonDAO {
 	public Persoon getPersoonByID(int id) {
 		Persoon persoon = null;
 		// session = HibernateUtil.getSessionFactory().openSession();
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
 		// kijken of hij hem hiermee opent.
 		/* try { */
 		connection = session.beginTransaction();
 		String queryString = "from Persoon where personID = :id";
 		Query query = session.createQuery(queryString);
-		query.setInteger("personID", id);
+		query.setInteger("id", id);
 		persoon = (Persoon) query.uniqueResult();
 		/*
 		 * } catch (RuntimeException e) { e.printStackTrace(); } finally {
@@ -52,7 +51,6 @@ public class PersoonDAO {
 
 	public List<Persoon> getPersoonByChef(int chef) {
 		List<Persoon> personen = new ArrayList<Persoon>();
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
 		connection = session.beginTransaction();
 		personen = session.createQuery("from Persoon where chef = :chef").list();
 		return personen;
@@ -60,8 +58,6 @@ public class PersoonDAO {
 
 	public List<Persoon> getListPersonen() {
 		List<Persoon> personen = new ArrayList<Persoon>();
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		personen = session.createQuery("From Persoon").list();
 
@@ -69,8 +65,6 @@ public class PersoonDAO {
 	}
 	public List<Persoon> getManagersBijBedrijf(int bedrijfID) {
 		List<Persoon> personen = new ArrayList<Persoon>();
-		session = HibernateUtil.getSessionFactory().getCurrentSession();
-
 		connection = session.beginTransaction();
 		personen = session.createQuery("From Persoon where bedrijfID = :bedrijfID").list();
 
