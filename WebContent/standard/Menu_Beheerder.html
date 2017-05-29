@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<body>
+	<div class="menu">
+		<div id="links">
+			<div id="menu">
+
+				<a href="../Manager/Manager_Home.jsp" id="Manager_Home"
+					class="menu-link">Home</a>
+
+				<form action="PlanningServlet" method="post">
+					<input type="submit" id="Bedrijf_BedrijfAanmaken" class="menu-link"
+						value="Bedrijfs Aanmaken">
+				</form>
+
+				<form action="CursistServlet" method="post">
+					<input type="submit" id="Manager_Cursisten" class="menu-link"
+						value="Manager Aanmaken">
+				</form>
+
+				<form action="CursusServlet" method="post">
+					<input type="submit" id="Manager_Cursusaanbod" class="menu-link"
+						value="Alle Cursussen">
+				</form>
+
+				<form action="ResultatenServlet" method="post">
+					<input type="submit" id="Manager_Resultaten" class="menu-link"
+						value="Planning">
+				</form>
+				
+				<form action="ResultatenServlet" method="post">
+					<input type="submit" id="Manager_Resultaten" class="menu-link"
+						value="Statestiek">
+				</form>
+			
+				<form action="ProfielServlet" method="post">
+					<input type="submit" id="Manager_Bedrijfsprofiel" class="menu-link"
+						value="Profile">
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
