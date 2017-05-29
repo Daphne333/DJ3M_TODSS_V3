@@ -88,8 +88,8 @@ function SetMenu(){
 		case "Manager":
 				$('#menu').load("../standard/Menu_Manager.html");
 					break;
-		case "Bedrijf":
-			  	$('#menu').load("../standard/Menu_Bedrijf.html");
+		case "Beheerder":
+			  	$('#menu').load("../standard/Menu_Beheerder.html");
 			  		break;
 		case "Cursist":
 			  	$('#menu').load("../standard/Menu_Cursist.html");
