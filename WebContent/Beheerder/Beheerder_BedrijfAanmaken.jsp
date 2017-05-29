@@ -48,38 +48,38 @@
 				<div style="text-align: center;">
 					<form action="BedrijfAanmakenServlet" method="post">
 						<label>Bedrijfsnaam: </label>
-						<br> <input type="text" name="setBedrijfsNaam"><br> 
+						<br> <input type="text" id="setBedrijfsNaam"><br> 
 						<label>Vestiging straat: </label>
-						<br> <input type="text" name="setVestigingStraat"><br>
+						<br> <input type="text" id="setVestigingStraat"><br>
 						<label>Vestiging huisnummer: </label>
-						<br> <input type="text"	name="setVestigingHuisnummer"><br> 
+						<br> <input type="text"	id="setVestigingHuisnummer"><br> 
 						<label>Vestiging toevoeging: </label>
-						<br> <input type="text" name="setVestigingToevoeging"><br> 
+						<br> <input type="text" id="setVestigingToevoeging"><br> 
 						<label>Vestiging postcode: </label>
-						<br> <input type="text" name="setVestigingPostcode"><br>
+						<br> <input type="text" id="setVestigingPostcode"><br>
 						<label>Vestiging plaats: </label>
-						<br> <input type="text"	name="setVestigingPlaats"><br> 
+						<br> <input type="text"	id="setVestigingPlaats"><br> 
 						<label>Vestiging postbus: </label>
-						<br> <input type="text" name="setVestigingPostbus"><br> 
+						<br> <input type="text" id="setVestigingPostbus"><br> 
 						<label>Postadres straat: </label>
-						<br> <input type="text" name="setPostadresStraat"><br>
+						<br> <input type="text" id="setPostadresStraat"><br>
 						<label>Postadres huisnummer: </label>
-						<br> <input type="text"	name="setPostadresHuisnummer"><br> 
+						<br> <input type="text"	id="setPostadresHuisnummer"><br> 
 						<label>Postadres toevoeging: </label>
-						<br> <input type="text" name="setPostadresToevoeging"><br> 
+						<br> <input type="text" id="setPostadresToevoeging"><br> 
 						<label>Postadres postcode: </label>
-						<br> <input type="text" name="setPostadresPostcode"><br>
+						<br> <input type="text" id="setPostadresPostcode"><br>
 						<label>Postadres plaats: </label>
-						<br> <input type="text"	name="setPostadresPlaats"><br> 
+						<br> <input type="text"	id="setPostadresPlaats"><br> 
 						<label>Postadres postbus: </label>
-						<br> <input type="text"	name="setPostadresPostbus"><br> 
+						<br> <input type="text"	id="setPostadresPostbus"><br> 
 						<label>Telefoonnummer: </label>
-						<br> <input type="text" name="setTelefoonnummer"><br> 
+						<br> <input type="text" id="setTelefoonnummer"><br> 
 						<label>Kvknummer: </label>
-						<br> <input type="text" name="setKvknummer"><br>
+						<br> <input type="text" id="setKvknummer"><br>
 						<label>E-mail: </label>
-						<br> <input type="text"	name="setEmail"><br> 
-						<br> <input type="submit" name="toevoegenknop" value="Bedrijf toevoegen">
+						<br> <input type="text"	id="setEmail"><br> 
+						<br> <input type="submit" id="toevoegenknop" value="Bedrijf toevoegen">
 					</form>
 				</div>
 
