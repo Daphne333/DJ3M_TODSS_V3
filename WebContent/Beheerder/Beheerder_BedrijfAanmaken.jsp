@@ -38,15 +38,9 @@
 		<div id="content" class="content">
 			<div class="inner-content">
 
-
-
-				<%
-					Object Bedrijf = request.getAttribute("voegtoeBedrijf");
-				%>
-
 				<h3 style="text-align: center;">Bedrijf toevoegen</h3>
 				<div style="text-align: center;">
-					<form action="BedrijfAanmakenServlet" method="post">
+					<form method="post" action="/BedrijfAanmakenServlet.do" >
 						<label>Bedrijfsnaam: </label>
 						<br> <input type="text" id="setBedrijfsNaam"><br> 
 						<label>Vestiging straat: </label>

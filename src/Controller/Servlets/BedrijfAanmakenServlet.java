@@ -14,7 +14,7 @@ import Model.domein.Cursus;
 public class BedrijfAanmakenServlet {
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{		
-		
+		System.out.println("Hier zijn de lala mensjes");
 		 String bedrijfsNaam = req.getParameter("setBedrijfsNaam");
 		 String vestigingStraat = req.getParameter("setVestigingStraat");
 		 String vestigingHuisnummerStr = req.getParameter("setVestigingHuisnummer");
@@ -38,8 +38,11 @@ public class BedrijfAanmakenServlet {
 		 
 		 RequestDispatcher rd = null;
 		 BedrijfService bedrijfService = new BedrijfService();
+		 System.out.println("Hallo hier is pino");
 		 
 		if (bedrijfsNaam != null && vestigingStraat != null && vestigingHuisnummerStr != null && vestigingPostcode != null && vestigingPlaats != null && telefoonnummer != null && kvknummerStr != null){
+			System.out.println("Hij komt door de check heen");
+			
 			Bedrijf bedrijf = new Bedrijf();
 			bedrijf.setBedrijfsnaam(bedrijfsNaam);
 			bedrijf.setVestiging_straat(vestigingStraat);
@@ -58,8 +61,12 @@ public class BedrijfAanmakenServlet {
 			bedrijf.setKvknummer(kvknummer);
 			
 			bedrijfService.maakBedrijfAan(bedrijf);
-			rd = req.getRequestDispatcher("/Beheerder_BedrijfAanmaken.jsp");
-			} 
+			rd = req.getRequestDispatcher("/Beheerder/Beheerder_Home.jsp");
+			} else {
+				System.out.println("Hij komt niet voorbij check 1");
+			}
+		
+		
 		rd.forward(req, resp);
 		} 
 
