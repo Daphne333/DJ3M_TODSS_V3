@@ -31,7 +31,7 @@ public class AntwoordCursistDAO {
 
 	public AntwoordCursist getAntwoordCursistByID(int antwoordCursistID) {
 		AntwoordCursist antwoordCursist = null;
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		String queryString = "from Antwoord_Cursist where antwoordCursistID = :antwoordCursistID";

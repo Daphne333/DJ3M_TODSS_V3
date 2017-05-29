@@ -60,7 +60,7 @@ public class PersoonDAO {
 
 	public List<Persoon> getListPersonen() {
 		List<Persoon> personen = new ArrayList<Persoon>();
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		personen = session.createQuery("From Persoon").list();
@@ -69,7 +69,7 @@ public class PersoonDAO {
 	}
 	public List<Persoon> getManagersBijBedrijf(int bedrijfID) {
 		List<Persoon> personen = new ArrayList<Persoon>();
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		personen = session.createQuery("From Persoon where bedrijfID = :bedrijfID").list();

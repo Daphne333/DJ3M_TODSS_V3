@@ -37,14 +37,11 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
-		if (username != null && password != null && username.equals("") && password.equals("")) {
+		if (username != null || password != null || username.equals("") || password.equals("")) {
 			try {
 				account = loginService.Login(username, password);
-			} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if ((account =(Account) request.getAttribute("loginAccount")) != null) {
+		
+			//if ((account =(Account) request.getAttribute("loginAccount")) != null) {
 				FunctieRol functieRol = account.getRol();
 				personalInfo = personalService.getPersoonBijAccount(account);
 				request.getSession().invalidate();
@@ -59,8 +56,14 @@ public class LoginServlet extends HttpServlet {
 				} else if (functieRol == FunctieRol.DOCENT) {
 					url = "/Docent/Docent_Home.jsp";
 				}
+			
+			} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			request.removeAttribute("loginAccount"); 
+		} else {
+			System.out.println("er zijn waardes niet goed ingevuld");
 		}
 		rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);

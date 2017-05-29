@@ -33,7 +33,7 @@ public class BedrijfDAO {
 
 	public Bedrijf getBedrijfBijNaam(String bedrijfsnaam) {
 		Bedrijf bedrijf = null;
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		String queryString = "from Bedrijf where bedrijfsnaam = :bedrijfsnaam";
@@ -46,7 +46,7 @@ public class BedrijfDAO {
 
 	public List<Bedrijf> getListBedrijven() {
 		List<Bedrijf> bedrijven = new ArrayList<Bedrijf>();
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		bedrijven = session.createQuery("From Bedrijf").list();

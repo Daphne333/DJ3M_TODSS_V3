@@ -33,7 +33,7 @@ public class ResultaatCursistDAO {
 
 	public ResultaatCursist getResultaatCursistID(int id) {
 		ResultaatCursist result = null;
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		String queryString = "from Resultaat_Cursist where resultaatID = :id";
@@ -46,7 +46,7 @@ public class ResultaatCursistDAO {
 
 	public List<ResultaatCursist> getListResultaatCursist() {
 		List<ResultaatCursist> resultaten = new ArrayList<ResultaatCursist>();
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		resultaten = session.createQuery("From Resultaat_Cursist").list();

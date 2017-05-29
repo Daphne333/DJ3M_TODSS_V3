@@ -21,17 +21,19 @@ public class AccountDAO {
 		connection = session.beginTransaction();
 		session.save(account);
 		session.getTransaction().commit();
+		session.close();
 	}
 
 	public void update(Account account) {
 		connection = session.beginTransaction();
 		session.update(account);
 		session.getTransaction();
+		session.close();
 	}
 
 	public Account getAccountbyID(int accountID) {
 		Account account = null;
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		String queryString = "from Account where accountID = :accountID";

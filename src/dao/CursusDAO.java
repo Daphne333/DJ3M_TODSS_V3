@@ -45,7 +45,7 @@ public class CursusDAO {
 
 	public List<Cursus> getListCursussen() {
 		List<Cursus> alleCursussen = new ArrayList<Cursus>();
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		alleCursussen = session.createQuery("From Cursus").list();

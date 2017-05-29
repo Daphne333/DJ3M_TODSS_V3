@@ -31,7 +31,7 @@ public class AntwoordOpdrachtDAO {
 
 	public AntwoordOpdracht getAntwoordOpdrachtByID(int antwoordOpdrachtID) {
 		AntwoordOpdracht antwoordOpdracht = null;
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		String queryString = "from Antwoord_Opdracht where antwoordOpdrachtID = :antwoordOpdrachtID";

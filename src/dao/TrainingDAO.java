@@ -46,7 +46,7 @@ public class TrainingDAO {
 
 	public List<Training> getListTrainingen() {
 		List<Training> trainingen = new ArrayList<Training>();
-		session = HibernateUtil.getSessionFactory().openSession();
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
 
 		connection = session.beginTransaction();
 		trainingen = session.createQuery("From Training").list();
