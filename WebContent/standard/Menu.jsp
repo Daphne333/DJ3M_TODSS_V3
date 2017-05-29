@@ -19,8 +19,6 @@
         <!-- style="visibility: hidden;" -->
         <!-- Bedrijf / Cursist / Manager /  -->
         <input type="hidden" id="rol" value="Beheerder" readonly></input>
-
-
 </html>
 
 

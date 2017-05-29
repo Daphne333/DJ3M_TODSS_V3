@@ -17,6 +17,15 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet.do</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BedrijfAanmaken</servlet-name>
+		<servlet-class>Controller.Servlets.BedrijfAanmakenServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BedrijfAanmaken</servlet-name>
+		<url-pattern>/Beheerder/BedrijfAanmaken.do</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>PlanningServlet</servlet-name>
@@ -78,18 +87,5 @@
 		<servlet-name>ProfielServlet</servlet-name>
 		<url-pattern>/Manager/ProfielServlet</url-pattern>
 	</servlet-mapping>
-
-	<!-- ==================================================================================== 
-		Beheerder ========================================================================================= -->
-
-	<servlet>
-		<servlet-name>BedrijfAanmakenServlet</servlet-name>
-		<servlet-class>Controller.Servlets.BedrijfAanmakenServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>BedrijfAanmakenServlet</servlet-name>
-		<url-pattern>/BedrijfAanmakenServlet.do</url-pattern>
-	</servlet-mapping>
-
 
 </web-app>
