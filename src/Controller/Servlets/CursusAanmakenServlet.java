@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import Model.Services.Cursus.*;
+import Model.Service.*;
 import Model.domein.Cursus;
 
 public class CursusAanmakenServlet extends HttpServlet{ 

@@ -1,7 +1,5 @@
-package Model.Services.Provider;
+package Model.Service;
 
-import Model.Services.Account.*;
-import Model.Services.Persoon.*;
 
 public class ServiceProvider {
 	// Met deze klasse kan je straks alle service Klassen aan gaan roepen. aan gaan roepen.

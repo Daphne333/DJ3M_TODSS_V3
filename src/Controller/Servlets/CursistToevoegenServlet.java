@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.Services.Account.AccountService;
-import Model.Services.Persoon.PersoonService;
-import Model.Services.Provider.ServiceProvider;
+import Model.Service.AccountService;
+import Model.Service.PersoonService;
+import Model.Service.ServiceProvider;
 import Model.domein.Bedrijf;
 import Model.domein.FunctieRol;
 import Model.domein.Persoon;

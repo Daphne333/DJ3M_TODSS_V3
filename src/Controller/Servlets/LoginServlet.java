@@ -9,11 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.Services.Provider.ServiceProvider;
-import Model.domein.Account;
-import Model.domein.FunctieRol;
-import Model.domein.Persoon;
-
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	/**

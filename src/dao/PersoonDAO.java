@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import Model.domein.Bedrijf;
 import Model.domein.Persoon;
 import util.HibernateUtil;
 
@@ -63,6 +64,15 @@ public class PersoonDAO {
 
 		connection = session.beginTransaction();
 		personen = session.createQuery("From Persoon").list();
+
+		return personen;
+	}
+	public List<Persoon> getManagersBijBedrijf(int bedrijfID) {
+		List<Persoon> personen = new ArrayList<Persoon>();
+		session = HibernateUtil.getSessionFactory().openSession();
+
+		connection = session.beginTransaction();
+		personen = session.createQuery("From Persoon where bedrijfID = :bedrijfID").list();
 
 		return personen;
 	}

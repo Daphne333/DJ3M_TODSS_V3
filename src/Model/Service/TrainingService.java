@@ -1,4 +1,4 @@
-package Model.Services.Cursus;
+package Model.Service;
 
 public class TrainingService {
 

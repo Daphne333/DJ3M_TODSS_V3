@@ -1,10 +1,9 @@
-package Model.Services.Account;
+package Model.Service;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.List;
 
-import Model.Services.Persoon.PersoonService;
 import Model.domein.Account;
 import Model.domein.FunctieRol;
 import Model.domein.Persoon;

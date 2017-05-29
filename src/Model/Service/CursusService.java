@@ -1,7 +1,6 @@
-package Model.Services.Cursus;
+package Model.Service;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import Model.domein.Cursus;
