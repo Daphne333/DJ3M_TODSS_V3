@@ -29,40 +29,41 @@ public class BedrijfAanmakenServlet extends HttpServlet {
 		 String bedrijfsNaam = req.getParameter("setBedrijfsNaam");
 		 String vestigingStraat = req.getParameter("setVestigingStraat");
 		 String vestigingHuisnummerStr = req.getParameter("setVestigingHuisnummer");
-		 if(vestigingHuisnummerStr != null){
+		 if(!vestigingHuisnummerStr.equals("")){
 			int vestigingHuisnummer = Integer.parseInt(vestigingHuisnummerStr);
 		 }
 		 String vestigingToevoeging = req.getParameter("setVestigingToevoeging");
 		 String vestigingPostcode = req.getParameter("setVestigingPostcode");
 		 String vestigingPlaats = req.getParameter("setVestigingPlaats");
 		 String vestigingPostbusStr = req.getParameter("setVestigingPostbus");
-		 if(vestigingPostbusStr != null){
+		 if(!vestigingPostbusStr.equals("")){
 			int vestigingPostbus = Integer.parseInt(vestigingPostbusStr);
 		 }
 		 String postadresStraat = req.getParameter("setPostadresStraat");
 		 String postadresHuisnummerStr = req.getParameter("setPostadresHuisnummer");
-		 if(postadresHuisnummerStr != null){
+		 if(!postadresHuisnummerStr.equals("")){
 			int postadresHuisnummer = Integer.parseInt(postadresHuisnummerStr);
 		 }
 		 String postadresToevoeging = req.getParameter("setPostadresToevoeging");
 		 String postadresPostcode = req.getParameter("setPostadresPostcode");
 		 String postadresPlaats = req.getParameter("setPostadresPlaats");
 		 String postadresPostbusStr = req.getParameter("setPostadresPostbus");
-		 if(postadresPostbusStr != null){
+		 if(!postadresPostbusStr.equals("")){
 			int postadresPostbus = Integer.parseInt(postadresPostbusStr);
 		 }
 		 String telefoonnummer = req.getParameter("setTelefoonnummer");
 		 String kvknummerStr = req.getParameter("setKvknummer");
-		 if(kvknummerStr != null){
+		 if(!kvknummerStr.equals("")){
 			int kvknummer = Integer.parseInt(kvknummerStr);
 		 }
+		 String email = req.getParameter("setEmail");
 		 
 		 RequestDispatcher rd = null;
 		 System.out.println(bedrijfsNaam + " " + vestigingStraat+ " " +vestigingHuisnummerStr+ " " +vestigingToevoeging+ " " +vestigingPostcode+ " " +vestigingPlaats+ " " +vestigingPostbusStr+ " " +postadresStraat+ " " +
 				 postadresHuisnummerStr + " " + postadresToevoeging + " " + postadresPostcode + " " + postadresPlaats + " " + postadresPostbusStr + " " + telefoonnummer + " " + kvknummerStr);
 		 System.out.println("Hallo hier is pino");
 		 
-		if (bedrijfsNaam != null && vestigingStraat != null && vestigingHuisnummerStr != null && vestigingPostcode != null && vestigingPlaats != null && telefoonnummer != null && kvknummerStr != null){
+		if (bedrijfsNaam != null && vestigingStraat != null && vestigingHuisnummerStr != null && vestigingPostcode != null && vestigingPlaats != null && telefoonnummer != null && kvknummerStr != null && email != null){
 			System.out.println("Hij komt door de check heen");
 			
 			Bedrijf bedrijf = new Bedrijf();
@@ -81,6 +82,7 @@ public class BedrijfAanmakenServlet extends HttpServlet {
 			bedrijf.setPostadres_postbus(234234);
 			bedrijf.setTelefoonnummer(telefoonnummer);
 			bedrijf.setKvknummer(2324);
+			bedrijf.setEmail(email);
 			
 			bedrijfService.maakBedrijfAan(bedrijf);
 			rd = req.getRequestDispatcher("/Beheerder/Beheerder_Home.jsp");
