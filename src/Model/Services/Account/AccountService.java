@@ -61,7 +61,7 @@ public class AccountService {
 		accDao.update(a);
 	}
 	public List<Account> getAccountsBijRol(FunctieRol rol){
-		return accDao.getAccountBijRol(rol.toString());
+		return accDao.getListAccountBijRol(rol.toString());
 	}
 
 }
