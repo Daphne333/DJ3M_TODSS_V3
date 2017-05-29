@@ -32,7 +32,7 @@
 	<div class="container-login">
 		<form method="post" action="LoginServlet.do">
 			<label for="name">Gebruikersnaam</label><br>
-			<br> <input id="username" name="username" value="${loginAccount.email}"></input> <br>
+			<br> <input id="username" name="username" value="${loginAccount.username}"></input> <br>
 			<br> <label for="password">Wachtwoord</label><br>
 			<br> <input id="password" name="password" type="password"></input><br>
 			<br> <input class="button-login" type="submit" value="login"></input>
