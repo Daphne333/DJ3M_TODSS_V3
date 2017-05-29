@@ -7,7 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.Services.Bedrijf.BedrijfService;
+import Model.Service.BedrijfService;
 import Model.domein.Bedrijf;
 import Model.domein.Cursus;
 
@@ -57,7 +57,7 @@ public class BedrijfAanmakenServlet {
 			bedrijf.setTelefoonnummer(telefoonnummer);
 			bedrijf.setKvknummer(kvknummer);
 			
-			bedrijfService.voegBedrijfToe(bedrijf);
+			bedrijfService.maakBedrijfAan(bedrijf);
 			rd = req.getRequestDispatcher("/Beheerder_BedrijfAanmaken.jsp");
 			} 
 		rd.forward(req, resp);
