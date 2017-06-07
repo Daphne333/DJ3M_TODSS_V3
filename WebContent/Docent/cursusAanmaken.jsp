@@ -46,7 +46,7 @@
 
 				<h3 style="text-align: center;">Cursus toevoegen</h3>
 				<div style="text-align: center;">
-					<form action="CursusAanmakenServlet" method="post">
+					<form method="post" action="CursusAanmakenServlet.do" >
 						<label>Cursusnaam: </label>
 						<br> <input type="text" name="setCursusNaam"><br> 
 						<label>Omschrijving: </label>

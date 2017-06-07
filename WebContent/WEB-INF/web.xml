@@ -35,6 +35,15 @@
 		<servlet-name>PlanningServlet</servlet-name>
 		<url-pattern>/Manager/PlanningServlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CursusAanmakenServlet</servlet-name>
+		<servlet-class>Controller.Servlets.CursusAanmakenServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CursusAanmakenServlet</servlet-name>
+		<url-pattern>/Docent/CursusAanmakenServlet.do</url-pattern>
+	</servlet-mapping>
 
 	<!-- ==================================================================================== 
 		CURSISTEN ========================================================================================= -->
@@ -70,14 +79,7 @@
 		<url-pattern>/Manager/CursusServlet</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>CursusAanmakenServlet</servlet-name>
-		<servlet-class>Controller.Servlets.CursusAanmakenServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>CursusAanmakenServlet</servlet-name>
-		<url-pattern>/Docent/CursusAanmakenServlet</url-pattern>
-	</servlet-mapping>
+	
 
 	<servlet>
 		<servlet-name>ResultatenServlet</servlet-name>
