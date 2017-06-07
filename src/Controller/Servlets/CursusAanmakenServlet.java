@@ -29,12 +29,12 @@ public class CursusAanmakenServlet extends HttpServlet{
 	if (plaatjeURL.equals("") && cursusnaam.equals("") && omschrijving.equals("") && cursusPrijsStr.equals("")){
 		Cursus cursus = new Cursus(cursusnaam, omschrijving, cursusPrijs, plaatjeURL);
 		cursusService.voegCursusToe(cursus);
-		rd = req.getRequestDispatcher("/cursusAanmaken.jsp");
+		rd = req.getRequestDispatcher("Docent/cursusAanmaken.jsp");
 		} 
 	else if (cursusnaam.equals("") && omschrijving.equals("") && cursusPrijsStr.equals("")){
 		Cursus cursus = new Cursus(cursusnaam, omschrijving, cursusPrijs);
 		cursusService.voegCursusToe(cursus);
-		rd = req.getRequestDispatcher("/cursusAanmaken.jsp");
+		rd = req.getRequestDispatcher("Docent/cursusAanmaken.jsp");
 	}
 	rd.forward(req, resp);
 	}

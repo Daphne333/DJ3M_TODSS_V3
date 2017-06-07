@@ -23,12 +23,13 @@ public class CursusService {
 	}
 	
 	// naar deze methode moeten we nog even kijken en nadenken hoe dit goed werkt, want voor een id moet je eerst een lijst van de database hebben.
-	/*public Cursus getCursus(Cursus cursus){
-		Integer cursusID = cursus.getCursusId();
-		if(cursusID != null){
-			return cursusDAO.getCursusByID(cursusID);
+	public Cursus getCursusByNaam(String cursusNaam){
+		Cursus c = null;
+		if(!cursusNaam.equals("")){
+			c = cursusDAO.getCursusByName(cursusNaam);
 		} 
-	}*/
+		return c;
+	}
 	
 	public List<Cursus> getAlleCursussen(){
 		

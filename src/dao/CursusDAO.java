@@ -30,12 +30,12 @@ public class CursusDAO {
 
 	}
 
-	public Cursus getCursusByID(int cursusID) {
+	public Cursus getCursusByName(String naam) {
 		Cursus result = null;
 		connection = session.beginTransaction();
-		String queryString = "from Training where cursusID = :cursusID";
+		String queryString = "from Cursus where naam = :naam";
 		Query query = session.createQuery(queryString);
-		query.setInteger("cursusID", cursusID);
+		query.setString("naam", naam);
 		result = (Cursus) query.uniqueResult();
 
 		return result;
