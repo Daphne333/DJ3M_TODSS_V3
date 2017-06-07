@@ -74,6 +74,7 @@ public class Cursus {
 		this.naam = naam;
 	}
 	
+	@Column(name = "imgFilePath")
 	public String getImageFilePath(){
 		return image;
 	}
