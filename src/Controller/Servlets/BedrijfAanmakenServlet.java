@@ -25,7 +25,7 @@ public class BedrijfAanmakenServlet extends HttpServlet {
 	private BedrijfService bedrijfService = ServiceProvider.getBedrijf();
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{		
-		System.out.println("Hier zijn de lala mensjes");
+	
 		 String bedrijfsNaam = req.getParameter("setBedrijfsNaam");
 		 String vestigingStraat = req.getParameter("setVestigingStraat");
 		 String vestigingHuisnummerStr = req.getParameter("setVestigingHuisnummer");
@@ -64,10 +64,9 @@ public class BedrijfAanmakenServlet extends HttpServlet {
 		 String email = req.getParameter("setEmail");
 		 
 		 RequestDispatcher rd = null;
-		 System.out.println(bedrijfsNaam + " " + vestigingStraat+ " " +vestigingHuisnummerStr+ " " +vestigingToevoeging+ " " +vestigingPostcode+ " " +vestigingPlaats+ " " +vestigingPostbusStr+ " " +postadresStraat+ " " +
+		 /*System.out.println(bedrijfsNaam + " " + vestigingStraat+ " " +vestigingHuisnummerStr+ " " +vestigingToevoeging+ " " +vestigingPostcode+ " " +vestigingPlaats+ " " +vestigingPostbusStr+ " " +postadresStraat+ " " +
 				 postadresHuisnummerStr + " " + postadresToevoeging + " " + postadresPostcode + " " + postadresPlaats + " " + postadresPostbusStr + " " + telefoonnummer + " " + kvknummerStr);
-		 System.out.println("Hallo hier is pino");
-		 
+		*/ 
 		if (bedrijfsNaam != null && vestigingStraat != null && vestigingHuisnummerStr != null && vestigingPostcode != null && vestigingPlaats != null && telefoonnummer != null && kvknummerStr != null && email != null){
 			System.out.println("Hij komt door de check heen");
 			
