@@ -48,11 +48,11 @@
 				<div style="text-align: center;">
 					<form action="CursusAanmakenServlet" method="post">
 						<label>Cursusnaam: </label>
-						<br> <input type="text" name="setCursusNaam" required><br> 
+						<br> <input type="text" name="setCursusNaam"><br> 
 						<label>Omschrijving: </label>
-						<br> <input type="text" name="setOmschrijving" required><br>
+						<br> <input type="text" name="setOmschrijving"><br>
 						<label>Cursusprijs: </label>
-						<br> <input type="text"	name="setPrijs" required><br> 
+						<br> <input type="text"	name="setPrijs"><br> 
 						<label>PlaatjeURL</label>
 						<br> <input type="text" name="setPlaatjeURL"><br> 
 						<br> <input type="submit" name="toevoegenknop" value="Cursus toevoegen">
