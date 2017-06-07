@@ -69,6 +69,15 @@
 		<servlet-name>CursusServlet</servlet-name>
 		<url-pattern>/Manager/CursusServlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CursusAanmakenServlet</servlet-name>
+		<servlet-class>Controller.Servlets.CursusAanmakenServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CursusAanmakenServlet</servlet-name>
+		<url-pattern>/Docent/CursusAanmakenServlet</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>ResultatenServlet</servlet-name>
