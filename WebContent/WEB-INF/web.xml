@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
-	<display-name>DJ3M_TODDS</display-name>
+	<display-name>TODSS</display-name>
 	<welcome-file-list>
 		<welcome-file>Inlogscherm.jsp</welcome-file>
 	</welcome-file-list>
@@ -97,6 +97,16 @@
 	<servlet-mapping>
 		<servlet-name>ProfielServlet</servlet-name>
 		<url-pattern>/Manager/ProfielServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<url-pattern>/todss/*</url-pattern>
 	</servlet-mapping>
 
 </web-app>
