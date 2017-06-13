@@ -33,7 +33,7 @@
 			//request.getSession().getAttribute("loginAccount");    
 			
 			//FunctieRol rol = account.getRol();
-    		//String naam = account.getUsername();
+    		///String naam = account.getUsername();
 		
 		%>
 		<td>Username: </td>
