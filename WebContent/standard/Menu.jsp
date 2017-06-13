@@ -13,12 +13,12 @@
             Account account = (Account) request.getSession().getAttribute("loginAccount");
         	/* String rol = "" + account.getFunctie(); */
         	String rol ="Beheerder";
-        	request.getSession().setAttribute("rol", rol);// deze zal denk ik niet meer nodig zijn als de loginservlet goed werkt?
+        	request.getSession().setAttribute("rol", account.getRol().toString());// deze zal denk ik niet meer nodig zijn als de loginservlet goed werkt?
         %>
         
         <!-- style="visibility: hidden;" -->
         <!-- Bedrijf / Cursist / Manager /  -->
-        <input type="hidden" id="rol" value="Beheerder" readonly></input>
+        <input type="hidden" id="rol" value="Cursist" readonly></input>
 </html>
 
 

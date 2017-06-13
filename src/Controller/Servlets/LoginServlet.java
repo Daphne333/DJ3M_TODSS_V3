@@ -45,8 +45,6 @@ public class LoginServlet extends HttpServlet {
 			//if ((account =(Account) request.getAttribute("loginAccount")) != null) {
 				FunctieRol functieRol = account.getRol();
 				personalInfo = personalService.getPersoonBijAccount(account);
-				System.out.println(account.getUsername());
-				System.out.println(account.getRol());
 				HttpSession session = request.getSession();
 				//session.invalidate();
 				session.setAttribute("loginAccount", account);
@@ -56,7 +54,7 @@ public class LoginServlet extends HttpServlet {
 					url = "/Beheerder/Beheerder_Home.jsp";
 				} else if (functieRol == FunctieRol.CURSIST) {
 					url = "/Cursist/Cursist_Home.jsp";
-					System.out.print("Hier is het werkende object uit de sessie :" + session.getAttribute("loginAccount").toString());
+					//System.out.print("Hier is het werkende object uit de sessie :" + session.getAttribute("loginAccount").toString());
 				} else if (functieRol == FunctieRol.MANAGER) {
 					url = "/Manager/Manager_Home.jsp";
 				} else if (functieRol == FunctieRol.DOCENT) {

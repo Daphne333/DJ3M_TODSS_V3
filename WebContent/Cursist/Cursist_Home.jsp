@@ -7,39 +7,41 @@
      C kan elk ander willekeurig iets zijn -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page language="java" session="true" %>
-    
+
+<!-- included pages  -->
+<%@include file="../standard/Menu.jsp"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-
-		
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">		
 		
 <title>Bedrijf | Cursisten</title>
 </head>
 <body>
 		
 	
-		<td> test</td>
-		<div id="content" class="content">
-		
-		<div class="inner-content"	style="background-color: white; opacity: .9;">
-<!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
-		<div id="messagebox">
+	<div id="header" class="header"></div>
+
+
+
+	<div class="menu-container">
+		<div id="menu" class="menu"></div>
+	</div>		
+
 		<%
 			
-			Account account = (Account) session.getAttribute("loginAccount"); 
+			//Account account = (Account) request.getSession().getAttribute("loginAccount");
+			System.out.print(account.toString());
 			//request.getSession().getAttribute("loginAccount");    
 			
 			//FunctieRol rol = account.getRol();
     		///String naam = account.getUsername();
 		
 		%>
-		<td>Username: </td>
-		<td><input type="text" value="<%= account.getUsername()%>" /></td>
+		<td>Welcome Cursist met de naam : </td>
+		<td><%= account.getUsername()%></td>
 		<%
-			
 			Object msg = request.getAttribute("msg");
 		
 			// dit object moet de informatie bevatten over de gehele planning
@@ -49,14 +51,22 @@
 		%>	
 		</div>
 
-	
-	<h1 style="text-align: center; margin-top:20px;">HOME</h1>
-		
-
-
-	</div>
-	</div>
-
+		<div class="content-container">
+		<div id="content" class="content">
+			<div class="inner-content">
+			</div>
+			</div>
+			</div>
 
 </body>
+<!-- scripts -->
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
+<script type="text/javascript" src="script/script.js"></script>
+
+<!-- css -->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/animate.css" rel="stylesheet" type="text/css" />
+</html>
+
 </html>
