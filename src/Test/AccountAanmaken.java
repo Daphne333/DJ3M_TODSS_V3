@@ -44,15 +44,15 @@ public class AccountAanmaken {
 		p.setBedrijfID(b);
 
 		dao.create(p);
-		
+
 		AccountDAO acc = new AccountDAO();
 		Account ac = new Account();
-		PasswordHandler pwh =new PasswordHandler();
+		PasswordHandler pwh = new PasswordHandler();
 		ac.setUsername("cursist");
 		byte[] salt = pwh.generateSalt();
 		ac.setSalt(salt);
 		ac.setPassword(pwh.getEncryptedPassword("cursist", salt));
-		
+
 		ac.setRol(FunctieRol.CURSIST);
 		ac.setPersoonID(p);
 		acc.create(ac);
