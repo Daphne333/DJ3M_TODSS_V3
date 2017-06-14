@@ -104,8 +104,8 @@
 		<servlet-class>Controller.Servlets.ProfielServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ProfielServlet</servlet-name>
-		<url-pattern>/ProfielServlet</url-pattern>
+		<servlet-name>HomeServlet</servlet-name>
+		<url-pattern>/HomeServlet</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
