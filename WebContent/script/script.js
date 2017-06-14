@@ -32,9 +32,19 @@ function menuClick(clicked_id){
 	var end ='webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 	
 	
-	switch(rol){
-	case a:
-	break;
+	switch(rolCASE){
+	case DOCENT:
+		rol="Docent";
+		break;
+	case CURSIST:
+		rol="Cursist";
+		break;
+	case MANAGER:
+		rol="Manager";
+		break;
+	case BEHEERDER:
+		rol="Beheerder";
+		break;
 	}
 	
 	
