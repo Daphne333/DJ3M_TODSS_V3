@@ -21,32 +21,6 @@
 
 <input type="hidden" id="rol" value="<%=rol %>" readonly></input>
 
-
-<% if (account != null) {
-            if (account.getRol() == FunctieRol.CURSIST) {
-        %>
-
-<% 			} else if (account.getRol() == FunctieRol.DOCENT) {
-        %>
-
-			
-<%
-			} else if (account.getRol() == FunctieRol.MANAGER) {
-
-        %>
-			
-
-<%
-			} else if (account.getRol() == FunctieRol.BEHEERDER) {
-        %>
-		
-			<%} %>
-<%
-			if (account.getRol() == FunctieRol.BEHEERDER || account.getRol() == FunctieRol.DOCENT || account.getRol() == FunctieRol.CURSIST || account.getRol() == FunctieRol.MANAGER) {
-%>
-		
-			<%}%>
-		<%} %>
 <!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 

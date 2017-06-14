@@ -24,7 +24,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>BedrijfAanmaken</servlet-name>
-		<url-pattern>/Beheerder/BedrijfAanmaken.do</url-pattern>
+		<url-pattern>/BedrijfAanmaken.do</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
