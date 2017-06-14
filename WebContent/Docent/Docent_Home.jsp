@@ -38,25 +38,8 @@
 			<div class="inner-content">
 
 
+				<h3 style="text-align: center;">Docent Home</h3>
 
-				<%
-					Object Cursus = request.getAttribute("voegtoeTraining");
-				%>
-
-				<h3 style="text-align: center;">Training toevoegen</h3>
-				<div style="text-align: center;">
-					<form action="TrainingAanmakenServlet" method="post">
-						<label>Trainingnaam: </label> <br> 
-						<input type="text" name="setTrainingNaam" required><br> 
-						<label>Begindatum: </label> 
-						<br> <input type="text" name="setBegindatum" required><br>
-						<label>Einddatum: </label> 
-						<br> <input type="text"	name="setEinddatum" required><br> 
-						<label>Cursus: </label>
-						<br> <input type="text" name="setCursus"><br>
-						<br> <input type="submit" name="toevoegenknop" value="Cursus toevoegen">
-					</form>
-				</div>
 
 			</div>
 		</div>
@@ -66,9 +49,8 @@
 <!-- scripts -->
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
-<script type="text/javascript" src="../script/script.js"></script>
+<script type="text/javascript" src="./script/script.js"></script>
 
 <!-- css -->
-<link href="../css/style.css" rel="stylesheet" type="text/css" />
-<link href="../css/animate.css" rel="stylesheet" type="text/css" />
+<link href="./css/style.css" rel="stylesheet" type="text/css" />
 </html>
