@@ -37,7 +37,6 @@
 		<div id="content" class="content">
 			<div class="inner-content">
 
-
 				<h3 style="text-align: center;">Docent Home</h3>
 
 
