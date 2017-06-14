@@ -5,15 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Sam Safety Login</title>
-<!-- 
-         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    	<script type="text/javascript" src="./script/script.js"></script>
-	      -->
+
 
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<!--  <link href="css/menu.css" rel="stylesheet" type="text/css"/>
-	    	    	    <link href="css/style-index.css" rel="stylesheet" type="text/css"/> -->
-
 
 </head>
 <body>

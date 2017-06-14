@@ -24,14 +24,22 @@ $(document).ready(function(){
 
 function menuClick(clicked_id){
 		
-	var rol = document.getElementById("rol").value;
+	var rolCASE = document.getElementById("rol").value;
+	
+	var rol = "";
 	
 	/*end of animation*/
 	var end ='webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 	
+	
+	switch(rol){
+	case a:
+	break;
+	}
+	
+	
 	//laden van de content
 	$('#content').load("../" + rol + "/"+ clicked_id + ".jsp");
-	
 	//voeg animatie toe
 	//animation is a random number between 1-4
 /*	RandomAnimation();*/
