@@ -56,6 +56,7 @@
 						<label>PlaatjeURL</label>
 						<br> <input type="text" name="setPlaatjeURL"><br> 
 						<br> <input type="submit" name="toevoegenknop" value="Cursus toevoegen">
+						
 					</form>
 				</div>
 

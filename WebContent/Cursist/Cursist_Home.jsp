@@ -55,8 +55,8 @@
 					// het object is van de eigenaar, degene die is ingeloged
 					Object cursisten = request.getAttribute("cursisten");
 				%>
-			</div>
 
+			</div>
 			<div class="content-container">
 				<div id="content" class="content">
 					<div class="inner-content"></div>
