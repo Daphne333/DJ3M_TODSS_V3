@@ -9,41 +9,12 @@ $(document).ready(function(){
 
 	  SetMenu();
 	  //SetHomePage();
-	  $('#header').load("../standard/header.jsp"); 
+	  $('#header').load("./standard/header.jsp"); 
 	  /*	  $("#footer").load("../standard/footer.html"); */
-	  
-	  $('#"cursus-img"').click(function(){
-		  alert($(this));
-	  })
 
 });
 
 /*end of page startup*/
-
-
-var animation;
-
-function RandomAnimation(){
-	var random = Math.floor(Math.random() * 4) + 1; 
-	
-	switch(random){
-	case 1:
-		animation= "fadeInDown";
-		break;
-	case 2:
-		animation= "fadeInLeft";
-		break;
-	case 3:
-		animation= "fadeInRight";
-		break;
-	case 4:
-		animation= "fadeInUp";
-		break;
-	}	
-}
-
-/*works with all buttons in the different menu's
-loads corresponding content and places it into the div with id="#content"*/
 
 
 /*============================================================
@@ -82,68 +53,19 @@ function SetMenu(){
 	var rol = document.getElementById("rol").value;
 	if(rol != "" || rol != null){
 		switch(rol){
-		case "Docent":
-				$('#menu').load("../standard/Menu_Docent.html");
+		case "DOCENT":
+				$('#menu').load("./standard/Menu_Docent.html");
 				break;
-		case "Manager":
-				$('#menu').load("../standard/Menu_Manager.html");
+		case "MANAGER":
+				$('#menu').load("./standard/Menu_Manager.html");
 					break;
-		case "Beheerder":
-			  	$('#menu').load("../standard/Menu_Beheerder.html");
+		case "BEHEERDER":
+			  	$('#menu').load("./standard/Menu_Beheerder.html");
 			  		break;
-		case "Cursist":
-			  	$('#menu').load("../standard/Menu_Cursist.html");
+		case "CURSIST":
+			  	$('#menu').load("./standard/Menu_Cursist.html");
 			  		break;
 		}	
 	}	
 }
 
-
-/*============================================================
-WORDT NIET GEBRUIKT!!!! 
-ELKE PAGINA BEVAT NU ALLE INFORMATIE
-============================================================*/
-
-function SetHomePage(){
-	
-	var rol = document.getElementById("rol").value;
-
-	
-	if(rol != "" || rol != null){
-		$('#content').load("../" + rol + "/"+ rol +"_Home.jsp");
-	}
-}
-
-
-/*
-werkt niet?*/
-
-/*$('#right1').hover(function() {
-	alert('dfgbhujilfbhuji');
-	    $('#left1').css('width','28%');
-	    $('#right1').css('width', '68%');
-	  }, function() {
-	    // on mouseout, reset the background color
-	    $('#left1').css('width', '68%');
-	    $('#right1').css('width', '28%');
- });
-*/
-
-/*
-werkt niet?*/
-		
-		
-		
-/*$(".right1").on({
-    mouseenter: function () {
-    	alert('awrg');
-        //stuff to do on mouse enter
-    	$(".left1").css('width','28%');
-	    $(".right1").css('width', '68%');
-    },
-    mouseleave: function () {
-        //stuff to do on mouse leave
-	    $(".left1").css('width', '68%');
-	    $(".right1").css('width', '28%');
-    }
-});*/

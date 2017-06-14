@@ -6,8 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<link href="https://fonts.googleapis.com/css?family=Titillium+Web"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web"	rel="stylesheet">
 
 
 <%
@@ -22,13 +21,10 @@
 
 <input type="hidden" id="rol" value="<%=rol %>" readonly></input>
 
-<%
-            Account loginAccount = (Account) request.getSession().getAttribute("loginAccount");
-        %>
-<% if (loginAccount != null) {
+
+<% if (account != null) {
             if (account.getRol() == FunctieRol.CURSIST) {
         %>
-			<
 
 <% 			} else if (account.getRol() == FunctieRol.DOCENT) {
         %>
@@ -52,7 +48,7 @@
 			<%}%>
 		<%} %>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 </html>
 
