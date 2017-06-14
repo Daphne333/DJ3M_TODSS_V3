@@ -56,7 +56,7 @@ public class CursusServlet extends HttpServlet{
 		allCursussen.add(c6);
 	
 		if(rol == "Manager"){
-		url = "../Manager/Manager_Cursussen.jsp";
+		url = "./Manager/Manager_Cursussen.jsp";
 		
 		rd = req.getRequestDispatcher(url);
 		req.getSession().setAttribute("cursussen", allCursussen);

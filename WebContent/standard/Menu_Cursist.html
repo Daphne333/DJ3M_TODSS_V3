@@ -9,19 +9,33 @@
 <body>
 
 <body>
-		<div class="menu">		
-		 	<ul id="menu">				
-		 	
-<!-- 		 	this.id geeft het id van de list-item mee zodat als
-		 		we erop klikken we weten om welke button het gaat  
-		 		HET ID MOET DEZELFDE NAAM HEBBEN ALS DE NAAM VAN DE PAGINA
-		 		WAAR WE NAARTOE GAAN VERWIJZEN: 
-		 		Bedrijf_Home gaat naar 'Bedrijf_Home.jsp'-->
-		 		<li id="Cursist_Home" onclick="menuClick(this.id)">Home</li>
-				<li id="Cursist_Planning" onclick="menuClick(this.id)" id="menu-link" >Planning</li>
-				<li id="Cursist_Cursussen" onclick="menuClick(this.id)" id="menu-link" >Cursussen</li>
-			</ul>   			 
-   		</div>
+			 	<div id="menu">				
+			 	
+			 		
+			 		<a  href="./Cursist/Cursist_Home.jsp" id="Manager_Home" class="menu-link">Home</a>
+			 		
+			 		<form action="PlanningServlet" method="post">
+						<input type="submit" id="Manager_Planning" class="menu-link" value="Planning">
+							</form>
+					
+					<form action="CursistServlet" method="post">
+						<input type="submit" id="Manager_Cursisten" class="menu-link" value="Cursisten">
+							</form>
+							
+					<form action="CursusServlet" method="post">					
+						<input type="submit" id="Manager_Cursusaanbod" class="menu-link" value="Cursusaanbod">
+							</form>	
+					
+					<form action="ResultatenServlet" method="post">
+						<input type="submit" id="Manager_Resultaten" class="menu-link" value="Resultaten">
+							</form>
+					
+					<form action="ProfielServlet" method="post">
+						<input type="submit" id="Manager_Bedrijfsprofiel" class="menu-link" value="Bedrijfsprofiel">
+							</form>
+					
+									
+				</div>
 
 
 </body>

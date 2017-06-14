@@ -22,7 +22,7 @@ public class ProfielServlet extends HttpServlet {
 			
 			RequestDispatcher rd = null;
 					
-			rd = req.getRequestDispatcher("../Manager/Manager_Bedrijfsprofiel.jsp"); //request komt vanaf de menu-pagina
+			rd = req.getRequestDispatcher("./Manager/Manager_Bedrijfsprofiel.jsp"); //request komt vanaf de menu-pagina
 			rd.forward(req, resp);
 			
 		}

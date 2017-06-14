@@ -57,7 +57,7 @@ public class CursistToevoegenServlet extends HttpServlet{
 				
 
 				//doorverwijzen naar:
-				url = "../Manager/Manager_Cursisten_Toevoegen.jsp";
+				url = "./Manager/Manager_Cursisten_Toevoegen.jsp";
 				rd = req.getRequestDispatcher(url);
 			}
 			
@@ -165,7 +165,7 @@ public class CursistToevoegenServlet extends HttpServlet{
 				
 				
 				req.setAttribute("msg", "De cursist is succesvol afgerond!");
-				url = "../Manager/Manager_Cursisten.jsp";
+				url = "./Manager/Manager_Cursisten.jsp";
 
 			}
 			

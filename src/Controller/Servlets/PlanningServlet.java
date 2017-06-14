@@ -22,7 +22,7 @@ public class PlanningServlet extends HttpServlet{
 		
 		RequestDispatcher rd = null;
 				
-		rd = req.getRequestDispatcher("../Manager/Manager_Planning.jsp"); //request komt vanaf de menu-pagina
+		rd = req.getRequestDispatcher("./Manager/Manager_Planning.jsp"); //request komt vanaf de menu-pagina
 		rd.forward(req, resp);
 		
 	}

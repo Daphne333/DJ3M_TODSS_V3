@@ -13,35 +13,30 @@
 <body>
 
 <body>
-		<div class="menu">		
-			<ul>
-				<li><a>Home</a></li>
-				<li><a>Docent</a>
-<!-- 					<ul>
-						<li><a>Deze week</a></li>
-						<li><a>Overzicht</a></li>
-						<li><a>Historie</a></li>					
-					</ul></li>
-				<li>Profielen
-					<ul>
-						<li>Maak aan</li>
-						<li>Overzicht</li>
-						<li>Archief</li>
-					</ul></li>
-				<li>Cursussen
-					<ul>
-						<li>Overzicht</li>
-					</ul></li>
-				<li>Ontdek
-					<ul>
-						<li>Nieuw</li>
-					</ul></li>
-				<li>Opties
-				<ul>
-					<li>Wijzigen</li>
-				</ul> --></li>
-			</ul>   			
-   		</div>
+			<div class="menu">		
+		
+			 		<a  href="./Docent/Docent_Home.jsp" id="Manager_Home" class="menu-link">Home</a>
+			 		
+			 		<form action="PlanningServlet" method="post">
+						<input type="submit" id="Manager_Planning" class="menu-link" value="Planning">
+							</form>
+					
+					<form action="CursistServlet" method="post">
+						<input type="submit" id="Manager_Cursisten" class="menu-link" value="Cursisten">
+							</form>
+							
+					<form action="CursusServlet" method="post">					
+						<input type="submit" id="Manager_Cursusaanbod" class="menu-link" value="Cursusaanbod">
+							</form>	
+					
+					<form action="ResultatenServlet" method="post">
+						<input type="submit" id="Manager_Resultaten" class="menu-link" value="Resultaten">
+							</form>
+					
+					<form action="ProfielServlet" method="post">
+						<input type="submit" id="Manager_Bedrijfsprofiel" class="menu-link" value="Bedrijfsprofiel">
+							</form> 			
+   			</div>
 </body>
 
 </html>

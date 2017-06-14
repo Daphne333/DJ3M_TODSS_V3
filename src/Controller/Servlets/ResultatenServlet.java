@@ -21,7 +21,7 @@ public class ResultatenServlet extends HttpServlet{
 		
 		RequestDispatcher rd = null;
 		
-		rd = req.getRequestDispatcher("../Manager/Manager_Resultaten.jsp");
+		rd = req.getRequestDispatcher("./Manager/Manager_Resultaten.jsp");
 		
 		rd.forward(req, resp);
 		

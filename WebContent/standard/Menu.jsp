@@ -47,9 +47,13 @@
 		
 			<%}%>
 		<%} %>
-
+<!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+<script type="text/javascript" src="./script/script.js"></script>
+
+<!-- css -->
+<link href="./css/style.css" rel="stylesheet" type="text/css" />
 </html>
 
 

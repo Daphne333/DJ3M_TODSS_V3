@@ -122,15 +122,5 @@
 	</div>
 </div>
 
-</body>
-
-
-		<!-- scripts -->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
-    	<script type="text/javascript" src="../script/script.js"></script>
-		
-		<!-- css -->
-		<link href="../css/style.css" rel="stylesheet" type="text/css"/>
-		<link href="../css/animate.css" rel="stylesheet" type="text/css"/>
-		
+</body>		
 </html>

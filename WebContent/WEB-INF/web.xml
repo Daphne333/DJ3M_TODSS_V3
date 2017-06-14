@@ -33,7 +33,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>PlanningServlet</servlet-name>
-		<url-pattern>/Manager/PlanningServlet</url-pattern>
+		<url-pattern>/PlanningServlet</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -42,7 +42,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CursusAanmakenServlet</servlet-name>
-		<url-pattern>/Docent/CursusAanmakenServlet.do</url-pattern>
+		<url-pattern>/CursusAanmakenServlet.do</url-pattern>
 	</servlet-mapping>
 
 	<!-- ==================================================================================== 
@@ -54,7 +54,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CursistServlet</servlet-name>
-		<url-pattern>/Manager/CursistServlet</url-pattern>
+		<url-pattern>/CursistServlet</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -63,7 +63,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CursistToevoegenServlet</servlet-name>
-		<url-pattern>/Manager/CursistToevoegenServlet</url-pattern>
+		<url-pattern>/CursistToevoegenServlet</url-pattern>
 	</servlet-mapping>
 
 
@@ -76,7 +76,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CursusServlet</servlet-name>
-		<url-pattern>/Manager/CursusServlet</url-pattern>
+		<url-pattern>/CursusServlet</url-pattern>
 	</servlet-mapping>
 	
 	
@@ -87,7 +87,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ResultatenServlet</servlet-name>
-		<url-pattern>/Manager/ResultatenServlet</url-pattern>
+		<url-pattern>/ResultatenServlet</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -96,7 +96,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ProfielServlet</servlet-name>
-		<url-pattern>/Manager/ProfielServlet</url-pattern>
+		<url-pattern>/ProfielServlet</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>

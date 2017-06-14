@@ -34,7 +34,7 @@ public class CursistServlet extends HttpServlet {
 			
 			if(rol == "Manager"){
 				
-				url="../Manager/Manager_Cursisten.jsp";
+				url="./Manager/Manager_Cursisten.jsp";
 				
 				Persoon p1 = new Persoon(1, "jelle.wiersma@sam.nl", "Jelle", "Wiersma", "../img/cursisten/person1.jpg");
 				Persoon p2 = new Persoon(2, "joukebouwe.punter@sam.nl", " Jouke-Bouwe", "Punter", "../img/cursisten/person2.jpg");
