@@ -7,38 +7,51 @@
 		<div id="links">
 			<div id="menu">
 
-				<a href="../Manager/Manager_Home.jsp" id="Manager_Home"
-					class="menu-link">Home</a>
 
-				<form action="PlanningServlet" method="post">
-					<input type="submit" id="Bedrijf_BedrijfAanmaken" class="menu-link"
+				<form action="HomeServlet" method="post">
+					<input type="submit" id="Beheer_Home" class="menu-link"
+						value="Home">
+						</form>
+						
+				<form action="BedrijfAanmakenServlet" method="post">
+					<input type="submit" id="Beheer_Bedrijf_Aanmaken" class="menu-link"
 						value="Bedrijfs Aanmaken">
-				</form>
+						</form>
 
-				<form action="CursistServlet" method="post">
-					<input type="submit" id="Manager_Cursisten" class="menu-link"
-						value="Manager Aanmaken">
-				</form>
+				<form action="UserAanmaken" method="post">
+					<input type="submit" id="Beheer_User_Toevoegen" class="menu-link"
+						value="User Toevoegen">
+						</form>
 
-				<form action="CursusServlet" method="post">
-					<input type="submit" id="Manager_Cursusaanbod" class="menu-link"
+				<form action="CursusAanmakenServlet" method="post">
+					<input type="submit" id="Beheer_Cursus_Aanmaken" class="menu-link"
+						value="Cursus Toevoegen">
+						</form>
+				
+				<form action="TrainingAanmakenServlet" method="post">
+					<input type="submit" id="Beheer_Training_Aanmaken" class="menu-link"
+						value="Training Toevoegen">
+						</form>
+				
+				<form action="CursusAanmakenServlet" method="post">
+					<input type="submit" id="Beheer_Cursus_Aanmaken" class="menu-link"
 						value="Alle Cursussen">
-				</form>
+						</form>
 
-				<form action="ResultatenServlet" method="post">
-					<input type="submit" id="Manager_Resultaten" class="menu-link"
-						value="Planning">
-				</form>
+				<form action="OpdrachtAanmakenServlet" method="post">
+					<input type="submit" id="Beheer_Opdracht_Aanmaken" class="menu-link"
+						value="Opdracht Toevoegen">
+						</form>
 				
 				<form action="ResultatenServlet" method="post">
-					<input type="submit" id="Manager_Resultaten" class="menu-link"
+					<input type="submit" id="Beheer_Resultaten" class="menu-link"
 						value="Statestiek">
-				</form>
+						</form>
 			
 				<form action="ProfielServlet" method="post">
-					<input type="submit" id="Manager_Bedrijfsprofiel" class="menu-link"
-						value="Profile">
-				</form>
+					<input type="submit" id="Beheer_Profiel" class="menu-link"
+						value="Profiel">
+						</form>
 				
 			</div>
 		</div>
