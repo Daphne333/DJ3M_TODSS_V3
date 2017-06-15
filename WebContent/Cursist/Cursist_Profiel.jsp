@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cursist | Home</title>
+<title>Cursist | Profiel</title>
 </head>
 <body>
 
@@ -39,7 +39,26 @@
 		<!-- inhoud vd pagina komt hier -->
 		<div class="content-container">
 			<div id="content" class="content" >
-				<div class="inner-content" style="background-color: white;"></div>			
+				<div class="inner-content" style="background-color: white;">
+				
+				<label> hier is het mogelijk om je wachtwoord t wijzigen</label>
+				
+				<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
+					<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
+				
+					<label> Geef ook j  wachtwoord op</label>
+					<input type="password" id="pass_old"></input>
+					<input type="text" id="plaats"></input>
+					<input type="text" id="adres"></input>
+					<input type="text" id="huisnummer"></input>
+				</form>
+				
+				
+				
+				
+				
+				
+				</div>			
 			</div>			
 		</div>
 
