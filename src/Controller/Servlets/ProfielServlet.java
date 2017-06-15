@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Model.Service.AccountService;
+import Model.domein.Account;
+
 public class ProfielServlet extends HttpServlet {
 
 	/**
@@ -18,12 +21,71 @@ public class ProfielServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException{
 			
-			System.out.println("sdfyuhgvo");
+		//deze data gebruiken wij als we veranderingen worden aangebracht bij het profiel
+		// op dit moment zal het ng alleen mogelijk zijn om het wachtwoord van het account te wijzigen
+		
+		RequestDispatcher rd = null;	
+
+		Account account = (Account) req.getSession().getAttribute("loginaccount");
+		String rol = account.getRol().toString();
+		String pass = (String) req.getSession().getAttribute("pass");
+		String pass2 = (String) req.getSession().getAttribute("pass_2");
+		
+		//de url waar we naar toe gaan als de functie is afgelopen
+		//deze wordt gzet op basis van jouw rol
+		
+		String url = "";
+		
+		
+		//De Services die worden aangeroepen
+		
+		AccountService c = null;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//valideer de invoer van de 2 wachtwoorden
+		if(pass != pass2 && pass != null && pass2 != null && pass != "" && pass2 != "" ){
+			System.out.println("De ingevoerde wachtwoorde komen niet met elkaar overeen");
+		}
+		else{
+			//acties voor de verschillende rollen
+			switch(rol){
+			case "BEHEERDER":
+				url ="";
+				break;
 			
-			RequestDispatcher rd = null;
-					
-			rd = req.getRequestDispatcher("./Manager/Manager_Bedrijfsprofiel.jsp"); //request komt vanaf de menu-pagina
-			rd.forward(req, resp);
+			case "MANAGER":
+				url = "";
+				
+				break;
+				
+			case "CURSIST":
+				url = "";
+				
+				
+				
+				
+				
+				
+				
+				break;
+				
+			case "DOCENT":
+				url = "";
+				break;
+				
+			}
+			
+		}		
+		
+		rd = req.getRequestDispatcher(url);
+		rd.forward(req, resp);
 			
 		}
 	}
