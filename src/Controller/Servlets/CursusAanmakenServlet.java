@@ -23,26 +23,31 @@ public class CursusAanmakenServlet extends HttpServlet {
 		String cursusnaam = req.getParameter("setCursusNaam");
 		String omschrijving = req.getParameter("setOmschrijving");
 		String cursusPrijsStr = req.getParameter("setPrijs");
-		double cursusPrijs = Double.parseDouble(cursusPrijsStr);
-		// if(cursusPrijsStr.equals("")){
-		// cursusPrijs = Double.parseDouble(cursusPrijsStr);
-		// }
+//		double cursusPrijs = Double.parseDouble(cursusPrijsStr);
+//		if (cursusPrijsStr.equals("")) {
+//			cursusPrijs = Double.parseDouble(cursusPrijsStr);
+//		}
 		String plaatjeURL = req.getParameter("setPlaatjeURL");
-		String url ="";
+		String url = "";
 		RequestDispatcher rd = null;
-		System.out.println(cursusnaam + ""+cursusPrijsStr );
+		System.out.println(cursusnaam + "" + cursusPrijsStr);
 
-		if (!plaatjeURL.equals("") && !cursusnaam.equals("") && !omschrijving.equals("") && !cursusPrijsStr.equals("")) {
-			Cursus cursus = new Cursus(cursusnaam, omschrijving, cursusPrijs, plaatjeURL);
+		if (plaatjeURL != null && cursusnaam != null && omschrijving != null
+				&& cursusPrijsStr != null) {
+			Cursus cursus = new Cursus(cursusnaam, omschrijving, /*cursusPrijs*/ 13.0, plaatjeURL);
 			System.out.println(cursus);
 			cursusService.voegCursusToe(cursus);
 			url = "/Docent/cursusAanmaken.jsp";
-		} else if (!cursusnaam.equals("") && !omschrijving.equals("") && !cursusPrijsStr.equals("")) {
-			Cursus cursus = new Cursus(cursusnaam, omschrijving, cursusPrijs);
+		} else if (cursusnaam != null && omschrijving != null && cursusPrijsStr != null) {
+			Cursus cursus = new Cursus(cursusnaam, omschrijving, /*cursusPrijs*/ 13.0);
 			cursusService.voegCursusToe(cursus);
 			url = "/Docent/cursusAanmaken.jsp";
-			
+
+		} 	 else{
+			url = "/Docent/cursusAanmaken.jsp";
+
 		}
+
 		System.out.println(url);
 		rd = req.getRequestDispatcher(url);
 		System.out.println(rd);

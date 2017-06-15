@@ -48,13 +48,16 @@
 					<form action="TrainingAanmakenServlet" method="post">
 						<label>Trainingnaam: </label> <br> 
 						<input type="text" name="setTrainingNaam" required><br> 
-						<label>Begindatum: </label> 
-						<br> <input type="text" name="setBegindatum" required><br>
-						<label>Einddatum: </label> 
-						<br> <input type="text"	name="setEinddatum" required><br> 
-						<label>Cursus: </label>
-						<br> <input type="text" name="setCursus"><br>
-						<br> <input type="submit" name="toevoegenknop" value="Cursus toevoegen">
+						<label>Begindatum:	</label> <br> 
+						<input type="text" name="setBegindatum" required><br>
+						<label>Einddatum: </label> <br> 
+						<input type="text" name="setEinddatum" required><br> 
+							<label>Cursus: </label> <br> 
+							<input type="text" name="setCursus"><br> 
+						<select	name="listboxCursus" id="listboxCursus" multiple="true">
+						</select> 
+						<input type="submit"> <br> 
+						<input type="submit" name="toevoegenknop" value="Cursus toevoegen">
 					</form>
 				</div>
 
