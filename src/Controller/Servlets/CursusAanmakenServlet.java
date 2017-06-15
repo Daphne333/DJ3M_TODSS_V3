@@ -23,10 +23,8 @@ public class CursusAanmakenServlet extends HttpServlet {
 		String cursusnaam = req.getParameter("setCursusNaam");
 		String omschrijving = req.getParameter("setOmschrijving");
 		String cursusPrijsStr = req.getParameter("setPrijs");
-//		double cursusPrijs = Double.parseDouble(cursusPrijsStr);
-//		if (cursusPrijsStr.equals("")) {
-//			cursusPrijs = Double.parseDouble(cursusPrijsStr);
-//		}
+		double cursusPrijs = 0;
+		
 		String plaatjeURL = req.getParameter("setPlaatjeURL");
 		String url = "";
 		RequestDispatcher rd = null;
@@ -34,12 +32,18 @@ public class CursusAanmakenServlet extends HttpServlet {
 
 		if (plaatjeURL != null && cursusnaam != null && omschrijving != null
 				&& cursusPrijsStr != null) {
-			Cursus cursus = new Cursus(cursusnaam, omschrijving, /*cursusPrijs*/ 13.0, plaatjeURL);
+			if (!cursusPrijsStr.equals("")) {
+				cursusPrijs = Double.parseDouble(cursusPrijsStr);
+			}
+			Cursus cursus = new Cursus(cursusnaam, omschrijving, cursusPrijs, plaatjeURL);
 			System.out.println(cursus);
 			cursusService.voegCursusToe(cursus);
 			url = "/Docent/cursusAanmaken.jsp";
 		} else if (cursusnaam != null && omschrijving != null && cursusPrijsStr != null) {
-			Cursus cursus = new Cursus(cursusnaam, omschrijving, /*cursusPrijs*/ 13.0);
+			if (!cursusPrijsStr.equals("")) {
+				cursusPrijs = Double.parseDouble(cursusPrijsStr);
+			}
+			Cursus cursus = new Cursus(cursusnaam, omschrijving, cursusPrijs);
 			cursusService.voegCursusToe(cursus);
 			url = "/Docent/cursusAanmaken.jsp";
 
