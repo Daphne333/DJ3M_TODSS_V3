@@ -11,27 +11,21 @@
 <body>
 			 	<div id="menu">				
 			 	
-			 		
-			 		<a  href="./Cursist/Cursist_Home.jsp" id="Manager_Home" class="menu-link">Home</a>
-			 		
+			 		<form action="HomeServlet" method="post">
+						<input type="submit" id="Cursist_Home" class="menu-link" value="Home">
+							</form>
+					
 			 		<form action="PlanningServlet" method="post">
-						<input type="submit" id="Manager_Planning" class="menu-link" value="Planning">
+						<input type="submit" id="Cursist_Planning" class="menu-link" value="Planning">
 							</form>
 					
-					<form action="CursistServlet" method="post">
-						<input type="submit" id="Manager_Cursisten" class="menu-link" value="Cursisten">
-							</form>
-							
-					<form action="CursusServlet" method="post">					
-						<input type="submit" id="Manager_Cursusaanbod" class="menu-link" value="Cursusaanbod">
-							</form>	
-					
+
 					<form action="ResultatenServlet" method="post">
-						<input type="submit" id="Manager_Resultaten" class="menu-link" value="Resultaten">
+						<input type="submit" id="Cursist_Resultaten" class="menu-link" value="Resultaten">
 							</form>
 					
 					<form action="ProfielServlet" method="post">
-						<input type="submit" id="Manager_Bedrijfsprofiel" class="menu-link" value="Bedrijfsprofiel">
+						<input type="submit" id="Cursist_Profiel" class="menu-link" value="Profiel">
 							</form>
 					
 									
