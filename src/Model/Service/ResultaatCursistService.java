@@ -1,5 +1,7 @@
 package Model.Service;
 
+import java.util.List;
+
 import Model.domein.ResultaatCursist;
 import dao.ResultaatCursistDAO;
 
@@ -16,6 +18,15 @@ public class ResultaatCursistService {
 		if (r != null) {
 			dao.update(r);
 		}
+	}
+	public List<ResultaatCursist> getResultaten(){
+		return dao.getListResultaatCursist();
+	}
+	public ResultaatCursist getResultaatCursist(int id){
+		if (id != 0){
+		return dao.getResultaatCursistID(id);
+		}
+		return null;
 	}
 }
 	
