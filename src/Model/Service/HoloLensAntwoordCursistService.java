@@ -30,7 +30,7 @@ public class HoloLensAntwoordCursistService {
 				ac.setAccount(as.Login(username, pw));
 				ac.setAntwoord(antwoord);
 				Opdracht op = new Opdracht();
-				op.setVraag("Wat is 1+1");
+				op.setVraag("Wat zijn de veiligheids kenmerken");
 				ac.setOpdracht(op);
 				return true;
 			}else{
