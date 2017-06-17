@@ -33,13 +33,13 @@ public class CursusUitvoeringDAO {
 		session.close();
 	}
 
-	public CursusUitvoeringDAO getCursusUitvoeringByID(int uitvoeringID) {
-		CursusUitvoeringDAO uitvoering = null;
+	public CursusUitvoering getCursusUitvoeringByID(int uitvoeringID) {
+		CursusUitvoering uitvoering = null;
 		connection = session.beginTransaction();
 		String queryString = "from Cursus_uitvoering where uitvoeringID = :uitvoeringID";
 		Query query = session.createQuery(queryString);
 		query.setInteger("uitvoeringID", uitvoeringID);
-		uitvoering = (CursusUitvoeringDAO) query.uniqueResult();
+		uitvoering = (CursusUitvoering) query.uniqueResult();
 		session.flush();
 		session.close();
 		return uitvoering;
