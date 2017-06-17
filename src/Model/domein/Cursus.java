@@ -2,6 +2,9 @@ package Model.domein;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,10 +16,21 @@ public class Cursus {
 	private double CursusPrijs;
 	private String image; // why string? we will use it's filepath to get the image from the server
 
+	
+	
+/*	//deze gebruiken we voor het tonen van data
+	private List<Training> trainingen = new ArrayList<Training>();
+	*/
+	
 	public Cursus() {
 	}
 	
+/*	//deze gebruiken we voor het tonen van data
+	public List<Training> getTrainingen(){
+		return trainingen;
+	}
 	
+	*/
 	public Cursus(String naam, String omschrijving, double prijs){
 		this.setNaam(naam);
 		this.Omschrijving = omschrijving;

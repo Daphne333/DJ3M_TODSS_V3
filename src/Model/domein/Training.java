@@ -1,7 +1,9 @@
 package Model.domein;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -14,9 +16,28 @@ public class Training {
 	private Date eindDatum;
 	private Cursus cursus;
 	private Account account;
+	
+	//deze gebruiken we voor het tonen van data
+
+	private List<Opdracht> opdrachtenlist = new ArrayList<Opdracht>();
+	
 	private Set<Opdracht> opdrachten = new HashSet<Opdracht>();
 	public Training(){
 	}
+	
+	
+	
+/*	//deze gebruiken we voor het tonen van data
+	public List<Opdracht> getOpdrachtenList(){
+		return opdrachtenlist;
+	}
+	*/
+	
+	
+	
+	
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "TrainingID")

@@ -15,7 +15,8 @@ import javax.persistence.Table;
 public class AntwoordCursist {
 
 	private int antwoordCursistID;
-	private String antwoord;
+	private FunctieRol rol;
+	private int antwoord;
 	private Account account;
 	private Opdracht opdracht;
 	public AntwoordCursist() {
@@ -31,10 +32,10 @@ public class AntwoordCursist {
 	}
 	@Column(name = "Antwoord")
 
-	public String getAntwoord() {
+	public int getAntwoord() {
 		return antwoord;
 	}
-	public void setAntwoord(String antwoord) {
+	public void setAntwoord(int antwoord) {
 		this.antwoord = antwoord;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)

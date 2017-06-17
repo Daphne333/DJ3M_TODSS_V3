@@ -13,6 +13,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Cursist | Profiel</title>
+
+<script>
+$(document).ready(function(){
+	$('#profiel-section-wijzig').hide();
+	
+	
+});
+
+</script>
+
 </head>
 <body>
 
@@ -41,17 +51,54 @@
 			<div id="content" class="content" >
 				<div class="inner-content" style="background-color: white;">
 				
-				<label> hier is het mogelijk om je wachtwoord t wijzigen</label>
 				
-				<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
-					<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
+				<div id="profiel-section-gegevens">
+					<form id="wijzig-pass-form" action="">
+						<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
+						
+						<br/><br/>
+						
+						<label>Plaats</label>
+						<input type="text" id="plaats"></input>
+						<label>adres</label>
+						<input type="text" id="adres"></input>
+						<label>huisnummer</label>
+						<input type="text" id="huisnummer"></input>
+						<div id="profiel-wijzig-btn" onclick="changeCursistProfile();">Wijzig</div>		
+						
+					</form>			
+				</div>
 				
-					<label> Geef ook j  wachtwoord op</label>
-					<input type="password" id="pass_old"></input>
-					<input type="text" id="plaats"></input>
-					<input type="text" id="adres"></input>
-					<input type="text" id="huisnummer"></input>
-				</form>
+				
+				
+				
+				
+				<div id="profiel-section-wijzig">
+				
+					<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
+						<label> hier is het mogelijk om je gegevens te wijzigen</label>
+						<div id="profiel-wijzig-btn" onclick="CloseProfileWindow();">Sluiten</div>		
+						<br/><br/>
+					
+						<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
+					
+						<label> Geef ook je  wachtwoord op voor security</label>
+						<br/>
+						<label>Wachtwoord</label>
+						<input type="text" id="pass"></input>
+						<br/>
+						
+						<label>Plaats</label>
+						<input type="text" id="plaats"></input>
+						<label>adres</label>
+						<input type="text" id="adres"></input>
+						<label>huisnummer</label>
+						<input type="text" id="huisnummer"></input>
+					</form>
+				
+				</div>
+				
+				
 				
 				
 				

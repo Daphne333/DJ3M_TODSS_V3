@@ -4,13 +4,17 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Model.domein.Account;
 import Model.domein.FunctieRol;
 
-public class HomeServlet {
+
+@WebServlet("/HomeServlet")
+public class HomeServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -21,13 +25,13 @@ public class HomeServlet {
       	String rol = account.getRol().toString();
       	
       	if (FunctieRol.BEHEERDER.equals(rol)){
-      		url = "/Beheerder/Beheerder_Home.jsp";
+      		url = "Beheerder/Beheerder_Home.jsp";
       	} else if (FunctieRol.CURSIST.equals(rol)){
-      		url = "/Cursist/Cursist_Home";
+      		url = "Cursist/Cursist_Home.jsp";
       	} else if (FunctieRol.DOCENT.equals(rol)){
-      		url = "/Docent/Docent_Home";
+      		url = "Docent/Docent_Home.jsp";
       	} else if (FunctieRol.MANAGER.equals(rol)){
-      		url = "/Manager/Manager_Home";
+      		url = "Manager/Manager_Home.jsp";
       	} 
       		
 		rd = request.getRequestDispatcher(url);

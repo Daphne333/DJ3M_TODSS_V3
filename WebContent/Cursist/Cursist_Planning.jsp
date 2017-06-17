@@ -28,10 +28,12 @@
 		
 			Object msg = request.getAttribute("msg");
 		
-			// dit object moet de informatie bevatten over de gehele planning
-			// dit object is via de servlet en de dao gevalideed in de database
-			// het object is van de eigenaar, degene die is ingeloged
-			Object cursisten = request.getAttribute("cursisten");
+			//cursussen hebben trainingen
+			//we willen de cursusnaam en de alle informatie van de training hebben
+			Object cursussen = request.getAttribute("cursussen");
+			
+
+			
 		%>	
 		</div>
 
@@ -39,25 +41,29 @@
 	<h1 style="text-align: center; margin-top:20px;">PLANNING</h1>
 	
 	
-	
-<!-- 	hier gaan we de opgevraagde gegevens; de planning, verwerken in een tabel-vorm
-	voor elk item dat in de planning zit gaan we de attributen opvragen en
-	in tabel-vorm weergeven -->
-	<div class="tableview" style="background: gray; opacity: .8;">
-			<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
-				<c:forEach var="cursist" items='${cursisten}'>	
-				<tr>
-				
-				<!-- voorbeeld van output: -->
-						<td>${cursist.GetId()}</td>
-						<td>${cursist.GetNaam()}</td>
-						<td>${cursist.GetAchternaam()}</td>
 
-				</tr>
-	 </c:forEach>
-	 </table>
-	</div>
-	</div>
+	
+	<p>Alle trainingen waar jij voor bent aangemeld door jouw Manager zullen hironder worden weergegeven in de tabel</p>
+	
+	
+	<!-- nog even goed kijken naar de methodes van de klassen.. dit zal net kloppen/volledig zijn
+		 ook de klassen nog toevoegen als imports. wss ook arraylist -->
+	
+			<div class="tableview" style="background: gray; opacity: .8;">
+				<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
+					<c:forEach var="cursus" items='${cursussen}'>	
+						<tr>
+							<td>${cursus.getNaam()}</td>							
+								<c:forEach var="training" items='${cursussen.getTrainingen();}'>													
+									<td>${training.GetNaam()}</td>
+									<td>${training.getBegindatum()}</td>
+									<td>${training.getEinddatum()}</td>`														
+								</c:forEach>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
 	</div>
 
 </body>

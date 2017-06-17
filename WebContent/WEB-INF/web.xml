@@ -45,6 +45,26 @@
 		<url-pattern>/CursusAanmakenServlet.do</url-pattern>
 	</servlet-mapping>
 
+
+	<servlet>
+		<servlet-name>UserAanmakenServlet</servlet-name>
+		<servlet-class>Controller.Servlets.UserAanmakenServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserAanmakenServlet</servlet-name>
+		<url-pattern>/UserAanmakenServlet.do</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>HomeServlet</servlet-name>
+		<servlet-class>Controller.Servlets.HomeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HomeServlet</servlet-name>
+		<url-pattern>/HomeServlet.do</url-pattern>
+	</servlet-mapping>
+	
+
 	<!-- ==================================================================================== 
 		CURSISTEN ========================================================================================= -->
 
@@ -97,15 +117,6 @@
 	<servlet-mapping>
 		<servlet-name>ProfielServlet</servlet-name>
 		<url-pattern>/ProfielServlet</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>HomeServlet</servlet-name>
-		<servlet-class>Controller.Servlets.ProfielServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>HomeServlet</servlet-name>
-		<url-pattern>/HomeServlet</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

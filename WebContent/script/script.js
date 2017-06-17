@@ -12,57 +12,11 @@ $(document).ready(function(){
 	  $('#header').load("./standard/header.jsp"); 
 	  /*	  $("#footer").load("../standard/footer.html"); */
 
+	  
+	  
 });
 
 /*end of page startup*/
-
-
-/*============================================================
-	WORDT NIET GEBRUIKT!!!! HET GAAT NU VIA DE SERVER IPV JAVASCRIPT
-	ANDERS KAN ER GEEN DATA WORDEN GETOONT DIE WE UIT DE DATABASE MOETEN HALEN
-============================================================*/
-
-function menuClick(clicked_id){
-		
-	var rolCASE = document.getElementById("rol").value;
-	
-	var rol = "";
-	
-	/*end of animation*/
-	var end ='webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-	
-	
-	switch(rolCASE){
-	case DOCENT:
-		rol="Docent";
-		break;
-	case CURSIST:
-		rol="Cursist";
-		break;
-	case MANAGER:
-		rol="Manager";
-		break;
-	case BEHEERDER:
-		rol="Beheerder";
-		break;
-	}
-	
-	
-	//laden van de content
-	$('#content').load("../" + rol + "/"+ clicked_id + ".jsp");
-	//voeg animatie toe
-	//animation is a random number between 1-4
-/*	RandomAnimation();*/
-	$("#content").addClass('animated fadeInDown').one(end, function(){
-		//verwijder animatie
-		$('#content').removeClass('fadeInDown');
-	});
-}
-
-
-
-
-
 
 /*to set the corresponding menu based on your role*/
 function SetMenu(){
@@ -87,3 +41,13 @@ function SetMenu(){
 	}	
 }
 
+
+
+function changeCursistProfile(){
+	$('#profiel-section-wijzig').fadeIn(1000);
+
+}
+
+function CloseProfileWindow(){
+	$('#profiel-section-wijzig').fadeOut(500);
+}

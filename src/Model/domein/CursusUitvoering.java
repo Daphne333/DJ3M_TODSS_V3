@@ -1,7 +1,9 @@
 package Model.domein;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -25,13 +27,24 @@ public class CursusUitvoering {
 	private Date eindDatum;
 	private int aantalPlaatsen;
 	private Cursus cursus;
-
+	
+/*	//deze gebruiken we
+	private List<Cursus> cursussen = new ArrayList<Cursus>();
+*/
 	private Set<Account> cursisten = new HashSet<Account>();
 	private Set<Account> docenten = new HashSet<Account>();
 	
 	public CursusUitvoering() {
 
 	}
+	
+/*	//deze gebruiken we
+	public List<Cursus> getCursussen(){
+		return cursussen;
+	}
+	*/
+	
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

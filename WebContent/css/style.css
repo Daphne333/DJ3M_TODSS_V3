@@ -240,6 +240,15 @@ ul li:hover ul li{
     background-size: contain;
     background-repeat: no-repeat; */
 }
+.inner-content2{
+	background-color: /* #f9f9f9 */ white; opacity: .9;
+    min-width: 100%;		
+    height: 146vh;
+    text-align: center;
+}
+
+
+
 
 .home-content-body{
 	width: 90%;
@@ -509,6 +518,34 @@ there should be a few more options but non actually worked for me
 				Cursisten
 ============================================================ */
 
+#profiel-section-gegevens{
+
+	width: 100%;
+	height: 45vh;
+	background-color: lightgray;
+	
+}
+
+#profiel-section-wijzig{
+	margin-top: 5px;
+	width: 100%;
+	height: 45vh;
+	background-color: lightgray;
+	
+}
+
+#profiel-wijzig-btn{
+	width: 150px; 
+	height: 50px; 
+	background-color:gray; 
+	color: white; 
+	font-size: 20px;
+}
+#profiel-wijzig-btn:hover{
+	cursor: pointer;
+}
+
+
 
 
 .cursist-profile{
@@ -522,6 +559,25 @@ there should be a few more options but non actually worked for me
 	border: 2px solid black;
 	box-shadow: 3px 3px 3px gray;
 }
+#wijzig-pass-form{
+	
+	width: 50%;
+	height: 45vh;
+	margin-top: 50px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#wijzig-pass-form label{
+	width: 100%;
+	height: 20px;
+}
+
+#wijzig-pass-form input{
+	width: 100%;
+	height: 20px;
+}
+
 
 
 
