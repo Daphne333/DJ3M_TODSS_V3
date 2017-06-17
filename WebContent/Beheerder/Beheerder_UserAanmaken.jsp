@@ -55,7 +55,8 @@
 							</tr>
 							<tr>
 								<td>Herhaal wachtwoord</td>
-								<td><input type="password" id="herhaalPassword" name="herhaalPassword" SIZE="30"></td>
+								<td><input type="password" id="herhaalPassword"
+									name="herhaalPassword" SIZE="30"></td>
 							</tr>
 							<tr>
 								<td>Kies een rol :</td>
@@ -125,8 +126,11 @@
 										%>
 								</select></td>
 							</tr>
-
 						</table>
+
+						<br> <input type="submit" name="User Toevoegen"
+							value="User toevoegen">
+
 					</form>
 				</div>
 			</div>
