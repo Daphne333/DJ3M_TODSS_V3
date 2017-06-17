@@ -30,7 +30,6 @@ public class PersoonDAO {
 		connection = session.beginTransaction();
 		session.save(persoon);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(Persoon persoon) {
@@ -38,7 +37,6 @@ public class PersoonDAO {
 		connection = session.beginTransaction();
 		session.update(persoon);
 		session.getTransaction();
-		session.close();
 	}
 
 	public Persoon getPersoonByID(int id) {
@@ -56,6 +54,7 @@ public class PersoonDAO {
 		 * } catch (RuntimeException e) { e.printStackTrace(); } finally {
 		 * session.flush(); session.close(); }
 		 */
+		session.flush();
 		return persoon;
 	}
 
@@ -69,6 +68,7 @@ public class PersoonDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("chef", chef);
 		personen = query.list();
+		session.flush();
 		return personen;
 	}
 
@@ -77,6 +77,7 @@ public class PersoonDAO {
 		List<Persoon> personen = new ArrayList<Persoon>();
 		connection = session.beginTransaction();
 		personen = session.createQuery("From Persoon").list();
+		session.flush();
 		return personen;
 	}
 
@@ -88,6 +89,7 @@ public class PersoonDAO {
 		Query query = session.createQuery(queryString);
 		query.setString("rol", rol);
 		accounts = query.list();
+		session.flush();
 		return accounts;
 	}
 	public List<Persoon> getManagersBijBedrijf(int bedrijfID) {
@@ -98,6 +100,7 @@ public class PersoonDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("bedrijfID", bedrijfID);
 		personen = query.list();
+		session.flush();
 		return personen;
 	}
 
@@ -109,6 +112,7 @@ public class PersoonDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("id", id);
 		persoon = (Persoon) query.uniqueResult();
+		session.flush();
 		return persoon;
 	}
 }

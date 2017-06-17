@@ -27,7 +27,6 @@ public class ResultaatCursistDAO {
 		connection = session.beginTransaction();
 		session.save(result);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(ResultaatCursist result) {
@@ -35,7 +34,6 @@ public class ResultaatCursistDAO {
 		connection = session.beginTransaction();
 		session.update(result);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public ResultaatCursist getResultaatCursistID(int id) {
@@ -46,6 +44,7 @@ public class ResultaatCursistDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("personID", id);
 		result = (ResultaatCursist) query.uniqueResult();
+		session.flush();
 		return result;
 	}
 
@@ -54,6 +53,7 @@ public class ResultaatCursistDAO {
 		List<ResultaatCursist> resultaten = new ArrayList<ResultaatCursist>();
 		connection = session.beginTransaction();
 		resultaten = session.createQuery("From ResultaatCursist").list();
+		session.flush();
 		return resultaten;
 	}
 

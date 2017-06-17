@@ -28,7 +28,6 @@ public class BedrijfDAO {
 		connection = session.beginTransaction();
 		session.save(bedrijf);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(Bedrijf bedrijf) {
@@ -36,7 +35,6 @@ public class BedrijfDAO {
 		connection = session.beginTransaction();
 		session.update(bedrijf);
 		session.getTransaction();
-		session.close();
 	}
 
 	public Bedrijf getBedrijfBijNaam(String bedrijfsnaam) {
@@ -47,6 +45,7 @@ public class BedrijfDAO {
 		Query query = session.createQuery(queryString);
 		query.setString("bedrijfsnaam", bedrijfsnaam);
 		bedrijf = (Bedrijf) query.uniqueResult();
+		session.flush();
 		return bedrijf;
 	}
 
@@ -55,6 +54,7 @@ public class BedrijfDAO {
 		List<Bedrijf> bedrijven = new ArrayList<Bedrijf>();
 		connection = session.beginTransaction();
 		bedrijven = session.createQuery("From Bedrijf").list();
+		session.flush();
 		return bedrijven;
 	}
 

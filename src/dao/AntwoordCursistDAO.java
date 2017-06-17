@@ -27,7 +27,6 @@ public class AntwoordCursistDAO {
 		connection = session.beginTransaction();
 		session.save(antwoordCursist);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(AntwoordCursist antwoordCursist) {
@@ -35,7 +34,6 @@ public class AntwoordCursistDAO {
 		connection = session.beginTransaction();
 		session.update(antwoordCursist);
 		session.getTransaction();
-		session.close();
 	}
 
 	public AntwoordCursist getAntwoordCursistByID(int antwoordCursistID) {
@@ -46,6 +44,7 @@ public class AntwoordCursistDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("antwoordCursistID", antwoordCursistID);
 		antwoordCursist = (AntwoordCursist) query.uniqueResult();
+		session.flush();
 		return antwoordCursist;
 	}
 
@@ -54,6 +53,7 @@ public class AntwoordCursistDAO {
 		List<AntwoordCursist> antwoordCursist = new ArrayList<AntwoordCursist>();
 		connection = session.beginTransaction();
 		antwoordCursist = session.createQuery("From Antwoord_Cursist").list();
+		session.flush();
 		return antwoordCursist;
 	}
 

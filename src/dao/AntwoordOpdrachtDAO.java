@@ -27,7 +27,6 @@ public class AntwoordOpdrachtDAO {
 		connection = session.beginTransaction();
 		session.save(antwoordOpdracht);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(AntwoordOpdracht antwoordOpdracht) {
@@ -35,7 +34,6 @@ public class AntwoordOpdrachtDAO {
 		connection = session.beginTransaction();
 		session.update(antwoordOpdracht);
 		session.getTransaction();
-		session.close();
 	}
 
 	public AntwoordOpdracht getAntwoordOpdrachtByID(int antwoordOpdrachtID) {
@@ -46,6 +44,7 @@ public class AntwoordOpdrachtDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("antwoordOpdrachtID", antwoordOpdrachtID);
 		antwoordOpdracht = (AntwoordOpdracht) query.uniqueResult();
+		session.flush();
 		return antwoordOpdracht;
 	}
 
@@ -54,6 +53,7 @@ public class AntwoordOpdrachtDAO {
 		List<AntwoordOpdracht> antwoordOpdracht = new ArrayList<AntwoordOpdracht>();
 		connection = session.beginTransaction();
 		antwoordOpdracht = session.createQuery("From Antwoord_Opdracht").list();
+		session.flush();
 		return antwoordOpdracht;
 	}
 

@@ -27,7 +27,6 @@ public class TrainingDAO {
 		connection = session.beginTransaction();
 		session.save(training);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(Training training) {
@@ -35,7 +34,6 @@ public class TrainingDAO {
 		connection = session.beginTransaction();
 		session.update(training);
 		session.getTransaction();
-		session.close();
 	}
 
 	public Training getTrainingByID(int trainingID) {
@@ -46,7 +44,7 @@ public class TrainingDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("trainingID", trainingID);
 		result = (Training) query.uniqueResult();
-		session.close();
+		session.flush();
 		return result;
 	}
 
@@ -55,7 +53,7 @@ public class TrainingDAO {
 		List<Training> trainingen = new ArrayList<Training>();
 		connection = session.beginTransaction();
 		trainingen = session.createQuery("From Training").list();
-		session.close();
+		session.flush();
 		return trainingen;
 	}
 }

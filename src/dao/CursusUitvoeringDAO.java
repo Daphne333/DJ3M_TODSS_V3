@@ -27,7 +27,6 @@ public class CursusUitvoeringDAO {
 		connection = session.beginTransaction();
 		session.save(uitvoering);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(CursusUitvoering uitvoering) {
@@ -35,7 +34,6 @@ public class CursusUitvoeringDAO {
 		connection = session.beginTransaction();
 		session.update(uitvoering);
 		session.getTransaction();
-		session.close();
 	}
 
 	public CursusUitvoering getCursusUitvoeringByID(int uitvoeringID) {
@@ -46,6 +44,7 @@ public class CursusUitvoeringDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("uitvoeringID", uitvoeringID);
 		uitvoering = (CursusUitvoering) query.uniqueResult();
+		session.flush();
 		return uitvoering;
 	}
 
@@ -54,6 +53,7 @@ public class CursusUitvoeringDAO {
 		List<CursusUitvoering> alleUitvoeringen = new ArrayList<CursusUitvoering>();
 		connection = session.beginTransaction();
 		alleUitvoeringen = session.createQuery("From Cursus").list();
+		session.flush();
 		return alleUitvoeringen;
 	}
 }
