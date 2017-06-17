@@ -28,9 +28,9 @@ public class CursusUitvoering {
 	private int aantalPlaatsen;
 	private Cursus cursus;
 	
-	//deze gebruiken we
+/*	//deze gebruiken we
 	private List<Cursus> cursussen = new ArrayList<Cursus>();
-
+*/
 	private Set<Account> cursisten = new HashSet<Account>();
 	private Set<Account> docenten = new HashSet<Account>();
 	
@@ -38,11 +38,11 @@ public class CursusUitvoering {
 
 	}
 	
-	//deze gebruiken we
+/*	//deze gebruiken we
 	public List<Cursus> getCursussen(){
 		return cursussen;
 	}
-	
+	*/
 	
 	
 

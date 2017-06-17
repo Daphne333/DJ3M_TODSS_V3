@@ -36,21 +36,21 @@ public class Account {
 	private int accountID;
 	
 	
-	//deze gebruiken we voor het tonen vd data
+/*	//deze gebruiken we voor het tonen vd data
 	private List<CursusUitvoering> cursusUitvoeringen = new ArrayList<CursusUitvoering>();
-	
+	*/
 	private Set<CursusUitvoering> uitvoeringen = new HashSet<CursusUitvoering>();
 	private Set<CursusUitvoering> geeftCursus = new HashSet<CursusUitvoering>();
 
 	public Account(){
 		
 	}
-	//deze gebruiken we voor het tonen vd data
+/*	//deze gebruiken we voor het tonen vd data
 	public List<CursusUitvoering> getCursusUitvoeringen(){
 		return cursusUitvoeringen;
 	}
 	
-	
+	*/
 	
 	
 	

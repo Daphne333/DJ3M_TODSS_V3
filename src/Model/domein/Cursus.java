@@ -18,19 +18,19 @@ public class Cursus {
 
 	
 	
-	//deze gebruiken we voor het tonen van data
+/*	//deze gebruiken we voor het tonen van data
 	private List<Training> trainingen = new ArrayList<Training>();
-	
+	*/
 	
 	public Cursus() {
 	}
 	
-	//deze gebruiken we voor het tonen van data
+/*	//deze gebruiken we voor het tonen van data
 	public List<Training> getTrainingen(){
 		return trainingen;
 	}
 	
-	
+	*/
 	public Cursus(String naam, String omschrijving, double prijs){
 		this.setNaam(naam);
 		this.Omschrijving = omschrijving;

@@ -19,11 +19,11 @@ public class Opdracht {
 	private int opdrachtID;
 	private String vraag;
 	
-	//deze gebruiken we voor het tonen van data
+/*	//deze gebruiken we voor het tonen van data
 	private List<AntwoordCursist> cursistAntwoorden = new ArrayList<AntwoordCursist>();
 	private List<AntwoordOpdracht> opdrachtAntwoorden = new ArrayList<AntwoordOpdracht>();
 	
-	
+	*/
 	private Set<Training> trainingen = new HashSet<Training>();
 	
 	
@@ -35,7 +35,7 @@ public class Opdracht {
 	}
 	
 	
-	
+/*	
 	//deze gebruiken we voor het tonen van data
 	public List<AntwoordCursist> getCursistAntworden(){
 		return cursistAntwoorden;
@@ -46,7 +46,7 @@ public class Opdracht {
 	}
 	
 	
-	
+	*/
 	
 	
 	public void setVraag(String vraag) {

@@ -535,9 +535,9 @@ there should be a few more options but non actually worked for me
 	
 	width: 50%;
 	height: 45vh;
+	margin-top: 50px;
 	margin-left: auto;
-	margin-left: auto;
-	margin-top: 50px;	
+    margin-right: auto;
 }
 
 #wijzig-pass-form label{

@@ -18,26 +18,6 @@ public class AccountService {
 		Account a = dao.getAccountByUsername(username);
 		if(a != null){
 			if(pwh.authenticate(password, a.getPassword(), a.getSalt())){
-				
-				// hier gaan we het accountobject vullen met alle andere data die bekent is bij deze persoon.
-				// dit gaan we doen met alle andere services die op hun beurt ook de data uit de database halen.
-	
-				//account
-				// --> cursusuitvoeringen
-				// ----> cursussen
-				//--------> trainingen
-				// -----------> opdrachten
-				// ---------------->antwoorden-opdracht
-				// ---------------->antwoorden-cursist
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				return a;
 			}else{
 				return null;

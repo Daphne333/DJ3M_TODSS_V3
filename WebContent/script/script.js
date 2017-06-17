@@ -12,6 +12,22 @@ $(document).ready(function(){
 	  $('#header').load("./standard/header.jsp"); 
 	  /*	  $("#footer").load("../standard/footer.html"); */
 
+	  
+	  
+	 //bij het laden van de pagina met persoonsgegevens van cursist waar je kan wijzigen
+	  $('#profiel-btn').click(function(){
+		 $('#profiel-section-gegevens').hide();
+		 $('#profiel-section-wijzig').fadeIn(1000);
+	  });
+	  
+	  //bij het laden van profielpagina
+	  $('#Cursist_Profiel').click(function(){
+		  $('#profiel-section-wijzig').hide();
+		  $('#profiel-section-gegevens').fadeIn(1000);
+
+	  });
+	  
+	  
 });
 
 /*end of page startup*/

@@ -27,11 +27,11 @@ public class Training {
 	
 	
 	
-	//deze gebruiken we voor het tonen van data
+/*	//deze gebruiken we voor het tonen van data
 	public List<Opdracht> getOpdrachtenList(){
 		return opdrachtenlist;
 	}
-	
+	*/
 	
 	
 	

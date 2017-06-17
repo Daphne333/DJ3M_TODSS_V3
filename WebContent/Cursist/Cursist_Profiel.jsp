@@ -41,17 +41,46 @@
 			<div id="content" class="content" >
 				<div class="inner-content" style="background-color: white;">
 				
-				<label> hier is het mogelijk om je wachtwoord t wijzigen</label>
 				
-				<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
-					<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
+				<div id="profiel-section-gegevens">
+					<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
+						<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
+						
+						<label>naam</label>
+						<label>Plaats</label>
+						<input type="text" id="plaats"></input>
+						<label>adres</label>
+						<input type="text" id="adres"></input>
+						<label>huisnummer</label>
+						<input type="text" id="huisnummer"></input>
+					</form>
+					
+					<input type="submit" id="profiel-btn"> Wijzig</input>
+				</div>
 				
-					<label> Geef ook je  wachtwoord op</label>
-					<input type="password" id="pass_old"></input>
-					<input type="text" id="plaats"></input>
-					<input type="text" id="adres"></input>
-					<input type="text" id="huisnummer"></input>
-				</form>
+				
+				
+				
+				
+				<div id="profiel-section-wijzig">
+					<label> hier is het mogelijk om je gegevens te wijzigen</label>
+				
+					<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
+						<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
+					
+						<label> Geef ook je  wachtwoord op</label>
+						<br/>
+						<label>Plaats</label>
+						<input type="text" id="plaats"></input>
+						<label>adres</label>
+						<input type="text" id="adres"></input>
+						<label>huisnummer</label>
+						<input type="text" id="huisnummer"></input>
+					</form>
+				
+				</div>
+				
+				
 				
 				
 				
