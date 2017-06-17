@@ -9,4 +9,19 @@ public enum FunctieRol {
 				return functieRol;
 		return null;
 	}
+	public FunctieRol getFunctieRole(String functie){
+		FunctieRol rol = null;
+		if(functie.equals("")){
+			if(functie.equalsIgnoreCase("CURSIST")){
+				rol = FunctieRol.CURSIST;
+			} else if (functie.equalsIgnoreCase("DOCENT")){
+				rol = FunctieRol.DOCENT;
+			} else if (functie.equalsIgnoreCase("BEHEERDER")){
+				rol = FunctieRol.BEHEERDER;
+			} else if (functie.equalsIgnoreCase("MANAGER")){
+				rol = FunctieRol.MANAGER;
+			}
+		} 
+		return rol;
+	}
 }

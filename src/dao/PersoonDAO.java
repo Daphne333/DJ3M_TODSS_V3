@@ -65,7 +65,10 @@ public class PersoonDAO {
 		List<Persoon> personen = new ArrayList<Persoon>();
 
 		connection = session.beginTransaction();
-		personen = session.createQuery("From Persoon where bedrijfID = :bedrijfID").list();
+		Query query = session.createQuery("From Persoon where bedrijfID = :bedrijfID");
+		query.setInteger("bedrijfID", bedrijfID);
+		//personen = (Persoon) query.qu.list();
+		
 
 		return personen;
 	}

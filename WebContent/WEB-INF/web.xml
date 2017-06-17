@@ -45,6 +45,17 @@
 		<url-pattern>/CursusAanmakenServlet.do</url-pattern>
 	</servlet-mapping>
 
+
+	<servlet>
+		<servlet-name>UserAanmakenServlet</servlet-name>
+		<servlet-class>Controller.Servlets.UserAanmakenServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserAanmakenServlet</servlet-name>
+		<url-pattern>/UserAanmakenServlet.do</url-pattern>
+	</servlet-mapping>
+	
+
 	<!-- ==================================================================================== 
 		CURSISTEN ========================================================================================= -->
 

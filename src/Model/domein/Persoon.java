@@ -40,6 +40,21 @@ public class Persoon {
 		this.achternaam =achternaam;
 		this.image = imageFilePath;
 	}
+	//persoon object zonder null waardes voor register.
+	public Persoon(String email, String naam, String achternaam,Date geboorteDatum, String telefoonnummer, String straatnaam, int huisnummer, String postcode, String plaats, int bsnnummer,
+			Bedrijf bedrijf){
+			this.email = email;
+			this.naam = naam;
+			this.achternaam = achternaam;
+			this.geboortedatum = geboorteDatum;
+			this.telefoonnummer = telefoonnummer;
+			this.straatnaam = straatnaam;
+			this.huisnummer = huisnummer;
+			this.postcode = postcode;
+			this.plaats = plaats;
+			this.bsnnummer = bsnnummer;
+			this.bedrijfID = bedrijf;
+	}
 	
 	//als je zelf chef bent
 	public Persoon(String email, String password, String naam, String tussenvoegsel, String achternaam,

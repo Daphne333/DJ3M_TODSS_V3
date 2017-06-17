@@ -45,7 +45,7 @@ public class ResultaatCursistDAO {
 	public List<ResultaatCursist> getListResultaatCursist() {
 		List<ResultaatCursist> resultaten = new ArrayList<ResultaatCursist>();
 		connection = session.beginTransaction();
-		resultaten = session.createQuery("From Resultaat_Cursist").list();
+		resultaten = session.createQuery("From ResultaatCursist").list();
 
 		return resultaten;
 	}
