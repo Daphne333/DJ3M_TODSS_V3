@@ -8,6 +8,10 @@ import dao.BedrijfDAO;
 public class BedrijfService {
 	BedrijfDAO dao = new BedrijfDAO();
 	
+	public BedrijfService(){
+		
+	}
+	
 	public void maakBedrijfAan(Bedrijf b) {
 		if (b != null) {
 			dao.create(b);

@@ -6,6 +6,10 @@ import dao.AntwoordOpdrachtDAO;
 public class AntwoordOpdrachtService {
 
 	AntwoordOpdrachtDAO dao = new AntwoordOpdrachtDAO();
+	
+	public AntwoordOpdrachtService(){
+		
+	}
 
 	public void maakAntwoordOpdrachtAan(AntwoordOpdracht a) {
 		if (a != null) {

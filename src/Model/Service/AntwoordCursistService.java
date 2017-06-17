@@ -6,6 +6,10 @@ import dao.AntwoordCursistDAO;
 public class AntwoordCursistService {
 
 	AntwoordCursistDAO dao = new AntwoordCursistDAO();
+	
+	public AntwoordCursistService(){
+		
+	}
 
 	public void maakAntwoordCursistAan(AntwoordCursist a) {
 		if (a != null) {
