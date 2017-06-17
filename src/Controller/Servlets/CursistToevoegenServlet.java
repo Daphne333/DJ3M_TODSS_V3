@@ -141,7 +141,7 @@ public class CursistToevoegenServlet extends HttpServlet{
 				
 				
 				@SuppressWarnings("static-access")
-				AccountService ac = sp.getAccountService();
+				AccountService ac = sp.getAccount();
 				try {
 					ac.Register(p, naam + "01", password, FunctieRol.CURSIST);                // wachtwoord generator???
 				} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {

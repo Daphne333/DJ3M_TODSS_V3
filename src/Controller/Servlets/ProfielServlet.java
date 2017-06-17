@@ -79,8 +79,8 @@ public class ProfielServlet extends HttpServlet {
 		
 		//De Services die worden aangeroepen		
 		ServiceProvider sp = new ServiceProvider();		
-		AccountService ac = sp.getAccountService();
-		PersoonService ps = sp.getPersoonService();
+		AccountService ac = sp.getAccount();
+		PersoonService ps = sp.getPersoon();
 		
 		
 		

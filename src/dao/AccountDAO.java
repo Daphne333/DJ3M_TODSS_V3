@@ -53,7 +53,10 @@ public class AccountDAO {
 	public List<Account> getListAccountBijRol(String rol) {
 		List<Account> accounts = new ArrayList<Account>();
 		connection = session.beginTransaction();
-		accounts = session.createQuery("from Persoon where rol = :rol").list();
+		String queryString = "from Account where rol = :rol";
+		Query query = session.createQuery(queryString);
+		query.setString("rol", rol);
+		accounts = query.list();
 		return accounts;
 	}
 

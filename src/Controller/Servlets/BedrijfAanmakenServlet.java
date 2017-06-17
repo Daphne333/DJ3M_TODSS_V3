@@ -20,7 +20,7 @@ public class BedrijfAanmakenServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private PersoonService personalService = ServiceProvider.getPersoonService();
+	private PersoonService personalService = ServiceProvider.getPersoon();
 
 	private BedrijfService bedrijfService = ServiceProvider.getBedrijf();
 	

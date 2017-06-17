@@ -15,14 +15,6 @@ public class ServiceProvider {
 	private static ResultaatCursistService ResultaatCursist = new ResultaatCursistService();
 	private static TrainingService Training = new TrainingService();
 
-	public static AccountService getAccountService() {
-		return Account;
-	}
-
-	public static PersoonService getPersoonService() {
-		return Persoon;
-	}
-
 	public static AccountService getAccount() {
 		return Account;
 	}
