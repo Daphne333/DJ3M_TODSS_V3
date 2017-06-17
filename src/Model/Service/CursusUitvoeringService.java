@@ -5,6 +5,10 @@ import dao.CursusUitvoeringDAO;
 
 public class CursusUitvoeringService {
 	CursusUitvoeringDAO dao = new CursusUitvoeringDAO();
+	
+	public CursusUitvoeringService(){
+		
+	}
 
 	public void maakCursusUitvoeringAan(CursusUitvoering c) {
 		if (c != null) {

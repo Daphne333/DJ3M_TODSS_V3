@@ -5,48 +5,55 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 import Model.domein.ResultaatCursist;
 import util.HibernateUtil;
 
 public class ResultaatCursistDAO {
 
+	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 	Session session = HibernateUtil.getSessionFactory().openSession();
 	Transaction connection = null;
 
-	public void create(ResultaatCursist result) {
+	public ResultaatCursistDAO() {
 
+	}
+
+	public void create(ResultaatCursist result) {
+		session = sessionFactory.getCurrentSession();
 		connection = session.beginTransaction();
 		session.save(result);
 		session.getTransaction().commit();
-
+		session.close();
 	}
 
 	public void update(ResultaatCursist result) {
-
+		session = sessionFactory.getCurrentSession();
 		connection = session.beginTransaction();
 		session.update(result);
-		session.getTransaction();
-
+		session.getTransaction().commit();
+		session.close();
 	}
 
 	public ResultaatCursist getResultaatCursistID(int id) {
+		session = sessionFactory.getCurrentSession();
 		ResultaatCursist result = null;
 		connection = session.beginTransaction();
 		String queryString = "from Resultaat_Cursist where resultaatID = :id";
 		Query query = session.createQuery(queryString);
 		query.setInteger("personID", id);
 		result = (ResultaatCursist) query.uniqueResult();
-
 		return result;
 	}
 
 	public List<ResultaatCursist> getListResultaatCursist() {
+		session = sessionFactory.getCurrentSession();
 		List<ResultaatCursist> resultaten = new ArrayList<ResultaatCursist>();
 		connection = session.beginTransaction();
 		resultaten = session.createQuery("From ResultaatCursist").list();
-
 		return resultaten;
 	}
 
