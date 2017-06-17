@@ -13,6 +13,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Cursist | Profiel</title>
+
+<script>
+$(document).ready(function(){
+	$('#profiel-section-wijzig').hide();
+	
+	
+});
+
+</script>
+
 </head>
 <body>
 
@@ -43,19 +53,20 @@
 				
 				
 				<div id="profiel-section-gegevens">
-					<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
+					<form id="wijzig-pass-form" action="">
 						<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
 						
-						<label>naam</label>
+						<br/><br/>
+						
 						<label>Plaats</label>
 						<input type="text" id="plaats"></input>
 						<label>adres</label>
 						<input type="text" id="adres"></input>
 						<label>huisnummer</label>
 						<input type="text" id="huisnummer"></input>
-					</form>
-					
-					<input type="submit" id="profiel-btn"> Wijzig</input>
+						<div id="profiel-wijzig-btn" onclick="changeCursistProfile();">Wijzig</div>		
+						
+					</form>			
 				</div>
 				
 				
@@ -63,13 +74,20 @@
 				
 				
 				<div id="profiel-section-wijzig">
-					<label> hier is het mogelijk om je gegevens te wijzigen</label>
 				
 					<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
+						<label> hier is het mogelijk om je gegevens te wijzigen</label>
+						<div id="profiel-wijzig-btn" onclick="CloseProfileWindow();">Sluiten</div>		
+						<br/><br/>
+					
 						<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
 					
-						<label> Geef ook je  wachtwoord op</label>
+						<label> Geef ook je  wachtwoord op voor security</label>
 						<br/>
+						<label>Wachtwoord</label>
+						<input type="text" id="pass"></input>
+						<br/>
+						
 						<label>Plaats</label>
 						<input type="text" id="plaats"></input>
 						<label>adres</label>
