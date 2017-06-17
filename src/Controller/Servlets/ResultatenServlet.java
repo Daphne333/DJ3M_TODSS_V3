@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Model.Service.AccountService;
+import Model.Service.CursusService;
 import Model.Service.ResultaatCursistService;
 import Model.Service.ServiceProvider;
 import Model.domein.Account;
@@ -31,25 +32,18 @@ public class ResultatenServlet extends HttpServlet {
 		RequestDispatcher rd = null;
 		Account account = (Account) req.getSession().getAttribute("loginaccount");
 		String rol = account.getRol().toString();
-		String pass = (String) req.getSession().getAttribute("pass");
-		String pass2 = (String) req.getSession().getAttribute("pass_2");
+
 
 		ServiceProvider service = new ServiceProvider();
 		ResultaatCursistService Res = service.getResultaatCursist();
 
 		// de url waar we naar toe gaan als de functie is afgelopen
 		// deze wordt gzet op basis van jouw rol
-
 		String url = "";
 
 		// De Services die worden aangeroepen
-
 		AccountService c = null;
 
-		// valideer de invoer van de 2 wachtwoorden
-		if (pass != pass2 && pass != null && pass2 != null && pass != "" && pass2 != "") {
-			System.out.println("De ingevoerde wachtwoorde komen niet met elkaar overeen");
-		} else {
 			// acties voor de verschillende rollen
 			switch (rol) {
 			case "BEHEERDER":
@@ -74,15 +68,37 @@ public class ResultatenServlet extends HttpServlet {
 
 			case "CURSIST":
 				url = ".Cursist/Cursist_Resultaten.jsp";
-				int Cursistid = account.getPersoonID().getPersonID();
+				/*int Cursistid = account.getPersoonID().getPersonID();
 				List<ResultaatCursist> C_l = Res.getResultaten();
 				for (int i = 0; i <= C_l.size(); i++) {
 					int resultaat_Cursistid = C_l.get(i).getAntwoordcursist().getAccount().getPersoonID().getPersonID();
 					if (Cursistid == resultaat_Cursistid) {
 						lijst.add(C_l.get(i));
-					}
+					}*/
+				
+				//account
+				// --> cursusuitvoeringen
+				// ----> cursussen
+				//--------> trainingen
+				// -----------> opdrachten
+				// ---------------->antwoorden-opdracht
+				// ---------------->antwoorden-cursist
+				
+				
+				
+				CursusService cs = new CursusService();
+				req.getSession().setAttribute("cursussen", cs.getAlleCursussen());
+				
+				
+				
+				
+				
+				
+				
+				
+				
 					req.getSession().setAttribute("Resultaten", lijst);
-				}
+				
 				break;
 
 			case "DOCENT":
@@ -113,7 +129,7 @@ public class ResultatenServlet extends HttpServlet {
 				break;
 
 			}
-		}
+		
 
 		rd = req.getRequestDispatcher(url);
 

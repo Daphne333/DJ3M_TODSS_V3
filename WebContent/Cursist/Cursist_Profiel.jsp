@@ -46,7 +46,7 @@
 				<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
 					<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
 				
-					<label> Geef ook j  wachtwoord op</label>
+					<label> Geef ook je  wachtwoord op</label>
 					<input type="password" id="pass_old"></input>
 					<input type="text" id="plaats"></input>
 					<input type="text" id="adres"></input>
