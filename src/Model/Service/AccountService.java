@@ -12,6 +12,10 @@ import util.PasswordHandler;
 
 public class AccountService {
 	AccountDAO accDao = new AccountDAO();
+	
+	public AccountService(){
+		
+	}
 	public Account Login(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		PasswordHandler pwh = new PasswordHandler();
 		AccountDAO dao = new AccountDAO();

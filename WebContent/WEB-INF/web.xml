@@ -19,12 +19,12 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>BedrijfAanmaken</servlet-name>
+		<servlet-name>BedrijfAanmakenServlet</servlet-name>
 		<servlet-class>Controller.Servlets.BedrijfAanmakenServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>BedrijfAanmaken</servlet-name>
-		<url-pattern>/BedrijfAanmaken.do</url-pattern>
+		<servlet-name>BedrijfAanmakenServlet</servlet-name>
+		<url-pattern>/BedrijfAanmakenServlet.do</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -54,8 +54,8 @@
 		<servlet-name>UserAanmakenServlet</servlet-name>
 		<url-pattern>/UserAanmakenServlet.do</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>HomeServlet</servlet-name>
 		<servlet-class>Controller.Servlets.HomeServlet</servlet-class>
 	</servlet>
@@ -63,7 +63,16 @@
 		<servlet-name>HomeServlet</servlet-name>
 		<url-pattern>/HomeServlet.do</url-pattern>
 	</servlet-mapping>
-	
+
+	<servlet>
+		<servlet-name>TrainingAanmakenServlet</servlet-name>
+		<servlet-class>Controller.Servlets.TrainingAanmakenServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TrainingAanmakenServlet</servlet-name>
+		<url-pattern>/TrainingAanmakenServlet.do</url-pattern>
+	</servlet-mapping>
+
 
 	<!-- ==================================================================================== 
 		CURSISTEN ========================================================================================= -->

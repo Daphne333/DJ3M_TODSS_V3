@@ -114,7 +114,7 @@ public class UserAanmakenServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			url = "/Beheerder/Beheerder_TrainingAanmaken.jsp";
+			url = "/Beheerder/Beheerder_Home.jsp";
 		} else {
 			alleBedrijven = bedrijfService.getBedrijven();
 			session = request.getSession();

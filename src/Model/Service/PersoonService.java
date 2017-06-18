@@ -11,6 +11,10 @@ import dao.PersoonDAO;
 
 public class PersoonService {
 	PersoonDAO perDao = new PersoonDAO();
+	
+	public PersoonService(){
+		
+	}
 
 	public void Register(Persoon p) {
 		if (p != null) {

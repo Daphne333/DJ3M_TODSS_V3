@@ -23,7 +23,7 @@
 <body>
 
 	<%
-		List<Account> alleDocenten = (List<Account>) request.getSession().getAttribute("alleDocenten");
+		List<Cursus> cursusNamen = (List<Cursus>) request.getSession().getAttribute("alleCursussen");
 	%>
 
 	<div id="header" class="header"></div>
@@ -44,37 +44,24 @@
 					<form method="post" action="TrainingAanmakenServlet.do">
 						<table cellspacing="2" cellpadding="2" border="0">
 							<tr>
-								<td>Trainingnaam :</td>
-								<td><input type="text" id="Trainingnaam"
-									name="Trainingnaam" SIZE="30"><br></td>
+								<td>Cursusnaam :</td>
+								<td><input type="text" id="cursusNaam"
+									name="cursusNaam" SIZE="30"><br></td>
 							</tr>
 							<tr>
-								<td>Begindatum :</td>
-								<td><input type="date" id="Begindatum" name="Begindatum"
+								<td>Omschrijving :</td>
+								<td><input type="text" id="omschrijving" name="omschrijving"
 									SIZE="30"><br></td>
 							</tr>
 							<tr>
-								<td>Einddatum :</td>
-								<td><input type="date" id="Einddatum" name="Einddatum"
+								<td>CursusPrijs :</td>
+								<td><input type="text" id="cursusPrijs" name="cursusPrijs"
 									SIZE="30"></td>
-							</tr>
-							<tr>
-								<td>Kies een cursus :</td>
-								<td><select name="cursusNaam">
-										<%
-											for (Account docent : alleDocenten) {
-												
-										%>
-										<option value="<%=docent.getUsername()%>"><%=docent.getUsername()%></option>
-										<%
-											}
-										%>
-								</select></td>
 							</tr>
 						</table>
 
-						<br> <input type="submit" name="Training toevoegen"
-							value="Training toevoegen">
+						<br> <input type="submit" name="User Toevoegen"
+							value="User toevoegen">
 						<form method="post" action="HomeServlet.do">
 							<br> <input type="submit" name="Home" value="Home">
 						</form>

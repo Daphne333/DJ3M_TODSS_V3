@@ -25,7 +25,13 @@ public class Training {
 	public Training(){
 	}
 	
-	
+	public Training(String naam,Date beginDatum, Date eindDatum,Cursus cursus,Account account){
+		this.naam = naam;
+		this.beginDatum = beginDatum;
+		this.eindDatum = eindDatum;
+		this.cursus = cursus;
+		this.account = account;
+	}
 	
 /*	//deze gebruiken we voor het tonen van data
 	public List<Opdracht> getOpdrachtenList(){

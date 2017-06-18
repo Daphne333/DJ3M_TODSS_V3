@@ -8,6 +8,10 @@ import dao.ResultaatCursistDAO;
 public class ResultaatCursistService {
 
 	ResultaatCursistDAO dao = new ResultaatCursistDAO();
+	
+	public ResultaatCursistService(){
+		
+	}
 	public void maakResultaatCursistAan(ResultaatCursist r) {
 		if (r != null) {
 			dao.create(r);

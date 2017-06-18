@@ -3,7 +3,7 @@
 
 <!-- java imports -->
 <%@page import="java.util.ArrayList"%>
-<%@page import="Model.domein.Cursus"%>
+<%@page import="Model.domein.Training"%>
 <%@page import="java.util.List"%>
 
 <!-- de C-prefix is nodig voor de tabel die hieronder wordt gegenereerd. 
@@ -18,12 +18,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>Beheerder | Training Toevoegen</title>
+<title>Beheerder | Opdracht Toevoegen</title>
 </head>
 <body>
 
 	<%
-		List<Account> alleDocenten = (List<Account>) request.getSession().getAttribute("alleDocenten");
+		List<Training> alleTrainingen = (List<Training>) request.getSession().getAttribute("alleTrainingen");
 	%>
 
 	<div id="header" class="header"></div>
@@ -44,28 +44,17 @@
 					<form method="post" action="TrainingAanmakenServlet.do">
 						<table cellspacing="2" cellpadding="2" border="0">
 							<tr>
-								<td>Trainingnaam :</td>
-								<td><input type="text" id="Trainingnaam"
-									name="Trainingnaam" SIZE="30"><br></td>
+								<td>Vraag :</td>
+								<td><input type="text" id="vraag"
+									name="vraag" SIZE="30"><br></td>
 							</tr>
 							<tr>
-								<td>Begindatum :</td>
-								<td><input type="date" id="Begindatum" name="Begindatum"
-									SIZE="30"><br></td>
-							</tr>
-							<tr>
-								<td>Einddatum :</td>
-								<td><input type="date" id="Einddatum" name="Einddatum"
-									SIZE="30"></td>
-							</tr>
-							<tr>
-								<td>Kies een cursus :</td>
+								<td>Kies een Training :</td>
 								<td><select name="cursusNaam">
 										<%
-											for (Account docent : alleDocenten) {
-												
+											for (Training training : alleTrainingen) {
 										%>
-										<option value="<%=docent.getUsername()%>"><%=docent.getUsername()%></option>
+										<option value="<%=training.getNaam()%>"><%=training.getNaam()%></option>
 										<%
 											}
 										%>
@@ -73,8 +62,8 @@
 							</tr>
 						</table>
 
-						<br> <input type="submit" name="Training toevoegen"
-							value="Training toevoegen">
+						<br> <input type="submit" name="Opdracht Toevoegen"
+							value="User toevoegen">
 						<form method="post" action="HomeServlet.do">
 							<br> <input type="submit" name="Home" value="Home">
 						</form>

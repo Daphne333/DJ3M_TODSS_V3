@@ -16,6 +16,11 @@ import Model.domein.FunctieRol;
 @WebServlet("/HomeServlet")
 public class HomeServlet extends HttpServlet {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "";
@@ -25,13 +30,13 @@ public class HomeServlet extends HttpServlet {
       	String rol = account.getRol().toString();
       	
       	if (FunctieRol.BEHEERDER.equals(rol)){
-      		url = "Beheerder/Beheerder_Home.jsp";
+      		url = "/Beheerder/Beheerder_Home.jsp";
       	} else if (FunctieRol.CURSIST.equals(rol)){
-      		url = "Cursist/Cursist_Home.jsp";
+      		url = "/Cursist/Cursist_Home.jsp";
       	} else if (FunctieRol.DOCENT.equals(rol)){
-      		url = "Docent/Docent_Home.jsp";
+      		url = "/Docent/Docent_Home.jsp";
       	} else if (FunctieRol.MANAGER.equals(rol)){
-      		url = "Manager/Manager_Home.jsp";
+      		url = "/Manager/Manager_Home.jsp";
       	} 
       		
 		rd = request.getRequestDispatcher(url);

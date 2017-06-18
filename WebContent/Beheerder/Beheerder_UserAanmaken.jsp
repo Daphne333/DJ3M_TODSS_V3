@@ -38,7 +38,7 @@
 		<div id="content" class="content">
 			<div class="inner-content">
 
-				<h3 style="text-align: center;">Manager</h3>
+				<h3 style="text-align: center;">User toevoegen</h3>
 				<div style="text-align: center;">
 
 					<form method="post" action="UserAanmakenServlet.do">
@@ -130,6 +130,9 @@
 
 						<br> <input type="submit" name="User Toevoegen"
 							value="User toevoegen">
+						<form method="post" action="HomeServlet.do">
+							<br> <input type="submit" name="Home" value="Home">
+						</form>
 
 					</form>
 				</div>

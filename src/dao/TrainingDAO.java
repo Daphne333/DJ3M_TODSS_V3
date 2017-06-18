@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import Model.domein.Bedrijf;
 import Model.domein.Training;
 import util.HibernateUtil;
 
@@ -19,13 +20,14 @@ public class TrainingDAO {
 	Transaction connection = null;
 
 	public TrainingDAO() {
-		session = HibernateUtil.getSessionFactory().openSession();
+		
 	}
 
 	public void create(Training training) {
 		session = sessionFactory.getCurrentSession();
 		connection = session.beginTransaction();
 		session.save(training);
+		session.flush();
 		session.getTransaction().commit();
 	}
 
@@ -55,5 +57,16 @@ public class TrainingDAO {
 		trainingen = session.createQuery("From Training").list();
 		session.flush();
 		return trainingen;
+	}
+	public Training getTrainingByNaam(String trainingNaam){
+		session = sessionFactory.getCurrentSession();
+		Training training = null;
+		connection = session.beginTransaction();
+		String queryString = "from Training where naam = :trainingNaam";
+		Query query = session.createQuery(queryString);
+		query.setString("trainingNaam", trainingNaam);
+		training = (Training) query.uniqueResult();
+		session.flush();
+		return training;
 	}
 }

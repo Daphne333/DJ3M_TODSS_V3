@@ -19,7 +19,7 @@ public class CursusUitvoeringDAO {
 	Transaction connection = null;
 
 	public CursusUitvoeringDAO(){
-		session = HibernateUtil.getSessionFactory().openSession();
+
 	}
 	
 	public void create(CursusUitvoering uitvoering) {
