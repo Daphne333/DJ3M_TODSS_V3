@@ -24,6 +24,7 @@
 
 	<%
 		List<Account> alleDocenten = (List<Account>) request.getSession().getAttribute("alleDocenten");
+		List<Cursus> alleCursussen = (List<Cursus>) request.getSession().getAttribute("alleCursussen");
 	%>
 
 	<div id="header" class="header"></div>
@@ -61,6 +62,19 @@
 							<tr>
 								<td>Kies een cursus :</td>
 								<td><select name="cursusNaam">
+										<%
+											for (Cursus cursus : alleCursussen) {
+												
+										%>
+										<option value="<%=cursus.getNaam()%>"><%=cursus.getNaam()%></option>
+										<%
+											}
+										%>
+								</select></td>
+							</tr>
+								<tr>
+								<td>Kies een Docent :</td>
+								<td><select name="docentNaam">
 										<%
 											for (Account docent : alleDocenten) {
 												

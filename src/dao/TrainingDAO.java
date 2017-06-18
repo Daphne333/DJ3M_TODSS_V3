@@ -26,8 +26,7 @@ public class TrainingDAO {
 	public void create(Training training) {
 		session = sessionFactory.getCurrentSession();
 		connection = session.beginTransaction();
-		session.save(training);
-		session.flush();
+		session.merge(training);
 		session.getTransaction().commit();
 	}
 

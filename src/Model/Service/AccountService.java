@@ -71,5 +71,8 @@ public class AccountService {
 	public Account getAccountbyID(int accountID){
 		return accDao.getAccountbyID(accountID);
 	}
+	public Account getAccountbyUsername(String username){
+		return accDao.getAccountByUsername(username);
+	}
 
 }

@@ -68,11 +68,8 @@
 									SIZE="30"><br></td>
 							</tr>
 							<form>
-								<select id="mySelect" size="8">
-									<option>Apple</option>
-									<option>Pear</option>
-									<option>Banana</option>
-									<option>Orange</option>
+								<select name="antwoordenBijOpdracht" id="mySelect" size="8">
+									<option></option>
 								</select>
 							</form>
 							<p>Click the button to add a "Kiwi" option at the end of the

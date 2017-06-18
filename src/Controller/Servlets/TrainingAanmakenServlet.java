@@ -32,7 +32,7 @@ public class TrainingAanmakenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private TrainingService trainingService = ServiceProvider.getTraining();
 	private CursusService cursusService = ServiceProvider.getCursus();
-	private AccountService account = ServiceProvider.getAccount();
+	private AccountService accountService = ServiceProvider.getAccount();
 	private List<Cursus> alleCursussen = new ArrayList<Cursus>();
 	private List<Account> alleDocenten = new ArrayList<Account>();
 
@@ -58,22 +58,25 @@ public class TrainingAanmakenServlet extends HttpServlet {
 			}
 		}
 		String cursusNaam = request.getParameter("cursusNaam");
+		String username = request.getParameter("docentNaam");
 
 
 		if (trainingNaam != null && !trainingNaam.trim().isEmpty() && beginDatum != null && eindDatum != null
 				&& !eindDatum.trim().isEmpty() && !beginDatum.trim().isEmpty() && cursusNaam != null && !cursusNaam.trim().isEmpty()) {
 			Cursus cursus = cursusService.getCursusByNaam(cursusNaam);
-			Account account = 
-					(Account) request.getSession().getAttribute("loginAccount");
+			Account account = accountService.getAccountbyUsername(username);
 			Training training = new Training(trainingNaam,date,date2,cursus,account);
-
+			
+			System.out.println("Cursus object : " + cursus.toString());
+			System.out.println("Training object : " + cursus.toString());
+			
 			trainingService.maakTrainingAan(training);
 			url = "/Beheerder/Beheerder_OpdrachtAanmaken.jsp";
 		} else {
 			alleCursussen = cursusService.getAlleCursussen();
 			session = request.getSession();
 			session.setAttribute("alleCursussen", alleCursussen);
-			alleDocenten = account.getAccountsBijRol(FunctieRol.DOCENT);
+			alleDocenten = accountService.getAccountsBijRol(FunctieRol.DOCENT);
 			session.setAttribute("alleDocenten", alleDocenten);
 			url = "/Beheerder/Beheerder_TrainingAanmaken.jsp";
 		}

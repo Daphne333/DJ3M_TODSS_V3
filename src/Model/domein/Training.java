@@ -8,7 +8,7 @@ import java.util.Set;
 
 import javax.persistence.*;
 @Entity
-@Table(name = "Training")
+@Table(name = "training")
 public class Training {
 	private int trainingID;
 	private String naam;
