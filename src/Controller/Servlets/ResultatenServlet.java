@@ -8,6 +8,7 @@ import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +23,8 @@ import Model.domein.AntwoordCursist;
 import Model.domein.CursusUitvoering;
 import Model.domein.ResultaatCursist;
 
+
+@WebServlet("/ResultatenServlet")
 public class ResultatenServlet extends HttpServlet {
 
 	/**
@@ -30,7 +33,7 @@ public class ResultatenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<ResultaatCursist> lijst = null;
+		List<ResultaatCursist> lijst = new ArrayList<ResultaatCursist>();
 		RequestDispatcher rd = null;
 		Account account = (Account) req.getSession().getAttribute("loginAccount");
 		String rol = account.getRol().toString();
@@ -52,13 +55,13 @@ public class ResultatenServlet extends HttpServlet {
 			// acties voor de verschillende rollen
 			switch (rol) {
 			case "BEHEERDER":
-				url = ".Beheerder/Beheerder_Resultaten.jsp";
+				url = "/Beheerder/Beheerder_Resultaten.jsp";
 				lijst = Res.getResultaten();
 				req.getSession().setAttribute("Resultaten", lijst);
 				break;
 
 			case "MANAGER":
-				url = ".Manager/Manager_Resultaten.jsp";
+				url = "/Manager/Manager_Resultaten.jsp";
 				int bedrijfid = account.getPersoonID().getBedrijfID().getBedrijfID();
 				List<ResultaatCursist> M_l = Res.getResultaten();
 /*				for (int i = 0; i <= M_l.size(); i++) {
@@ -72,7 +75,7 @@ public class ResultatenServlet extends HttpServlet {
 				break;
 
 			case "CURSIST":
-				url = ".Cursist/Cursist_Resultaten.jsp";
+				url = "/Cursist/Cursist_Resultaten.jsp";
 				int Cursistid = account.getPersoonID().getPersonID();
 				
 				
@@ -86,14 +89,16 @@ public class ResultatenServlet extends HttpServlet {
 				//bepaal antwoordCursistID
 				int id = 0;
 				
-				for(int i = 0; i <=C_l.size(); i++){
+	
+				for(ResultaatCursist result : C_l){
 					
-					System.out.println(C_l.get(i).getAntwoordcursist().getOpdracht().getOpdrachtID());
-					System.out.println(C_l.get(i).getAntwoordcursist().getAccount().getAccountID());
+					System.out.println(result.getAntwoordcursist().getOpdracht().getOpdrachtID());
+					System.out.println(result.getAntwoordcursist().getAccount().getAccountID());
 
-					if(C_l.get(i).getAntwoordcursist().getAccount().getAccountID() == account.getAccountID()){
-						lijst.add(C_l.get(i));
-					
+					if(result.getAntwoordcursist().getAccount().getAccountID() == account.getAccountID()){
+						System.out.println("het resulttaat object : "+ result.toString());
+						lijst.add(result);
+					}
 					
 					
 					
@@ -120,7 +125,6 @@ public class ResultatenServlet extends HttpServlet {
 						lijst.add(C_l.get(i));
 						}					
 					}*/
-				}
 				
 				
 				
@@ -148,9 +152,9 @@ public class ResultatenServlet extends HttpServlet {
 					req.getSession().setAttribute("Resultaten", lijst);
 				
 				break;
-
+	
 			case "DOCENT":
-				url = ".Docent/Docent_Resultaten.jsp";
+				url = "/Docent/Docent_Resultaten.jsp";
 				// pak cursus die account geeft
 				Set<CursusUitvoering> gegevencursus = account.getGeeftCursus();
 /*				for (Iterator<CursusUitvoering> it = gegevencursus.iterator(); it.hasNext();) {

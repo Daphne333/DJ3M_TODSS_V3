@@ -3,7 +3,7 @@
 
 <!-- java imports -->
 <%@page import="java.util.ArrayList"%>
-<%@page import="Model.domein.Training"%>
+<%@page import="Model.domein.AntwoordOpdracht"%>
 <%@page import="java.util.List"%>
 
 <!-- de C-prefix is nodig voor de tabel die hieronder wordt gegenereerd. 
@@ -23,7 +23,7 @@
 <body>
 
 	<%
-		List<Training> alleTrainingen = (List<Training>) request.getSession().getAttribute("alleTrainingen");
+		List<AntwoordOpdracht> alleOpdrachten = new ArrayList<AntwoordOpdracht>();
 	%>
 
 	<div id="header" class="header"></div>
@@ -38,29 +38,39 @@
 		<div id="content" class="content">
 			<div class="inner-content">
 
-				<h3 style="text-align: center;">Training toevoegen</h3>
+				<h3 style="text-align: center;">Opdracht toevoegen</h3>
 				<div style="text-align: center;">
 
-					<form method="post" action="TrainingAanmakenServlet.do">
+					<form method="post" action="OpdrachtAanmakenServlet.do">
 						<table cellspacing="2" cellpadding="2" border="0">
 							<tr>
 								<td>Vraag :</td>
-								<td><input type="text" id="vraag"
-									name="vraag" SIZE="30"><br></td>
+								<td><input type="text" id="vraag" name="vraag" SIZE="30"><br></td>
 							</tr>
-							<tr>
-								<td>Kies een Training :</td>
-								<td><select name="cursusNaam">
-										<%
-											for (Training training : alleTrainingen) {
-										%>
-										<option value="<%=training.getNaam()%>"><%=training.getNaam()%></option>
-										<%
-											}
-										%>
-								</select></td>
-							</tr>
+						<form>
+							<select id="alleVragen" size="8">
+								<option>Apple</option>
+								<option>Pear</option>
+								<option>Banana</option>
+								<option>Orange</option>
+							</select>
+						</form>
+						<br>
+
+						<p>Click the button to add a "Kiwi" option at the end of the
+							dropdown list.</p>
+
+						<button type="button" onclick="myFunction()">Insert
+							option</button>
 						</table>
+						<script>
+							function myFunction() {
+								var x = document.getElementById("alleVragen");
+								var option = document.createElement("option");
+								option.text = "Kiwi";
+								x.add(option);
+							}
+						</script>
 
 						<br> <input type="submit" name="Opdracht Toevoegen"
 							value="User toevoegen">

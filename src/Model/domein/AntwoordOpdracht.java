@@ -21,6 +21,13 @@ public class AntwoordOpdracht {
 	
 	public AntwoordOpdracht() {
 	}
+	public AntwoordOpdracht(String omschrijving, int goedfout,String antwoord,Opdracht opdracht){
+		this.omschrijving = omschrijving;
+		this.goedfout = goedfout;
+		this.antwoord = antwoord;
+		this.opdracht = opdracht;
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "AntwoordID")

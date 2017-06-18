@@ -15,7 +15,7 @@ import Model.Service.AntwoordCursistService;
 import Model.Service.ServiceProvider;
 
 @Entity
-@Table(name = "Antwoord_Cursist")
+@Table(name = "antwoord_cursist")
 public class AntwoordCursist {
 
 	private int antwoordCursistID;

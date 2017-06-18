@@ -7,8 +7,6 @@
 	<welcome-file-list>
 		<welcome-file>Inlogscherm.jsp</welcome-file>
 	</welcome-file-list>
-
-
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>Controller.Servlets.LoginServlet</servlet-class>
@@ -17,7 +15,6 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet.do</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>BedrijfAanmakenServlet</servlet-name>
 		<servlet-class>Controller.Servlets.BedrijfAanmakenServlet</servlet-class>
@@ -26,7 +23,6 @@
 		<servlet-name>BedrijfAanmakenServlet</servlet-name>
 		<url-pattern>/BedrijfAanmakenServlet.do</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>PlanningServlet</servlet-name>
 		<servlet-class>Controller.Servlets.PlanningServlet</servlet-class>
@@ -35,7 +31,6 @@
 		<servlet-name>PlanningServlet</servlet-name>
 		<url-pattern>/PlanningServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>CursusAanmakenServlet</servlet-name>
 		<servlet-class>Controller.Servlets.CursusAanmakenServlet</servlet-class>
@@ -44,8 +39,6 @@
 		<servlet-name>CursusAanmakenServlet</servlet-name>
 		<url-pattern>/CursusAanmakenServlet.do</url-pattern>
 	</servlet-mapping>
-
-
 	<servlet>
 		<servlet-name>UserAanmakenServlet</servlet-name>
 		<servlet-class>Controller.Servlets.UserAanmakenServlet</servlet-class>
@@ -54,7 +47,6 @@
 		<servlet-name>UserAanmakenServlet</servlet-name>
 		<url-pattern>/UserAanmakenServlet.do</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>HomeServlet</servlet-name>
 		<servlet-class>Controller.Servlets.HomeServlet</servlet-class>
@@ -63,7 +55,6 @@
 		<servlet-name>HomeServlet</servlet-name>
 		<url-pattern>/HomeServlet.do</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>TrainingAanmakenServlet</servlet-name>
 		<servlet-class>Controller.Servlets.TrainingAanmakenServlet</servlet-class>
@@ -72,10 +63,16 @@
 		<servlet-name>TrainingAanmakenServlet</servlet-name>
 		<url-pattern>/TrainingAanmakenServlet.do</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>OpdrachtAanmakenServlet</servlet-name>
+		<servlet-class>Controller.Servlets.OpdrachtAanmakenServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OpdrachtAanmakenServlet</servlet-name>
+		<url-pattern>/OpdrachtAanmakenServlet.do</url-pattern>
+	</servlet-mapping>
 
 
-	<!-- ==================================================================================== 
-		CURSISTEN ========================================================================================= -->
 
 	<servlet>
 		<servlet-name>CursistServlet</servlet-name>
@@ -85,7 +82,6 @@
 		<servlet-name>CursistServlet</servlet-name>
 		<url-pattern>/CursistServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>CursistToevoegenServlet</servlet-name>
 		<servlet-class>Controller.Servlets.CursistToevoegenServlet</servlet-class>
@@ -94,11 +90,6 @@
 		<servlet-name>CursistToevoegenServlet</servlet-name>
 		<url-pattern>/CursistToevoegenServlet</url-pattern>
 	</servlet-mapping>
-
-
-	<!-- ==================================================================================== 
-		CURSUSSEN ========================================================================================= -->
-
 	<servlet>
 		<servlet-name>CursusServlet</servlet-name>
 		<servlet-class>Controller.Servlets.CursusServlet</servlet-class>
@@ -107,18 +98,14 @@
 		<servlet-name>CursusServlet</servlet-name>
 		<url-pattern>/CursusServlet</url-pattern>
 	</servlet-mapping>
-
-
-
 	<servlet>
 		<servlet-name>ResultatenServlet</servlet-name>
 		<servlet-class>Controller.Servlets.ResultatenServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ResultatenServlet</servlet-name>
-		<url-pattern>/ResultatenServlet</url-pattern>
+		<url-pattern>/ResultatenServlet.do</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>ProfielServlet</servlet-name>
 		<servlet-class>Controller.Servlets.ProfielServlet</servlet-class>
@@ -127,7 +114,6 @@
 		<servlet-name>ProfielServlet</servlet-name>
 		<url-pattern>/ProfielServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>Jersey Web Application</servlet-name>
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
@@ -137,5 +123,4 @@
 		<servlet-name>Jersey Web Application</servlet-name>
 		<url-pattern>/todss/*</url-pattern>
 	</servlet-mapping>
-
 </web-app>
