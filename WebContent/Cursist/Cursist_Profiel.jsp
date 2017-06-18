@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page import="Model.domein.Persoon"%>
 
 			<!-- included pages  -->
 
@@ -31,7 +32,7 @@ $(document).ready(function(){
 
 		<div id="messagebox">
 			<%
-				Object msg = request.getAttribute("msg");
+				Persoon persoon =  (Persoon) request.getSession().getAttribute("profielinfo");
 			%>
 		</div>
 	
@@ -51,6 +52,8 @@ $(document).ready(function(){
 			<div id="content" class="content" >
 				<div class="inner-content" style="background-color: white;">
 				
+					<h1 style="text-align: center;">Profiel</h1>
+				
 				
 				<div id="profiel-section-gegevens">
 					<form id="wijzig-pass-form" action="">
@@ -58,15 +61,23 @@ $(document).ready(function(){
 						
 						<br/><br/>
 						
-						<label>Plaats</label>
-						<input type="text" id="plaats"></input>
-						<label>adres</label>
-						<input type="text" id="adres"></input>
-						<label>huisnummer</label>
-						<input type="text" id="huisnummer"></input>
-						<div id="profiel-wijzig-btn" onclick="changeCursistProfile();">Wijzig</div>		
+						<% if(persoon == null){out.print("ergiujoh");}%>
 						
+						
+						<label>Naam</label>
+						<label id="profiel-lbl"><%=persoon.getNaam()%></label>
+						<label>Achternaam</label>
+						<label id="profiel-lbl"><%=persoon.getAchternaam() %></label>
+						<label>Plaats</label>
+						<label id="profiel-lbl"><%=persoon.getPlaats() %></label>
+						<label>Straatnaam</label>
+						<label id="profiel-lbl"><%=persoon.getStraatnaam()  %></label>
+						<label>huisnummer</label>
+						<label id="profiel-lbl"><%=persoon.getHuisnummer() %></label>						
 					</form>			
+					
+					<div id="profiel-wijzig-btn" onclick="changeCursistProfile();">Wijzig</div>		
+					
 				</div>
 				
 				
@@ -74,26 +85,27 @@ $(document).ready(function(){
 				
 				
 				<div id="profiel-section-wijzig">
+					<br/><br/><br/>
+					<div id="profiel-wijzig-btn" onclick="CloseProfileWindow();">Sluiten</div>		
 				
 					<form id ="wijzig-pass-form" action="ProfielServlet" method="post">
 						<label> hier is het mogelijk om je gegevens te wijzigen</label>
-						<div id="profiel-wijzig-btn" onclick="CloseProfileWindow();">Sluiten</div>		
 						<br/><br/>
 					
 						<input type="hidden" name="servletAction" value="cursist-verwerk-profielgegevens"></input>
 					
 						<label> Geef ook je  wachtwoord op voor security</label>
-						<br/>
+						<br/><br/>
 						<label>Wachtwoord</label>
 						<input type="text" id="pass"></input>
 						<br/>
 						
 						<label>Plaats</label>
-						<input type="text" id="plaats"></input>
-						<label>adres</label>
-						<input type="text" id="adres"></input>
+						<input type="text" id="plaats" value="<%=persoon.getPlaats() %>"></input>
+						<label>Straatnaam</label>
+						<input type="text" id="adres" value="<%=persoon.getStraatnaam() %>"></input>
 						<label>huisnummer</label>
-						<input type="text" id="huisnummer"></input>
+						<input type="text" id="huisnummer" value="<%=persoon.getHuisnummer() %>"></input>
 					</form>
 				
 				</div>

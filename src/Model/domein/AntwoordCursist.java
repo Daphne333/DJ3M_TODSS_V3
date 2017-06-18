@@ -10,6 +10,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import Model.Service.AccountService;
+import Model.Service.AntwoordCursistService;
+import Model.Service.ServiceProvider;
+
 @Entity
 @Table(name = "Antwoord_Cursist")
 public class AntwoordCursist {
@@ -41,17 +45,17 @@ public class AntwoordCursist {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "accountID")
 	public Account getAccount() {
-		if(account.getRol() == FunctieRol.CURSIST){
+/*		if(account.getRol() == FunctieRol.CURSIST){*/
 			return account;
-		} else {
+/*		} else {
 			return null;
-		}
+		}*/
 	}
 	public void setAccount(Account account) {
-		if(account.getRol() == FunctieRol.CURSIST ){
-			this.account = account;
+/*		if(account.getRol() == FunctieRol.CURSIST ){
+*/			this.account = account;
 		}
-	}
+	/*}*/
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "opdrachtID")
 	public Opdracht getOpdracht() {

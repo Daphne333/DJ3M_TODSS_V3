@@ -52,7 +52,7 @@ public class ResultaatCursistDAO {
 		session = sessionFactory.getCurrentSession();
 		List<ResultaatCursist> resultaten = new ArrayList<ResultaatCursist>();
 		connection = session.beginTransaction();
-		resultaten = session.createQuery("From ResultaatCursist").list();
+		resultaten = session.createQuery("From Resultaat_Cursist").list();
 		session.flush();
 		return resultaten;
 	}

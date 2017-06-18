@@ -67,5 +67,9 @@ public class AccountService {
 	public List<Account> getAccountsBijRol(FunctieRol rol){
 		return accDao.getListAccountBijRol(rol.toString());
 	}
+	
+	public Account getAccountbyID(int accountID){
+		return accDao.getAccountbyID(accountID);
+	}
 
 }
