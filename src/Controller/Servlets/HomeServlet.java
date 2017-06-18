@@ -29,14 +29,18 @@ public class HomeServlet extends HttpServlet {
 	    Account account = (Account) request.getSession().getAttribute("loginAccount");
       	String rol = account.getRol().toString();
       	
-      	if (FunctieRol.BEHEERDER.equals(rol)){
+      	if (rol.equalsIgnoreCase("BEHEERDER")){
       		url = "/Beheerder/Beheerder_Home.jsp";
-      	} else if (FunctieRol.CURSIST.equals(rol)){
+      		System.out.println(rol);
+      	} else if (rol.equalsIgnoreCase("CURSIST")){
       		url = "/Cursist/Cursist_Home.jsp";
-      	} else if (FunctieRol.DOCENT.equals(rol)){
+      		System.out.println(rol);
+      	} else if (rol.equalsIgnoreCase("DOCENT")){
       		url = "/Docent/Docent_Home.jsp";
-      	} else if (FunctieRol.MANAGER.equals(rol)){
+      		System.out.println(rol);
+      	} else if (rol.equalsIgnoreCase("MANAGER")){
       		url = "/Manager/Manager_Home.jsp";
+      		System.out.println(rol);
       	} 
       		
 		rd = request.getRequestDispatcher(url);

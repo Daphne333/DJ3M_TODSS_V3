@@ -47,37 +47,69 @@
 								<td>Vraag :</td>
 								<td><input type="text" id="vraag" name="vraag" SIZE="30"><br></td>
 							</tr>
-						<form>
-							<select id="alleVragen" size="8">
-								<option>Apple</option>
-								<option>Pear</option>
-								<option>Banana</option>
-								<option>Orange</option>
-							</select>
-						</form>
-						<br>
+							<tr>
 
-						<p>Click the button to add a "Kiwi" option at the end of the
-							dropdown list.</p>
+								<td>Druk op de knop om de lijst aan te vullen met
+									antwoorden bij de vraag.</td>
+							</tr>
+							<tr>
+								<td>Omschrijving :</td>
+								<td><input type="text" id="omschrijving"
+									name="omschrijving" SIZE="30"><br></td>
+							</tr>
+							<tr>
+								<td>Goed of Fout (aangeven met 0(false)-1(true) :</td>
+								<td><input type="text" id=goedFout name="goedFout"
+									SIZE="30"><br></td>
+							</tr>
+							<tr>
+								<td>Antwoord :</td>
+								<td><input type="text" id="antwoord" name="antwoord"
+									SIZE="30"><br></td>
+							</tr>
+							<form>
+								<select id="mySelect" size="8">
+									<option>Apple</option>
+									<option>Pear</option>
+									<option>Banana</option>
+									<option>Orange</option>
+								</select>
+							</form>
+							<p>Click the button to add a "Kiwi" option at the end of the
+								dropdown list.</p>
 
-						<button type="button" onclick="myFunction()">Insert
-							option</button>
+
+
+							<tr>
+								<td><button type="button" onclick="myFunction()">Antwoord Toevoegen</button></td>
+							</tr>
+							<tr>
+								<td><input type="submit" name="Opdracht Toevoegen"
+									value="User toevoegen"></td>
+							</tr>
+							<tr>
+								<form method="post" action="HomeServlet.do">
+									<td><input type="submit" name="Home" value="Home"></td>
+								</form>
+							</tr>
 						</table>
-						<script>
-							function myFunction() {
-								var x = document.getElementById("alleVragen");
-								var option = document.createElement("option");
-								option.text = "Kiwi";
-								x.add(option);
-							}
-						</script>
-
-						<br> <input type="submit" name="Opdracht Toevoegen"
-							value="User toevoegen">
-						<form method="post" action="HomeServlet.do">
-							<br> <input type="submit" name="Home" value="Home">
-						</form>
 					</form>
+
+
+
+
+					<script>
+						function myFunction() {
+							var x = document.getElementById("mySelect");
+							var option = document.createElement("option");
+							var value = document.getElementById("omschrijving").value;
+							var value2 = document.getElementById("goedFout").value;
+							var value3 = document.getElementById("antwoord").value;
+							option.text = value + "-" + value2 + "-" + value3;
+							x.add(option);
+						}
+					</script>
+
 				</div>
 			</div>
 		</div>
