@@ -10,16 +10,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import Model.Service.AccountService;
-import Model.Service.AntwoordCursistService;
-import Model.Service.ServiceProvider;
-
 @Entity
 @Table(name = "antwoord_cursist")
 public class AntwoordCursist {
 
 	private int antwoordCursistID;
-	private FunctieRol rol;
 	private int antwoord;
 	private Account account;
 	private Opdracht opdracht;

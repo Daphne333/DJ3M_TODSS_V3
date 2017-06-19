@@ -18,7 +18,7 @@ public class AccountAanmaken {
 	public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		BedrijfDAO bdao = new BedrijfDAO();
 		Bedrijf b = new Bedrijf();
-		b.setKvknummer(127);
+		b.setKvknummer(1234323);
 		b.setBedrijfsnaam("SAM");
 		b.setVestiging_straat("DaltoonLaan");
 		b.setVestiging_postcode("1234FS");
