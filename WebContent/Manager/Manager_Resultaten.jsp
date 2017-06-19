@@ -1,8 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
+<!-- java imports -->    
+<%@page import="Model.domein.ResultaatCursist"%>
+<%@page import="Model.domein.AntwoordCursist"%>
+<%@page import="Model.domein.AntwoordOpdracht"%>
+<%@page import="Model.domein.Opdracht"%>
+<%@page import="java.util.ArrayList"%>
+    
+    
     		<!-- de C-prefix is nodig voor de tabel die hieronder wordt gegenereerd. C kan elk ander willekeurig iets zijn -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
 			<!-- included pages  -->
 <%@include file="../standard/Menu.jsp" %>
@@ -19,11 +28,8 @@
 				<%
 				
 					Object msg = request.getAttribute("msg");
-				
-					// dit object moet de informatie bevatten over de gehele planning
-					// dit object is via de servlet en de dao gevalideed in de database
-					// het object is van de eigenaar, degene die is ingeloged
-					Object cursisten = request.getAttribute("cursisten");
+					Object cursisten = request.getAttribute("cursisten"); //alle cursisten bij jouw bedrijf
+					Object resultaten = request.getAttribute("cursist-resultaten");//resultaten van gekozen cursist
 				%>	
 				</div>
 		
@@ -45,6 +51,66 @@
 				
 			<div class="title-bar">
 				<h1>Resultaten</h1></div>
+
+					
+				
+				
+				<div id="section-manager-cursisten">
+						<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
+								<tr>
+									<th></th>
+									<th>PERSOON ID</th>				
+									<th>NAAM</th>
+									<th>ACHTERNAAM</th>
+									<th>E-MAIL</th>
+								</tr>	
+							<c:forEach var="cursist" items='${cursisten}'>
+								<tr>
+									<td id="selection-td"><div><form action="ResultatenServlet.do" method="post">
+										<input type="hidden" name="cursistID" value="${cursist.getPersonID()}"></input>
+										<input type="hidden" name="servletAction" value="manager-selectCursist"></input>
+										<input type="submit" value="Selecteer Cursist" onclick=""></input>
+										</form></div>
+									</td>
+									<td>${cursist.getPersonID()}</td>
+									<td>${cursist.getNaam()}</td>
+									<td>${cursist.getAchternaam()}</td>
+									<td>${cursist.getEmail()}</td>
+								</tr>		
+							</c:forEach>					
+						</table>				
+				</div>
+				
+				
+				<div id="section-manager-cursistresult">
+					
+				<table border ="5" cellpadding="5" width="max" align=center class=tableview2>			
+					<c:forEach var="result" items='${resultaten}'>
+						<tr><td   class="title">${result.getResultaatID()}</td><td  colspan="2" > ${result.getAntwoordcursist().getOpdracht().getVraag()}</td></tr>	
+						<tr><td rowspan="4"></td></tr>
+						<tr>					
+							<td>Jouw antwoord</td>			<td id="td-cursist"> ${result.getAntwoordcursist().getAntwoord()}</td>
+						</tr>
+						<tr>
+							<td>Juiste Antwoord</td>		<td id="td-opdracht"> ${result.getAntwoordopdracht().getGoedfout()}</td>
+						</tr>
+						<tr>					
+							<td>Resultaat</td>				<td id="td-result" >${result.getResultaat()}</td>
+						</tr>			
+					</c:forEach>						
+				</table>
+				
+				
+				
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 		</div>

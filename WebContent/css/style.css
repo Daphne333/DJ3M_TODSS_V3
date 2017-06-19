@@ -513,6 +513,15 @@ there should be a few more options but non actually worked for me
 	border-bottom: 2px solid #00BE9B;
 }
 
+#selection-td:hover{
+	cursor: pointer;
+	background-color: #00BE9B;
+	
+}
+
+
+
+
 
 /* ============================================================
 				Cursisten

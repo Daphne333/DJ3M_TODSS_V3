@@ -65,4 +65,9 @@ public class PersoonService {
 	public Persoon getPersoonBijID(int id){
 		return perDao.getPersoonBijID(id);
 	}
+	
+	
+	public List<Persoon> getListPersonen(){
+		return perDao.getListPersonen();
+	}
 }

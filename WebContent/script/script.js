@@ -51,3 +51,15 @@ function changeCursistProfile(){
 function CloseProfileWindow(){
 	$('#profiel-section-wijzig').fadeOut(500);
 }
+
+function showCursistList(){
+	$('#section-manager-cursistresult').fadeIn(1000);
+}
+
+function hideCursistList(){
+	$('#section-manager-cursistresult').fadeOut(500);
+}
+
+
+
+

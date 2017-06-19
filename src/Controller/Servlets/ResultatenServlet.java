@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.Service.AccountService;
 import Model.Service.AntwoordCursistService;
@@ -21,6 +22,7 @@ import Model.Service.ServiceProvider;
 import Model.domein.Account;
 import Model.domein.AntwoordCursist;
 import Model.domein.CursusUitvoering;
+import Model.domein.Persoon;
 import Model.domein.ResultaatCursist;
 
 
@@ -38,12 +40,18 @@ public class ResultatenServlet extends HttpServlet {
 		Account account = (Account) req.getSession().getAttribute("loginAccount");
 		String rol = account.getRol().toString();
 		
+		String servletAction = req.getParameter("servletAction");
+		
+		
+		HttpSession session = req.getSession();
+		
+		
 		System.out.println("resultaat Servlet rol: "+rol);
 
 
-		ServiceProvider service = new ServiceProvider();
-		ResultaatCursistService Res = service.getResultaatCursist();
-		AntwoordCursistService AcS = service.getAntwoordCursist();
+		ServiceProvider sp = new ServiceProvider();
+		ResultaatCursistService Res = sp.getResultaatCursist();
+		AntwoordCursistService AcS = sp.getAntwoordCursist();
 		
 		// de url waar we naar toe gaan als de functie is afgelopen
 		// deze wordt gzet op basis van jouw rol
@@ -59,100 +67,159 @@ public class ResultatenServlet extends HttpServlet {
 				lijst = Res.getResultaten();
 				req.getSession().setAttribute("Resultaten", lijst);
 				break;
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 
 			case "MANAGER":
-				url = "/Manager/Manager_Resultaten.jsp";
-				int bedrijfid = account.getPersoonID().getBedrijfID().getBedrijfID();
-				List<ResultaatCursist> M_l = Res.getResultaten();
-/*				for (int i = 0; i <= M_l.size(); i++) {
-					int resultaat_bedrijfid = M_l.get(i).getAntwoordcursist().getAccount().getPersoonID().getBedrijfID()
-							.getBedrijfID();
-					if (bedrijfid == resultaat_bedrijfid) {
-						lijst.add(M_l.get(i));
+				url = "/Manager/Manager_Resultaten.jsp";				
+				
+				
+				
+				switch(servletAction){
+				
+				//
+				//									als er cursisten geladen moeten worden
+				//
+				//
+				
+				case "manager-redirect":
+					
+					//manager --> bedrijf id
+					int bedrijfid = account.getPersoonID().getBedrijfID().getBedrijfID();
+					
+					
+					
+					
+					// lijst met cursisten met hetzelfde bedrijf id
+					//lijst wordt gevuld met ALLEEN de personen die hetzelfde bedrijfID hebben
+					List<Persoon> personenVanBedrijf = new ArrayList<Persoon>();
+					
+					for(Persoon p : sp.getPersoon().getListPersonen()){ //lijst met alle personen
+						if (p.getBedrijfID().getBedrijfID() == bedrijfid){ //als bedrijfId overeenkomt met die van MANAGER
+							personenVanBedrijf.add(p);
+							System.out.println(p.getAchternaam());
+						}
 					}
-					req.getSession().setAttribute("Resultaten", lijst);
-				}*/
-				break;
+					
+					//lijst gemaakt, stuur door naar de JSP
+					req.setAttribute("cursisten", personenVanBedrijf);
+					session.setAttribute("cursisten", personenVanBedrijf);
+
+						
+					
+					break;
+					
+					
+					//
+					//									als er een cursist gekozen is
+					//
+					//
+					
+				case "manager-selectCursist":
+					
+					System.out.println("@@@@@@@@@@@@@");
+					
+					
+					int selectedCursistId = Integer.parseInt(req.getParameter("cursistID"));
+					System.out.println(selectedCursistId);
+					
+					
+					//lijst met resultaten van cursist met id = selectedCursistId
+					List<ResultaatCursist> resultaten = new ArrayList<ResultaatCursist>();
+					
+					for(ResultaatCursist rc : sp.getResultaatCursist().getResultaten()){
+						if(rc.getAntwoordcursist().getAccount().getPersoonID().getPersonID() == selectedCursistId){
+							resultaten.add(rc);
+						}						
+					}
+					
+					//lijst gemaakt, stuur door naar de JSP
+					session.setAttribute("cursist-resultaten", resultaten);
+			
+				
+					break;
+				
+				
+				
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 
 			case "CURSIST":
 				url = "/Cursist/Cursist_Resultaten.jsp";
-				int Cursistid = account.getPersoonID().getPersonID();
 				
-				
+				//lijst met alle beschikbare resultaten
 				List<ResultaatCursist> C_l = Res.getResultaten();
-				System.out.println("test heuherhueruihervuhrveuhervuh"+C_l.get(0).getAntwoordcursist().getOpdracht().getOpdrachtID());
-				System.out.println("test heuherhueruihervuhrveuhervuh"+C_l.get(0).getAntwoordcursist().getAccount().getAccountID());
 				
-				
-				List<AntwoordCursist> c_Antwoorden = AcS.getListAntwoordCursisten();
-				
-				//bepaal antwoordCursistID
-				int id = 0;
-				
-	
 				for(ResultaatCursist result : C_l){
 					
-					System.out.println(result.getAntwoordcursist().getOpdracht().getOpdrachtID());
-					System.out.println(result.getAntwoordcursist().getAccount().getAccountID());
-
+					//als het ook echt alleen maar om jouw resultaat gaat
 					if(result.getAntwoordcursist().getAccount().getAccountID() == account.getAccountID()){
-						System.out.println("het resulttaat object : "+ result.toString());
+						
+						//voeg deze dan toe aan de lijst
 						lijst.add(result);
-					}
-					
-					
-					
-					/*					if(c_Antwoorden.get(i).getAccount().getAccountID() ==account.getAccountID()){
-						id = c_Antwoorden.get(i).getAntwoordCursistID();
-						i=0;
-						break;*/
+						}
 					}
 				
-					
-					
-				
-				
-/*				for (int i = 0; i <= C_l.size(); i++) {
-					int resultaat_Cursistid = C_l.get(i).getAntwoordcursist().getAccount().getPersoonID().getPersonID();
-					if (Cursistid == resultaat_Cursistid) {
-						lijst.add(C_l.get(i));
-					}
-				}*/
-/*				
-				
-				for(i = 0; i<=C_l.size(); i++){
-					if(C_l.get(i).getAntwoordcursist().getAntwoordCursistID() == id){
-						lijst.add(C_l.get(i));
-						}					
-					}*/
-				
-				
-				
-				//account
-				// --> cursusuitvoeringen
-				// ----> cursussen
-				//--------> trainingen
-				// -----------> opdrachten
-				// ---------------->antwoorden-opdracht
-				// ---------------->antwoorden-cursist
-				
-				
-				
-//				CursusService cs = new CursusService();
-//				req.getSession().setAttribute("cursussen", cs.getAlleCursussen());
-//				
-//				
-				
-				
-				
-				
-				
-				
-					System.out.println(lijst.get(1).getAntwoordcursist().getAccount().getAccountID());
-					req.getSession().setAttribute("Resultaten", lijst);
-				
+				//stuur deze lijst naar de pagina
+				session.setAttribute("results", lijst);
 				break;
-	
+
+				
+				
 			case "DOCENT":
 				url = "/Docent/Docent_Resultaten.jsp";
 				// pak cursus die account geeft
@@ -189,3 +256,4 @@ public class ResultatenServlet extends HttpServlet {
 
 	}
 }
+	
