@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import Model.domein.Account;
 import Model.domein.CursusUitvoering;
 import util.HibernateUtil;
 
@@ -53,7 +54,18 @@ public class CursusUitvoeringDAO {
 		session = sessionFactory.getCurrentSession();
 		List<CursusUitvoering> alleUitvoeringen = new ArrayList<CursusUitvoering>();
 		connection = session.beginTransaction();
-		alleUitvoeringen = session.createQuery("From Cursus").list();
+		alleUitvoeringen = session.createQuery("From Cursus_uitvoering").list();
+		return alleUitvoeringen;
+	}
+	
+	public List<CursusUitvoering> getListCursusUitvoeringenPerAccount(int AccountID) {
+		session = sessionFactory.getCurrentSession();
+		List<CursusUitvoering> alleUitvoeringen = new ArrayList<CursusUitvoering>();
+		connection = session.beginTransaction();
+		String queryString = "From volgt_cursus where accountID = :accountID";
+		Query query = session.createQuery(queryString);
+		query.setInteger("accountID", AccountID);
+		alleUitvoeringen = query.list();
 		return alleUitvoeringen;
 	}
 }

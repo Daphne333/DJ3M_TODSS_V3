@@ -28,7 +28,7 @@ import Model.domein.Persoon;
 public class UserAanmakenServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private AccountService accountService = ServiceProvider.getAccountService();
+	private AccountService accountService = ServiceProvider.getAccount();
 	private BedrijfService bedrijfService = ServiceProvider.getBedrijf();
 	private List<Bedrijf> alleBedrijven = new ArrayList<Bedrijf>();
 	private FunctieRol functie;
