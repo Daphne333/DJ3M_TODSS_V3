@@ -10,6 +10,10 @@ public class CursusService {
 	
 	private CursusDAO cursusDAO = new CursusDAO();
 	
+	public CursusService(){
+		
+	}
+	
 	public void voegCursusToe(Cursus cursus){
 		if(cursus != null){
 			cursusDAO.create(cursus);

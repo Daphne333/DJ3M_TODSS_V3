@@ -27,7 +27,6 @@ public class AccountDAO {
 		connection = session.beginTransaction();
 		session.save(account);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(Account account) {
@@ -35,7 +34,6 @@ public class AccountDAO {
 		connection = session.beginTransaction();
 		session.update(account);
 		session.getTransaction();
-		session.close();
 	}
 
 	public Account getAccountbyID(int accountID) {
@@ -46,6 +44,7 @@ public class AccountDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("accountID", accountID);
 		account = (Account) query.uniqueResult();
+		session.flush();
 		return account;
 	}
 
@@ -57,6 +56,7 @@ public class AccountDAO {
 		Query query = session.createQuery(queryString);
 		query.setString("username", username);
 		account = (Account) query.uniqueResult();
+		session.flush();
 		return account;
 	}
 
@@ -68,6 +68,7 @@ public class AccountDAO {
 		Query query = session.createQuery(queryString);
 		query.setString("rol", rol);
 		accounts = query.list();
+		session.flush();
 		return accounts;
 	}
 

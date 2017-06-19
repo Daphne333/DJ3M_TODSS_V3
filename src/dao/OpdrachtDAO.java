@@ -27,7 +27,6 @@ public class OpdrachtDAO {
 		connection = session.beginTransaction();
 		session.save(opdracht);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(Opdracht opdracht) {
@@ -35,7 +34,6 @@ public class OpdrachtDAO {
 		connection = session.beginTransaction();
 		session.update(opdracht);
 		session.getTransaction();
-		session.close();
 	}
 
 	public Opdracht getOpdrachtByID(int opdrachtID) {
@@ -46,6 +44,7 @@ public class OpdrachtDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("opdrachtID", opdrachtID);
 		opdracht = (Opdracht) query.uniqueResult();
+		session.flush();
 		return opdracht;
 	}
 
@@ -54,6 +53,7 @@ public class OpdrachtDAO {
 		List<Opdracht> opdrachten = new ArrayList<Opdracht>();
 		connection = session.beginTransaction();
 		opdrachten = session.createQuery("From Opdracht").list();
+		session.flush();
 		return opdrachten;
 	}
 

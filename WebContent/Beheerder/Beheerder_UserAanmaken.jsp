@@ -38,7 +38,7 @@
 		<div id="content" class="content">
 			<div class="inner-content">
 
-				<h3 style="text-align: center;">Manager</h3>
+				<h3 style="text-align: center;">User toevoegen</h3>
 				<div style="text-align: center;">
 
 					<form method="post" action="UserAanmakenServlet.do">
@@ -55,7 +55,8 @@
 							</tr>
 							<tr>
 								<td>Herhaal wachtwoord</td>
-								<td><input type="password" id="herhaalPassword" name="herhaalPassword" SIZE="30"></td>
+								<td><input type="password" id="herhaalPassword"
+									name="herhaalPassword" SIZE="30"></td>
 							</tr>
 							<tr>
 								<td>Kies een rol :</td>
@@ -125,8 +126,14 @@
 										%>
 								</select></td>
 							</tr>
-
 						</table>
+
+						<br> <input type="submit" name="User Toevoegen"
+							value="User toevoegen">
+						<form method="post" action="HomeServlet.do">
+							<br> <input type="submit" name="Home" value="Home">
+						</form>
+
 					</form>
 				</div>
 			</div>

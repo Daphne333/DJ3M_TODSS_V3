@@ -1,5 +1,7 @@
 package Model.Service;
 
+import java.util.List;
+
 import Model.domein.AntwoordCursist;
 import dao.AntwoordCursistDAO;
 
@@ -22,4 +24,11 @@ public class AntwoordCursistService {
 			dao.update(a);
 		}
 	}
+	
+	public List<AntwoordCursist> getListAntwoordCursisten(){
+		return dao.getListAntwoordCursisten();
+		
+	}
+	
+	
 }

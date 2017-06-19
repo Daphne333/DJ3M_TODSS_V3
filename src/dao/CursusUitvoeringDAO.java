@@ -20,7 +20,7 @@ public class CursusUitvoeringDAO {
 	Transaction connection = null;
 
 	public CursusUitvoeringDAO(){
-		session = HibernateUtil.getSessionFactory().openSession();
+
 	}
 	
 	public void create(CursusUitvoering uitvoering) {
@@ -28,7 +28,6 @@ public class CursusUitvoeringDAO {
 		connection = session.beginTransaction();
 		session.save(uitvoering);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(CursusUitvoering uitvoering) {
@@ -36,7 +35,6 @@ public class CursusUitvoeringDAO {
 		connection = session.beginTransaction();
 		session.update(uitvoering);
 		session.getTransaction();
-		session.close();
 	}
 
 	public CursusUitvoering getCursusUitvoeringByID(int uitvoeringID) {
@@ -47,6 +45,7 @@ public class CursusUitvoeringDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("uitvoeringID", uitvoeringID);
 		uitvoering = (CursusUitvoering) query.uniqueResult();
+		session.flush();
 		return uitvoering;
 	}
 
@@ -54,18 +53,8 @@ public class CursusUitvoeringDAO {
 		session = sessionFactory.getCurrentSession();
 		List<CursusUitvoering> alleUitvoeringen = new ArrayList<CursusUitvoering>();
 		connection = session.beginTransaction();
-		alleUitvoeringen = session.createQuery("From Cursus_uitvoering").list();
-		return alleUitvoeringen;
-	}
-	
-	public List<CursusUitvoering> getListCursusUitvoeringenPerAccount(int AccountID) {
-		session = sessionFactory.getCurrentSession();
-		List<CursusUitvoering> alleUitvoeringen = new ArrayList<CursusUitvoering>();
-		connection = session.beginTransaction();
-		String queryString = "From volgt_cursus where accountID = :accountID";
-		Query query = session.createQuery(queryString);
-		query.setInteger("accountID", AccountID);
-		alleUitvoeringen = query.list();
+		alleUitvoeringen = session.createQuery("From Cursus").list();
+		session.flush();
 		return alleUitvoeringen;
 	}
 }

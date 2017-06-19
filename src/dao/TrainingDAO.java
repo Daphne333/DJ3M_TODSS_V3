@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import Model.domein.Bedrijf;
 import Model.domein.Training;
 import util.HibernateUtil;
 
@@ -19,15 +20,14 @@ public class TrainingDAO {
 	Transaction connection = null;
 
 	public TrainingDAO() {
-		session = HibernateUtil.getSessionFactory().openSession();
+		
 	}
 
 	public void create(Training training) {
 		session = sessionFactory.getCurrentSession();
 		connection = session.beginTransaction();
-		session.save(training);
+		session.merge(training);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(Training training) {
@@ -35,7 +35,6 @@ public class TrainingDAO {
 		connection = session.beginTransaction();
 		session.update(training);
 		session.getTransaction();
-		session.close();
 	}
 
 	public Training getTrainingByID(int trainingID) {
@@ -46,7 +45,7 @@ public class TrainingDAO {
 		Query query = session.createQuery(queryString);
 		query.setInteger("trainingID", trainingID);
 		result = (Training) query.uniqueResult();
-		session.close();
+		session.flush();
 		return result;
 	}
 
@@ -55,7 +54,18 @@ public class TrainingDAO {
 		List<Training> trainingen = new ArrayList<Training>();
 		connection = session.beginTransaction();
 		trainingen = session.createQuery("From Training").list();
-		session.close();
+		session.flush();
 		return trainingen;
+	}
+	public Training getTrainingByNaam(String trainingNaam){
+		session = sessionFactory.getCurrentSession();
+		Training training = null;
+		connection = session.beginTransaction();
+		String queryString = "from Training where naam = :trainingNaam";
+		Query query = session.createQuery(queryString);
+		query.setString("trainingNaam", trainingNaam);
+		training = (Training) query.uniqueResult();
+		session.flush();
+		return training;
 	}
 }

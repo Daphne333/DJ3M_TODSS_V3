@@ -27,7 +27,6 @@ public class CursusDAO {
 		connection = session.beginTransaction();
 		session.save(cursus);
 		session.getTransaction().commit();
-		session.close();
 	}
 
 	public void update(Cursus cursus) {
@@ -35,8 +34,6 @@ public class CursusDAO {
 		connection = session.beginTransaction();
 		session.update(cursus);
 		session.getTransaction();
-		session.close();
-
 	}
 
 	public Cursus getCursusByName(String naam) {
@@ -55,6 +52,7 @@ public class CursusDAO {
 		List<Cursus> alleCursussen = new ArrayList<Cursus>();
 		connection = session.beginTransaction();
 		alleCursussen = session.createQuery("From Cursus").list();
+		session.flush();
 		return alleCursussen;
 	}
 

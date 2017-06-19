@@ -569,12 +569,19 @@ there should be a few more options but non actually worked for me
 }
 
 #wijzig-pass-form label{
-	width: 100%;
+	text-align: left;
+	float: left;
+	width: 50%;
 	height: 20px;
 }
 
+#profiel-lbl{
+	text-align: left;
+}
+
 #wijzig-pass-form input{
-	width: 100%;
+	float: left;
+	width: 50%;
 	height: 20px;
 }
 

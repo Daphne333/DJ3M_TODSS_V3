@@ -8,7 +8,7 @@ import java.util.Set;
 
 import javax.persistence.*;
 @Entity
-@Table(name = "Training")
+@Table(name = "training")
 public class Training {
 	private int trainingID;
 	private String naam;
@@ -25,7 +25,13 @@ public class Training {
 	public Training(){
 	}
 	
-	
+	public Training(String naam,Date beginDatum, Date eindDatum,Cursus cursus,Account account){
+		this.naam = naam;
+		this.beginDatum = beginDatum;
+		this.eindDatum = eindDatum;
+		this.cursus = cursus;
+		this.account = account;
+	}
 	
 /*	//deze gebruiken we voor het tonen van data
 	public List<Opdracht> getOpdrachtenList(){
