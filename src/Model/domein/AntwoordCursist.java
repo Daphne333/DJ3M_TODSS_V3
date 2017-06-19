@@ -16,7 +16,7 @@ public class AntwoordCursist {
 
 	private int antwoordCursistID;
 	private FunctieRol rol;
-	private int antwoord;
+	private String antwoord;
 	private Account account;
 	private Opdracht opdracht;
 	public AntwoordCursist() {
@@ -32,11 +32,11 @@ public class AntwoordCursist {
 	}
 	@Column(name = "Antwoord")
 
-	public int getAntwoord() {
+	public String getAntwoord() {
 		return antwoord;
 	}
-	public void setAntwoord(int antwoord) {
-		this.antwoord = antwoord;
+	public void setAntwoord(String antwoord2) {
+		this.antwoord = antwoord2;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "accountID")
