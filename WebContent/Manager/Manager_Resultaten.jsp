@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-<!-- java imports -->    
+<!-- java imports -->
+<%@page import="Model.domein.Persoon" %> 
 <%@page import="Model.domein.ResultaatCursist"%>
 <%@page import="Model.domein.AntwoordCursist"%>
 <%@page import="Model.domein.AntwoordOpdracht"%>
 <%@page import="Model.domein.Opdracht"%>
 <%@page import="java.util.ArrayList"%>
+
+
     
     
     		<!-- de C-prefix is nodig voor de tabel die hieronder wordt gegenereerd. C kan elk ander willekeurig iets zijn -->
@@ -20,16 +23,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Manager | Resultaten</title>
+
+
 </head>
-<body>
+<body style="height: 250vh;">
 
 <!-- 		in de messagebox wordt de data opgevangen die wij terugkrijgen van de servlets/dao/database -->
 				<div id="messagebox">
 				<%
 				
-					Object msg = request.getAttribute("msg");
-					Object cursisten = request.getAttribute("cursisten"); //alle cursisten bij jouw bedrijf
-					Object resultaten = request.getAttribute("cursist-resultaten");//resultaten van gekozen cursist
+
+					Object cursisten = request.getSession().getAttribute("cursisten"); //alle cursisten bij jouw bedrijf
+					Object resultaten = request.getSession().getAttribute("cursistresults");//resultaten van gekozen cursist
 				%>	
 				</div>
 		
@@ -52,8 +57,7 @@
 			<div class="title-bar">
 				<h1>Resultaten</h1></div>
 
-					
-				
+
 				
 				<div id="section-manager-cursisten">
 						<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
@@ -69,7 +73,7 @@
 									<td id="selection-td"><div><form action="ResultatenServlet.do" method="post">
 										<input type="hidden" name="cursistID" value="${cursist.getPersonID()}"></input>
 										<input type="hidden" name="servletAction" value="manager-selectCursist"></input>
-										<input type="submit" value="Selecteer Cursist" onclick=""></input>
+										<input type="submit" value="Selecteer Cursist"></input>
 										</form></div>
 									</td>
 									<td>${cursist.getPersonID()}</td>
@@ -78,31 +82,52 @@
 									<td>${cursist.getEmail()}</td>
 								</tr>		
 							</c:forEach>					
-						</table>				
+						</table>
+						
+					<div id="profiel-wijzig-btn" onclick="showCursistList();">Meer</div>						
 				</div>
 				
 				
 				<div id="section-manager-cursistresult">
+				
+				
+				
+				<%  if(resultaten == null){ out.print("niks in resultaten");} else{out.print("wel wat in resultaten:" + resultaten.toString());}%>
+				
+									<br/><br/><br/>
+					<div id="profiel-wijzig-btn" onclick="hideCursistList();">Sluiten</div>
+					<br/><br/>
 					
-				<table border ="5" cellpadding="5" width="max" align=center class=tableview2>			
-					<c:forEach var="result" items='${resultaten}'>
-						<tr><td   class="title">${result.getResultaatID()}</td><td  colspan="2" > ${result.getAntwoordcursist().getOpdracht().getVraag()}</td></tr>	
-						<tr><td rowspan="4"></td></tr>
-						<tr>					
-							<td>Jouw antwoord</td>			<td id="td-cursist"> ${result.getAntwoordcursist().getAntwoord()}</td>
-						</tr>
-						<tr>
-							<td>Juiste Antwoord</td>		<td id="td-opdracht"> ${result.getAntwoordopdracht().getGoedfout()}</td>
-						</tr>
-						<tr>					
-							<td>Resultaat</td>				<td id="td-result" >${result.getResultaat()}</td>
-						</tr>			
-					</c:forEach>						
-				</table>
-				
-				
-				
+						<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
+							<c:forEach var="result" items='${cursistresults}'><%--waarom cursistresults? en niet resultaten --%>
+									<tr><td   class="title">${result.getResultaatID()}</td><td  colspan="2" > ${result.getAntwoordcursist().getOpdracht().getVraag()}</td></tr>	
+									<tr><td rowspan="4"></td></tr>
+									<tr>					
+										<td>Jouw antwoord</td>			<td id="td-cursist"> ${result.getAntwoordcursist().getAntwoord()}</td>
+									</tr>
+									<tr>
+										<td>Juiste Antwoord</td>		<td id="td-opdracht"> ${result.getAntwoordopdracht().getGoedfout()}</td>
+									</tr>
+									<tr>					
+										<td>Resultaat</td>				<td id="td-result" >${result.getResultaat()}</td>
+									</tr>
+							</c:forEach>						
+					</table>				
 				</div>
+		
+							<%-- <tr><td   class="title">${resultaat.getResultaatID()}</td><td  colspan="2" > ${resultaat.getAntwoordcursist().getOpdracht().getVraag()}</td></tr>	
+							<tr><td rowspan="4"></td></tr>
+							<tr>					
+								<td>Jouw antwoord</td>			<td id="td-cursist"> ${resultaat.getAntwoordcursist().getAntwoord()}</td>
+							</tr>
+							<tr>
+								<td>Juiste Antwoord</td>		<td id="td-opdracht"> ${resultaat.getAntwoordopdracht().getGoedfout()}</td>
+							</tr>
+							<tr>					
+								<td>Resultaat</td>				<td id="td-result" >${resultaat.getResultaat()}</td>
+							</tr>
+					 --%>
+
 				
 				
 				

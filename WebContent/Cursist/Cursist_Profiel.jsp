@@ -76,8 +76,9 @@ $(document).ready(function(){
 						<label id="profiel-lbl"><%=persoon.getHuisnummer() %></label>						
 					</form>			
 					
-					<div id="profiel-wijzig-btn" onclick="changeCursistProfile();">Wijzig</div>		
-					
+					<div id="profiel-wijzig-btn" onclick="changeCursistProfile();">Wijzig</div>
+	<br/>
+	<br/>
 				</div>
 				
 				

@@ -595,6 +595,21 @@ there should be a few more options but non actually worked for me
 }
 
 
+#section-manager-cursisten{
+	width: 100%;
+	height: 45vh;
+	margin-bottom: 30px;
+	background-color: lightgray;
+}
+
+#section-manager-cursistresult{
+	width: 100%;
+	height: 200vh;
+	margin-bottom: 30px;
+	background-color: lightgray;
+}
+
+
 
 
 

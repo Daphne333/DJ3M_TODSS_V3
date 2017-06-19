@@ -80,7 +80,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CursistServlet</servlet-name>
-		<url-pattern>/CursistServlet</url-pattern>
+		<url-pattern>/CursistServlet.do</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>CursistToevoegenServlet</servlet-name>

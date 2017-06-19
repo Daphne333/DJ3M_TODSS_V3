@@ -2,7 +2,6 @@ package Controller.Servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -16,11 +15,10 @@ import javax.servlet.http.HttpSession;
 
 import Model.Service.AccountService;
 import Model.Service.AntwoordCursistService;
-import Model.Service.CursusService;
+import Model.Service.PersoonService;
 import Model.Service.ResultaatCursistService;
 import Model.Service.ServiceProvider;
 import Model.domein.Account;
-import Model.domein.AntwoordCursist;
 import Model.domein.CursusUitvoering;
 import Model.domein.Persoon;
 import Model.domein.ResultaatCursist;
@@ -35,15 +33,18 @@ public class ResultatenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<ResultaatCursist> lijst = new ArrayList<ResultaatCursist>();
+		List<ResultaatCursist> lijst = new ArrayList<ResultaatCursist>();//cursist
+		List<ResultaatCursist> resultaten = new ArrayList<ResultaatCursist>();//manager
+		List<Persoon> personenVanBedrijf = new ArrayList<Persoon>();//manager
+
+
 		RequestDispatcher rd = null;
 		Account account = (Account) req.getSession().getAttribute("loginAccount");
 		String rol = account.getRol().toString();
 		
 		String servletAction = req.getParameter("servletAction");
 		
-		
-		HttpSession session = req.getSession();
+		System.out.println("je bent in: resultatenServlet");
 		
 		
 		System.out.println("resultaat Servlet rol: "+rol);
@@ -52,6 +53,11 @@ public class ResultatenServlet extends HttpServlet {
 		ServiceProvider sp = new ServiceProvider();
 		ResultaatCursistService Res = sp.getResultaatCursist();
 		AntwoordCursistService AcS = sp.getAntwoordCursist();
+		PersoonService ps = sp.getPersoon();
+		
+		HttpSession session = req.getSession();
+
+		
 		
 		// de url waar we naar toe gaan als de functie is afgelopen
 		// deze wordt gzet op basis van jouw rol
@@ -99,32 +105,34 @@ public class ResultatenServlet extends HttpServlet {
 				//
 				
 				case "manager-redirect":
-					
+
 					//manager --> bedrijf id
 					int bedrijfid = account.getPersoonID().getBedrijfID().getBedrijfID();
 					
+					System.out.println(bedrijfid);
 					
+					System.out.println("manager-redirect: "+servletAction);
 					
 					
 					// lijst met cursisten met hetzelfde bedrijf id
 					//lijst wordt gevuld met ALLEEN de personen die hetzelfde bedrijfID hebben
-					List<Persoon> personenVanBedrijf = new ArrayList<Persoon>();
 					
-					for(Persoon p : sp.getPersoon().getListPersonen()){ //lijst met alle personen
+					for(Persoon p : ps.getListPersonen()){ //lijst met alle personen
 						if (p.getBedrijfID().getBedrijfID() == bedrijfid){ //als bedrijfId overeenkomt met die van MANAGER
 							personenVanBedrijf.add(p);
 							System.out.println(p.getAchternaam());
 						}
 					}
-					
 					//lijst gemaakt, stuur door naar de JSP
-					req.setAttribute("cursisten", personenVanBedrijf);
+					
+					System.out.println(personenVanBedrijf.size());
 					session.setAttribute("cursisten", personenVanBedrijf);
 
 						
 					
 					break;
-					
+
+		
 					
 					//
 					//									als er een cursist gekozen is
@@ -132,58 +140,39 @@ public class ResultatenServlet extends HttpServlet {
 					//
 					
 				case "manager-selectCursist":
+
 					
 					System.out.println("@@@@@@@@@@@@@");
 					
-					
+					System.out.println("manager-selectCursist: "+servletAction);
 					int selectedCursistId = Integer.parseInt(req.getParameter("cursistID"));
-					System.out.println(selectedCursistId);
+					System.out.println("id: " + selectedCursistId);
 					
 					
-					//lijst met resultaten van cursist met id = selectedCursistId
-					List<ResultaatCursist> resultaten = new ArrayList<ResultaatCursist>();
+
 					
 					for(ResultaatCursist rc : sp.getResultaatCursist().getResultaten()){
 						if(rc.getAntwoordcursist().getAccount().getPersoonID().getPersonID() == selectedCursistId){
 							resultaten.add(rc);
+							System.out.println(rc.getAntwoordcursist().getOpdracht().getVraag());
+							
+							
 						}						
 					}
 					
 					//lijst gemaakt, stuur door naar de JSP
-					session.setAttribute("cursist-resultaten", resultaten);
-			
-				
+					System.out.println("test-3");
+					System.out.print(resultaten.size());
+
+					session.setAttribute("cursistresults", resultaten);				
 					break;
 				
 				
 				
 				}
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				break;
+					
 				
 				
 				
@@ -201,6 +190,8 @@ public class ResultatenServlet extends HttpServlet {
 			case "CURSIST":
 				url = "/Cursist/Cursist_Resultaten.jsp";
 				
+				System.out.println("Cursist: " +servletAction);
+				
 				//lijst met alle beschikbare resultaten
 				List<ResultaatCursist> C_l = Res.getResultaten();
 				
@@ -215,7 +206,7 @@ public class ResultatenServlet extends HttpServlet {
 					}
 				
 				//stuur deze lijst naar de pagina
-				session.setAttribute("results", lijst);
+				req.setAttribute("results", lijst);
 				break;
 
 				

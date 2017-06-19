@@ -57,11 +57,7 @@
 				
 			<div class="title-bar">
 				<h1>Resultaten</h1></div>
-				
-				
-			<input id="count" type="hidden" value=""></input>
-			<script>document.getElementById("count").value = 0;</script>	
-				
+
 			<table border ="5" cellpadding="5" width="max" align=center class=tableview2>
 			
 				<c:forEach var="result" items='${results}'>
