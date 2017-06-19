@@ -67,18 +67,20 @@
 								<td><input type="text" id="antwoord" name="antwoord"
 									SIZE="30"><br></td>
 							</tr>
-							<form>
+							
 								<select name="antwoordenBijOpdracht" id="mySelect" size="8">
-									<option></option>
-								</select>
-							</form>
-							<p>Click the button to add a "Kiwi" option at the end of the
-								dropdown list.</p>
 
+								</select>
+							
+							<tr>
+								<td>Klik op de op knop om een Antwoordt bij een Opdracht
+									toe te voegen.</td>
+							</tr>
 
 
 							<tr>
-								<td><button type="button" onclick="myFunction()">Antwoord Toevoegen</button></td>
+								<td><button type="button" onclick="myFunction()">Antwoord
+										Toevoegen</button></td>
 							</tr>
 							<tr>
 								<td><input type="submit" name="Opdracht Toevoegen"
@@ -90,23 +92,27 @@
 								</form>
 							</tr>
 						</table>
+
+
+
+
+
+						<script>
+							function myFunction() {
+								var x = document.getElementById("mySelect");
+								var option = document.createElement("option");
+								var value = document
+										.getElementById("omschrijving").value;
+								var value2 = document
+										.getElementById("goedFout").value;
+								var value3 = document
+										.getElementById("antwoord").value;
+								option.text = value + "-" + value2 + "-"
+										+ value3;
+								x.add(option);
+							}
+						</script>
 					</form>
-
-
-
-
-					<script>
-						function myFunction() {
-							var x = document.getElementById("mySelect");
-							var option = document.createElement("option");
-							var value = document.getElementById("omschrijving").value;
-							var value2 = document.getElementById("goedFout").value;
-							var value3 = document.getElementById("antwoord").value;
-							option.text = value + "-" + value2 + "-" + value3;
-							x.add(option);
-						}
-					</script>
-
 				</div>
 			</div>
 		</div>

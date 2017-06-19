@@ -35,7 +35,7 @@ public class OpdrachtAanmakenServlet extends HttpServlet {
 
 		String vraag = request.getParameter("vraag");
 		String[] alleOpdrachten = request.getParameterValues("antwoordenBijOpdracht");
-	
+
 		System.out.println(alleOpdrachten);
 
 		if (vraag != null && !vraag.trim().isEmpty() ) {
@@ -60,7 +60,6 @@ public class OpdrachtAanmakenServlet extends HttpServlet {
 		} else {
 			url = "/Beheerder/Beheerder_OpdrachtAanmaken.jsp";
 		}
-
 		rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}
