@@ -40,7 +40,7 @@ public class ResultaatCursistDAO {
 		session = sessionFactory.getCurrentSession();
 		ResultaatCursist result = null;
 		connection = session.beginTransaction();
-		String queryString = "from Resultaat_Cursist where resultaatID = :id";
+		String queryString = "from ResultaatCursist where resultaatID = :id";
 		Query query = session.createQuery(queryString);
 		query.setInteger("personID", id);
 		result = (ResultaatCursist) query.uniqueResult();

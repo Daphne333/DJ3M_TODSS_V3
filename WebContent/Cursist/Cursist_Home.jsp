@@ -37,24 +37,10 @@
 		<div id="content" class="content">
 			<div class="inner-content">
 
-				<%
-					//Account account = (Account) request.getSession().getAttribute("loginAccount");
-					System.out.print(account.toString());
-					//request.getSession().getAttribute("loginAccount");    
 
-					//FunctieRol rol = account.getRol();
-					///String naam = account.getUsername();
-				%>
 				<td>Welcome Cursist met de naam :</td>
 				<td><%=account.getUsername()%></td>
-				<%
-					Object msg = request.getAttribute("msg");
 
-					// dit object moet de informatie bevatten over de gehele planning
-					// dit object is via de servlet en de dao gevalideed in de database
-					// het object is van de eigenaar, degene die is ingeloged
-					Object cursisten = request.getAttribute("cursisten");
-				%>
 
 			</div>
 			<div class="content-container">

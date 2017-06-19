@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.Service.AccountService;
 import Model.Service.PersoonService;
@@ -72,7 +73,8 @@ public class ProfielServlet extends HttpServlet {
 		//deze wordt gezet op basis van jouw rol		
 		String url = "";
 		
-		
+		HttpSession session = req.getSession();
+
 		
 		
 		
@@ -110,6 +112,11 @@ public class ProfielServlet extends HttpServlet {
 				//alleen doorverwijzen
 				case "cursist-redirect":
 					url = "./Cursist/Cursist_Profiel.jsp";
+					
+					//jouw persoonlijke info
+					Persoon p = ps.getPersoonBijID(account.getPersoonID().getPersonID());
+					System.out.println(p.getNaam() + p.getAchternaam());
+					session.setAttribute("profielinfo", p);					
 					break;
 				}
 				

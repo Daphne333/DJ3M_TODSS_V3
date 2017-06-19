@@ -18,8 +18,8 @@ public class BeheerderAanmaken {
 	public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
 		BedrijfDAO bdao = new BedrijfDAO();
 		Bedrijf b = new Bedrijf();
-		b.setKvknummer(412);
-		b.setBedrijfsnaam("Social Brothers");
+		b.setKvknummer(21415);
+		b.setBedrijfsnaam("Social fkljsfo");
 		b.setVestiging_straat("Maliebaan");
 		b.setVestiging_postcode("1234FS");
 		b.setVestiging_huisnummer(1);

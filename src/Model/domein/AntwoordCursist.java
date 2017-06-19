@@ -11,12 +11,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Antwoord_Cursist")
+@Table(name = "antwoord_cursist")
 public class AntwoordCursist {
 
 	private int antwoordCursistID;
-	private FunctieRol rol;
-	private String antwoord;
+	private int antwoord;
 	private Account account;
 	private Opdracht opdracht;
 	public AntwoordCursist() {
@@ -32,26 +31,26 @@ public class AntwoordCursist {
 	}
 	@Column(name = "Antwoord")
 
-	public String getAntwoord() {
+	public int getAntwoord() {
 		return antwoord;
 	}
-	public void setAntwoord(String antwoord2) {
+	public void setAntwoord(int antwoord2) {
 		this.antwoord = antwoord2;
 	}
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "accountID")
 	public Account getAccount() {
-		if(account.getRol() == FunctieRol.CURSIST){
+/*		if(account.getRol() == FunctieRol.CURSIST){*/
 			return account;
-		} else {
+/*		} else {
 			return null;
-		}
+		}*/
 	}
 	public void setAccount(Account account) {
-		if(account.getRol() == FunctieRol.CURSIST ){
-			this.account = account;
+/*		if(account.getRol() == FunctieRol.CURSIST ){
+*/			this.account = account;
 		}
-	}
+	/*}*/
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "opdrachtID")
 	public Opdracht getOpdracht() {

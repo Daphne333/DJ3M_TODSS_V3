@@ -3,7 +3,7 @@
 
 <!-- java imports -->
 <%@page import="java.util.ArrayList"%>
-<%@page import="Model.domein.Training"%>
+<%@page import="Model.domein.AntwoordOpdracht"%>
 <%@page import="java.util.List"%>
 
 <!-- de C-prefix is nodig voor de tabel die hieronder wordt gegenereerd. 
@@ -23,7 +23,7 @@
 <body>
 
 	<%
-		List<Training> alleTrainingen = (List<Training>) request.getSession().getAttribute("alleTrainingen");
+		List<AntwoordOpdracht> alleOpdrachten = new ArrayList<AntwoordOpdracht>();
 	%>
 
 	<div id="header" class="header"></div>
@@ -38,35 +38,80 @@
 		<div id="content" class="content">
 			<div class="inner-content">
 
-				<h3 style="text-align: center;">Training toevoegen</h3>
+				<h3 style="text-align: center;">Opdracht toevoegen</h3>
 				<div style="text-align: center;">
 
-					<form method="post" action="TrainingAanmakenServlet.do">
+					<form method="post" action="OpdrachtAanmakenServlet.do">
 						<table cellspacing="2" cellpadding="2" border="0">
 							<tr>
 								<td>Vraag :</td>
-								<td><input type="text" id="vraag"
-									name="vraag" SIZE="30"><br></td>
+								<td><input type="text" id="vraag" name="vraag" SIZE="30"><br></td>
 							</tr>
 							<tr>
-								<td>Kies een Training :</td>
-								<td><select name="cursusNaam">
-										<%
-											for (Training training : alleTrainingen) {
-										%>
-										<option value="<%=training.getNaam()%>"><%=training.getNaam()%></option>
-										<%
-											}
-										%>
-								</select></td>
+
+								<td>Druk op de knop om de lijst aan te vullen met
+									antwoorden bij de vraag.</td>
+							</tr>
+							<tr>
+								<td>Omschrijving :</td>
+								<td><input type="text" id="omschrijving"
+									name="omschrijving" SIZE="30"><br></td>
+							</tr>
+							<tr>
+								<td>Goed of Fout (aangeven met 0(false)-1(true) :</td>
+								<td><input type="text" id=goedFout name="goedFout"
+									SIZE="30"><br></td>
+							</tr>
+							<tr>
+								<td>Antwoord :</td>
+								<td><input type="text" id="antwoord" name="antwoord"
+									SIZE="30"><br></td>
+							</tr>
+							
+								<select name="antwoordenBijOpdracht" id="mySelect" size="8">
+
+								</select>
+							
+							<tr>
+								<td>Klik op de op knop om een Antwoordt bij een Opdracht
+									toe te voegen.</td>
+							</tr>
+
+
+							<tr>
+								<td><button type="button" onclick="myFunction()">Antwoord
+										Toevoegen</button></td>
+							</tr>
+							<tr>
+								<td><input type="submit" name="Opdracht Toevoegen"
+									value="User toevoegen"></td>
+							</tr>
+							<tr>
+								<form method="post" action="HomeServlet.do">
+									<td><input type="submit" name="Home" value="Home"></td>
+								</form>
 							</tr>
 						</table>
 
-						<br> <input type="submit" name="Opdracht Toevoegen"
-							value="User toevoegen">
-						<form method="post" action="HomeServlet.do">
-							<br> <input type="submit" name="Home" value="Home">
-						</form>
+
+
+
+
+						<script>
+							function myFunction() {
+								var x = document.getElementById("mySelect");
+								var option = document.createElement("option");
+								var value = document
+										.getElementById("omschrijving").value;
+								var value2 = document
+										.getElementById("goedFout").value;
+								var value3 = document
+										.getElementById("antwoord").value;
+								option.text = value + "-" + value2 + "-"
+										+ value3;
+								x.add(option);
+							}
+						</script>
 					</form>
 				</div>
 			</div>

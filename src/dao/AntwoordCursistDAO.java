@@ -40,7 +40,7 @@ public class AntwoordCursistDAO {
 		session = sessionFactory.getCurrentSession();
 		AntwoordCursist antwoordCursist = null;
 		connection = session.beginTransaction();
-		String queryString = "from Antwoord_Cursist where antwoordCursistID = :antwoordCursistID";
+		String queryString = "from AntwoordCursist where antwoordCursistID = :antwoordCursistID";
 		Query query = session.createQuery(queryString);
 		query.setInteger("antwoordCursistID", antwoordCursistID);
 		antwoordCursist = (AntwoordCursist) query.uniqueResult();
@@ -52,7 +52,7 @@ public class AntwoordCursistDAO {
 		session = sessionFactory.getCurrentSession();
 		List<AntwoordCursist> antwoordCursist = new ArrayList<AntwoordCursist>();
 		connection = session.beginTransaction();
-		antwoordCursist = session.createQuery("From Antwoord_Cursist").list();
+		antwoordCursist = session.createQuery("From AntwoordCursist").list();
 		session.flush();
 		return antwoordCursist;
 	}

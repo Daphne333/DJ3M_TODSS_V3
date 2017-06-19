@@ -44,7 +44,6 @@ public class CursusDAO {
 		Query query = session.createQuery(queryString);
 		query.setString("naam", naam);
 		result = (Cursus) query.uniqueResult();
-		session.flush();
 		return result;
 	}
 
