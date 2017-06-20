@@ -20,6 +20,13 @@ public class AntwoordCursist {
 	private Opdracht opdracht;
 	public AntwoordCursist() {
 	}
+	
+	public AntwoordCursist(int antwoord, Account account, Opdracht opdracht){
+		this.antwoord = antwoord;
+		this.account = account;
+		this.opdracht = opdracht;
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "AntwoordCursistID")

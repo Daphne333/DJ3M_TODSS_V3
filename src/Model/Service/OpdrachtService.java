@@ -17,4 +17,8 @@ public class OpdrachtService {
 			dao.update(o);
 		}
 	}
+	
+	public Opdracht getOpdrachtByID(int id){
+		return dao.getOpdrachtByID(id);
+	}
 }

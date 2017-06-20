@@ -17,6 +17,7 @@ public class Opdracht {
 	private int opdrachtID;
 	private String vraag;
 	
+	
 /*	//deze gebruiken we voor het tonen van data
 	private List<AntwoordCursist> cursistAntwoorden = new ArrayList<AntwoordCursist>();
 	private List<AntwoordOpdracht> opdrachtAntwoorden = new ArrayList<AntwoordOpdracht>();
