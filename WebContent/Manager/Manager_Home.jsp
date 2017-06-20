@@ -48,7 +48,7 @@
 
 
 		<div class="title-bar">
-			<h1>Beheer Home</h1></div>
+			<h1>Manager Home</h1></div>
 	
 
 		</div>

@@ -84,7 +84,7 @@
 							</tr>
 							<tr>
 								<td><input type="submit" name="Opdracht Toevoegen"
-									value="User toevoegen"></td>
+									value="Opdracht toevoegen"></td>
 							</tr>
 							<tr>
 								<form method="post" action="HomeServlet.do">

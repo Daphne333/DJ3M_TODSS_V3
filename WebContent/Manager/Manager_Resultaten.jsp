@@ -92,7 +92,7 @@
 				
 				
 				
-				<%  if(resultaten == null){ out.print("niks in resultaten");} else{out.print("wel wat in resultaten:" + resultaten.toString());}%>
+				<%  if(resultaten == null){ out.print("niks in resultaten");} else{out.print("wel wat in resultaten:");}%>
 				
 									<br/><br/><br/>
 					<div id="profiel-wijzig-btn" onclick="hideCursistList();">Sluiten</div>

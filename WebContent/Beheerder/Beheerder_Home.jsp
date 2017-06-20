@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">		
-<title>Manager | Home</title>
+<title>Beheerder | Home</title>
 </head>
 <body>
 
@@ -48,7 +48,7 @@
 
 
 		<div class="title-bar">
-			<h1>Home</h1></div>
+			<h1>Beheerder Home</h1></div>
 	
 	
 		<div class="manager-home-container">

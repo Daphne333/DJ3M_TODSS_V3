@@ -42,8 +42,8 @@ public class LoginServlet extends HttpServlet {
 		String url = "";
 		RequestDispatcher rd = null;
 
-		Account account;
-		Persoon personalInfo;
+		Account account = null;
+		Persoon personalInfo = null;
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 

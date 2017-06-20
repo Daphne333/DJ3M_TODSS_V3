@@ -45,38 +45,38 @@
 							<tr>
 								<td>Bedrijfsnaam:</td>
 								<td><input type="text" id="setBedrijfsNaam"
-									name="setBedrijfsNaam">
-								<td>
+									name="setBedrijfsNaam" >*
+								</td>
 							</tr>
 							<tr>
 								<td>Vestiging straat:</td>
 								<td><input type="text" id="setVestigingStraat"
-									name="setVestigingStraat"></td>
+									name="setVestigingStraat">*</td>
 							</tr>
 							<tr>
 								<td>Vestiging huisnummer:</td>
 								<td><input type="text" id="setVestigingHuisnummer"
-									name="setVestigingHuisnummer"></td>
+									name="setVestigingHuisnummer">*</td>
 							</tr>
 							<tr>
 								<td>Vestiging toevoeging:</td>
 								<td><input type="text" id="setVestigingToevoeging"
-									name="setVestigingToevoeging"></td>
+									name="setVestigingToevoeging">*</td>
 							</tr>
 							<tr>
 								<td>Vestiging postcode:</td>
 								<td><input type="text" id="setVestigingPostcode"
-									name="setVestigingPostcode"></td>
+									name="setVestigingPostcode">*</td>
 							</tr>
 							<tr>
 								<td>Vestiging plaats:</td>
 								<td><input type="text" id="setVestigingPlaats"
-									name="setVestigingPlaats"></td>
+									name="setVestigingPlaats">*</td>
 							</tr>
 							<tr>
 								<td>Vestiging postbus:</td>
 								<td><input type="text" id="setVestigingPostbus"
-									name="setVestigingPostbus"></td>
+									name="setVestigingPostbus">*</td>
 							</tr>
 							<tr>
 								<td>Postadres straat:</td>
@@ -111,20 +111,20 @@
 							<tr>
 								<td>Telefoonnummer:</td>
 								<td><input type="text" id="setTelefoonnummer"
-									name="setTelefoonnummer"></td>
+									name="setTelefoonnummer">*</td>
 							</tr>
 							<tr>
 								<td>Kvknummer:</td>
 								<td><input type="text" id="setKvknummer"
-									name="setKvknummer"></td>
+									name="setKvknummer">*</td>
 							</tr>
 							<tr>
 								<td>E-mail:</td>
-								<td><input type="text" id="setEmail" name="setEmail"></td>
+								<td><input type="text" id="setEmail" name="setEmail">*</td>
 							</tr>
 							<tr>
 								<td><input type="submit" id="toevoegenknop"
-									value="Bedrijf toevoegen"></td>
+									value="Bedrijf toevoegen">*</td>
 							</tr>
 						</table>
 					</form>
